@@ -263,6 +263,12 @@ textarea {
   color: #e0e0e0;
 }
 
+/* 暗黑模式下 Logo 颜色与正文一致 */
+[data-theme="dark"] .logo-image {
+  filter: brightness(0) invert(1);
+  opacity: 0.88;
+}
+
 [data-theme="dark"] a {
   color: #6b9eff;
 }
