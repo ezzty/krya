@@ -23,15 +23,15 @@ const formatDate = (date: string) => {
   
   <div class="col-mb-12" id="main" role="main">
     <article class="post">
-      <h1 class="post-title">
+      <h1 class="col-mb-12 post-title">
         <a href={Astro.url.pathname}>{title}</a>
       </h1>
-      <ul class="post-meta">
+      <ul class="col-mb-12 post-meta">
         <li>作者：<a href="/about">{author}</a></li>
         <li>{formatDate(pubDate)}</li>
         <li>{wordCount}字</li>
       </ul>
-      <div class="post-content">
+      <div class="col-mb-12 post-content">
         <slot />
       </div>
       {tags.length > 0 || categories.length > 0 ? (

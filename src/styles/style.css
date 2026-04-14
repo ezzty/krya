@@ -379,7 +379,8 @@ textarea {
   .post-title,
   .post-meta,
   .post-content,
-  .col-9 {
+  .col-9,
+  .col-mb-12 {
     display: block;
     float: none;
     clear: both;
@@ -390,13 +391,6 @@ textarea {
   /* 移动端正文顶部间距设为 0，避免跳动 */
   .post-content {
     margin-top: 0;
-  }
-  
-  /* 移动端文章页标题、信息、正文左边距为 0，与首页一致 */
-  .post-title,
-  .post-meta,
-  .post-content {
-    margin-left: 0;
   }
   
   /* 移除 post-content 内第一个段落的 margin-top，避免跳动 */
