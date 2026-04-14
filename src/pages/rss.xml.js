@@ -10,8 +10,8 @@ export async function GET(context) {
   });
   
   return rss({
-    title: 'KRYA | Jin 的个人博客',
-    description: 'Jin 的个人博客 - 技术、生活、旅行',
+    title: '佛系日志 | Jin 的个人博客',
+    description: 'Jin 的个人博客 - 旅行、生活、感悟',
     site: context.site,
     items: await Promise.all(sortedPosts.map(async (post) => {
       // 直接使用 post.content 获取 Markdown 内容
