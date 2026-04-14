@@ -5,6 +5,11 @@ interface Props {
 }
 
 const { title, description = "Jin 的个人博客" } = Astro.props;
+
+// 导入 CSS 文件（Vite 会自动打包）
+import '../../public/normalize.css';
+import '../../public/grid.css';
+import '../../public/style.css';
 ---
 
 <!DOCTYPE html>
@@ -17,10 +22,7 @@ const { title, description = "Jin 的个人博客" } = Astro.props;
     <title>{title}</title>
     <meta name="description" content={description} />
     
-    <!-- CSS -->
-    <link rel="stylesheet" href="/normalize.css" />
-    <link rel="stylesheet" href="/grid.css" />
-    <link rel="stylesheet" href="/style.css" />
+    <!-- CSS (imported for Vite bundling) -->
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />

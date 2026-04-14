@@ -2,10 +2,14 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://krya.com',
+  site: 'https://frc.cc',
   output: 'static',
   compressHTML: true,
   vite: {
+    build: {
+      // 合并所有 CSS 到一个文件
+      cssCodeSplit: false,
+    },
     css: {
       preprocessorOptions: {
         scss: {
