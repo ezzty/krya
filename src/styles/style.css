@@ -382,6 +382,11 @@ textarea {
     margin-left: 0;
   }
   
+  /* 移动端正文顶部间距设为 0，避免跳动 */
+  .post-content {
+    margin-top: 0;
+  }
+  
   /* 作者链接颜色与"作者"文字一致 */
   .post-meta a {
     color: #999;
