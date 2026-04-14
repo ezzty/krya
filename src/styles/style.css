@@ -36,24 +36,26 @@ a:hover, a:active {
 
 pre, code {
   padding: 2px 4px;
-  background: #F9F9F9;
+  background: none;
   font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Noto Sans CJK Regular", sans-serif;
   font-size: 1em;
 }
 
 code {
-  color: #B94A48;
+  color: #3354AA;
 }
 
 pre {
   padding: 8px;
   overflow: auto;
   max-height: 400px;
+  background: none;
 }
 
 pre code {
   padding: 0;
   color: #444;
+  background: none;
 }
 
 blockquote {
@@ -272,11 +274,11 @@ textarea {
 
 [data-theme="dark"] pre,
 [data-theme="dark"] code {
-  background: #2a2a2a;
+  background: none;
 }
 
 [data-theme="dark"] code {
-  color: #ff6b6b;
+  color: #6b9eff;
 }
 
 [data-theme="dark"] pre code {
