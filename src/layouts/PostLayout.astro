@@ -1,0 +1,46 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+
+interface Props {
+  title: string;
+  author: string;
+  pubDate: string;
+  wordCount?: number;
+  tags?: string[];
+  categories?: string[];
+}
+
+const { title, author, pubDate, wordCount = 0, tags = [], categories = [] } = Astro.props;
+
+const formatDate = (date: string) => {
+  return new Date(date).toISOString().split('T')[0];
+};
+---
+
+<BaseLayout title={title}>
+  <NavBar slot="header" />
+  
+  <div class="col-mb-12" id="main" role="main">
+    <article class="post">
+      <h1 class="post-title">
+        <a href={Astro.url.pathname}>{title}</a>
+      </h1>
+      <ul class="post-meta">
+        <li>作者：<a href="/about">{author}</a></li>
+        <li>{formatDate(pubDate)}</li>
+        <li>{wordCount}字</li>
+      </ul>
+      <div class="post-content">
+        <slot />
+      </div>
+      {tags.length > 0 || categories.length > 0 ? (
+        <p class="tags">
+          分类：{categories.join(', ')}  /  标签：{tags.join(', ') || 'none'}
+        </p>
+      ) : null}
+    </article>
+    
+    <slot name="comments" />
+  </div>
+</BaseLayout>

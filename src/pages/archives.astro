@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('posts');
+
+// 按年份和月份分组
+const groupedPosts: Record<string, typeof posts> = {};
+
+posts.sort((a, b) => {
+  return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+}).forEach((post) => {
+  const date = new Date(post.data.pubDate);
+  const yearMonth = `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, '0')}`;
+  
+  if (!groupedPosts[yearMonth]) {
+    groupedPosts[yearMonth] = [];
+  }
+  groupedPosts[yearMonth].push(post);
+});
+
+const formatDate = (date: string) => {
+  return new Date(date).toISOString().split('T')[0];
+};
+---
+
+<BaseLayout title="归档 - KRYA">
+  <NavBar slot="header" />
+  
+  <div class="col-mb-12" id="main" role="main">
+    <article class="post">
+      <h1 class="post-title">文章归档</h1>
+      
+      {Object.entries(groupedPosts).map(([yearMonth, posts]) => {
+        const [year, month] = yearMonth.split('-');
+        return (
+          <div class="archive-group">
+            <h2 class="archive-year">{year}年 {month}月</h2>
+            <ul class="archive-list">
+              {posts.map((post) => (
+                <li>
+                  <span class="archive-date">{formatDate(post.data.pubDate.toISOString())}</span>
+                  <a href={`/blog/${post.id.replace('.md', '')}`}>{post.data.title}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        );
+      })}
+    </article>
+  </div>
+</BaseLayout>
+
+<style>
+  .archive-group {
+    margin-bottom: 2em;
+  }
+  .archive-year {
+    font-size: 1.2em;
+    color: #3354aa;
+    margin-bottom: 0.5em;
+    padding-bottom: 0.3em;
+    border-bottom: 1px solid #eee;
+  }
+  .archive-list {
+    list-style: none;
+    padding: 0;
+  }
+  .archive-list li {
+    margin-bottom: 0.5em;
+    display: flex;
+    gap: 1em;
+  }
+  .archive-date {
+    color: #999;
+    font-size: 0.9em;
+    min-width: 100px;
+  }
+  .archive-list a {
+    color: #444;
+  }
+  .archive-list a:hover {
+    color: #3354aa;
+  }
+</style>

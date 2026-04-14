@@ -1,0 +1,68 @@
+---
+import HomeLayout from '../../layouts/HomeLayout.astro';
+import { getCollection } from 'astro:content';
+import { extractFirstImage, getRandomThumbnailIndex, stripMarkdown, countWords } from '../../lib/utils';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  
+  // 按日期排序
+  const sortedPosts = posts.sort((a, b) => {
+    return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+  });
+  
+  // 分页配置
+  const PAGE_SIZE = 10;
+  const totalPages = Math.ceil(sortedPosts.length / PAGE_SIZE);
+  
+  // 返回第 2 页到最后一页
+  return Array.from({ length: totalPages - 1 }, (_, i) => {
+    const page = i + 2; // 从第 2 页开始
+    const paginatedPosts = sortedPosts.slice((page - 1) * PAGE_SIZE, page * PAGE_SIZE);
+    
+    const formattedPosts = paginatedPosts.map((post) => {
+      // 优先级：Front Matter 中的 thumbnail > 文章内第一张图片 > 随机图片
+      let thumbnail = post.data.thumbnail;
+      
+      if (!thumbnail) {
+        const firstImage = extractFirstImage(post.body || '');
+        if (firstImage) {
+          thumbnail = firstImage;
+        } else {
+          const randomIndex = getRandomThumbnailIndex(post.id);
+          thumbnail = `/img/random/${randomIndex}.jpg`;
+        }
+      }
+      
+      // 清理 Markdown 语法，获取纯文本摘要
+      const plainText = stripMarkdown(post.body || '');
+      
+      // 计算字数
+      const wordCount = countWords(post.body || '');
+      
+      return {
+        title: post.data.title,
+        slug: post.id.replace('.md', ''),
+        author: post.data.author || 'Jin',
+        pubDate: post.data.pubDate.toISOString(),
+        wordCount: wordCount,
+        excerpt: post.data.description || plainText.slice(0, 70),
+        thumbnail: thumbnail,
+      };
+    });
+    
+    return {
+      params: { page: page.toString() },
+      props: {
+        posts: formattedPosts,
+        currentPage: page,
+        totalPages: totalPages,
+      },
+    };
+  });
+}
+
+const { posts: formattedPosts, currentPage, totalPages } = Astro.props;
+---
+
+<HomeLayout posts={formattedPosts} currentPage={currentPage} totalPages={totalPages} />

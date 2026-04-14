@@ -1,0 +1,33 @@
+---
+import PostLayout from '../../layouts/PostLayout.astro';
+import { getCollection } from 'astro:content';
+import { countWords } from '../../lib/utils';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  
+  return posts.map((post) => ({
+    params: {
+      slug: post.id.replace('.md', ''),
+    },
+    props: {
+      post,
+      wordCount: countWords(post.body || ''),
+    },
+  }));
+}
+
+const { post, wordCount } = Astro.props;
+const { Content } = await post.render();
+---
+
+<PostLayout
+  title={post.data.title}
+  author={post.data.author || 'Jin'}
+  pubDate={post.data.pubDate.toISOString()}
+  wordCount={wordCount}
+  tags={post.data.tags || []}
+  categories={post.data.categories || []}
+>
+  <Content />
+</PostLayout>

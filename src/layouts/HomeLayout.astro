@@ -1,0 +1,161 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+
+interface Post {
+  title: string;
+  slug: string;
+  author: string;
+  pubDate: string;
+  wordCount: number;
+  excerpt: string;
+  thumbnail?: string;
+}
+
+interface Props {
+  posts: Post[];
+  currentPage?: number;
+  totalPages?: number;
+}
+
+const { posts, currentPage = 1, totalPages = 1 } = Astro.props;
+
+const formatDate = (date: string) => {
+  return new Date(date).toISOString().split('T')[0];
+};
+
+// 截取摘要（减少 4 个字符）
+const truncateExcerpt = (excerpt: string, length: number = 116) => {
+  if (!excerpt) return '';
+  return excerpt.slice(0, length);
+};
+
+// 生成页码列表（最多显示 5 个页码）
+function getPageNumbers(current: number, total: number): number[] {
+  const pages: number[] = [];
+  const maxVisible = 5;
+  
+  let start = Math.max(1, current - Math.floor(maxVisible / 2));
+  let end = Math.min(total, start + maxVisible - 1);
+  
+  // 调整起始位置，确保始终显示 5 个页码（如果总页数足够）
+  if (end - start < maxVisible - 1) {
+    start = Math.max(1, end - maxVisible + 1);
+  }
+  
+  for (let i = start; i <= end; i++) {
+    pages.push(i);
+  }
+  
+  return pages;
+}
+
+const pageNumbers = getPageNumbers(currentPage, totalPages);
+---
+
+<BaseLayout title="KRYA | 首页">
+  <NavBar slot="header" />
+  
+  <div class="col-mb-12" id="main" role="main">
+    {posts.map((post) => (
+      <article class="post">
+        <div class="col-3 index-image">
+          <img 
+            class="thumbnail" 
+            src={post.thumbnail || '/images/default-thumbnail.png'} 
+            alt={post.title}
+            decoding="async"
+            loading="lazy"
+          />
+        </div>
+        <h1 class="col-9 post-title">
+          <a href={`/blog/${post.slug}`}>{post.title}</a>
+        </h1>
+        <ul class="col-9 post-meta">
+          <li>作者：<a href="/about">{post.author}</a></li>
+          <li>{formatDate(post.pubDate)}</li>
+          <li>{post.wordCount}字</li>
+        </ul>
+        <div class="col-9 post-content">
+          {truncateExcerpt(post.excerpt)}...
+        </div>
+      </article>
+    ))}
+    
+    {totalPages > 1 && (
+      <nav class="pagination">
+        <ul class="page-list">
+          {/* 上一页 */}
+          {currentPage > 1 && (
+            <li class="page-item">
+              <a href="/" class="page-link">&laquo; 上页</a>
+            </li>
+          )}
+          
+          {/* 页码列表 */}
+          {pageNumbers.map((page) => (
+            <li class="page-item">
+              <a 
+                href={page === 1 ? '/' : `/p/${page}`} 
+                class={`page-link ${page === currentPage ? 'active' : ''}`}
+              >
+                {page}
+              </a>
+            </li>
+          ))}
+          
+          {/* 下一页 */}
+          {currentPage < totalPages && (
+            <li class="page-item">
+              <a href={`/p/${currentPage + 1}`} class="page-link">下页 &raquo;</a>
+            </li>
+          )}
+        </ul>
+      </nav>
+    )}
+  </div>
+</BaseLayout>
+
+<style>
+  .pagination {
+    margin: 60px 0 40px;
+    text-align: center;
+  }
+  
+  .page-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: inline-flex;
+    gap: 8px;
+  }
+  
+  .page-item {
+    display: inline-block;
+  }
+  
+  .page-link {
+    display: inline-block;
+    padding: 10px 16px;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    min-width: 40px;
+    text-align: center;
+  }
+  
+  .page-link:hover {
+    background-color: #e8e8e8;
+    border-color: #ccc;
+  }
+  
+  .page-link.active {
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+  }
+</style>

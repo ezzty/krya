@@ -1,0 +1,46 @@
+---
+// Logo 组件 - 可复用
+interface Props {
+  href?: string;
+  src?: string;
+  alt?: string;
+  width?: string | number;
+  height?: string | number;
+}
+
+const { 
+  href = "/", 
+  src = "/logo.svg", 
+  alt = "KRYA",
+  width = "auto",
+  height = "auto"
+} = Astro.props;
+---
+
+<a href={href} class="logo-link">
+  <img 
+    src={src} 
+    alt={alt} 
+    width={width}
+    height={height}
+    class="logo-image"
+  />
+</a>
+
+<style>
+  .logo-link {
+    display: inline-block;
+    line-height: 0;
+  }
+  
+  .logo-image {
+    display: block;
+    width: auto;
+    height: 32px;
+    transition: opacity 0.2s ease;
+  }
+  
+  .logo-link:hover .logo-image {
+    opacity: 0.8;
+  }
+</style>

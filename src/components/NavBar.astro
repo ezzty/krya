@@ -1,0 +1,414 @@
+---
+// 导航栏组件 - 支持滚动隐藏和移动端下拉菜单
+import Logo from './Logo.astro';
+
+interface Props {
+  links?: Array<{ href: string; label: string }>;
+}
+
+const { 
+  links = [
+    { href: "/", label: "首页" },
+    { href: "/archives", label: "归档" },
+    { href: "/about", label: "关于" }
+  ]
+} = Astro.props;
+---
+
+<header class="cd-auto-hide-header">
+  <div class="container">
+    <div class="header-content">
+      <div class="logo">
+        <Logo />
+        <!-- 暗黑模式切换按钮 - 放在 Logo 右边 -->
+        <div class="logo-switches">
+          <button id="theme-toggle" aria-label="切换暗黑模式" title="切换暗黑模式 (Alt + T)" accesskey="t">
+            <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+            <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="5"/>
+              <line x1="12" y1="1" x2="12" y2="3"/>
+              <line x1="12" y1="21" x2="12" y2="23"/>
+              <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+              <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+              <line x1="1" y1="12" x2="3" y2="12"/>
+              <line x1="21" y1="12" x2="23" y2="12"/>
+              <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+              <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      
+      <!-- 桌面导航 -->
+      <nav class="desktop-nav">
+        <ul class="nav-list">
+          {links.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </nav>
+      
+      <!-- 移动端汉堡菜单按钮 -->
+      <button class="mobile-menu-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      
+      <!-- 下拉导航菜单 -->
+      <div class="mobile-dropdown-menu">
+        <ul class="nav-list">
+          {links.map((link) => (
+            <li>
+              <a href={link.href}>{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script is:inline>
+  (function() {
+    // 暗黑模式切换 - 桌面端
+    const themeToggleDesktop = document.querySelector('#theme-toggle');
+    
+    const html = document.documentElement;
+    
+    function getPreferredTheme() {
+      const stored = localStorage.getItem('theme');
+      if (stored) return stored;
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    
+    function applyTheme(theme) {
+      if (theme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+    
+    applyTheme(getPreferredTheme());
+    
+    themeToggleDesktop?.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const current = html.getAttribute('data-theme');
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+    
+    // 导航菜单
+    const menuToggle = document.querySelector('.mobile-menu-toggle');
+    const dropdown = document.querySelector('.mobile-dropdown-menu');
+    const header = document.querySelector('.cd-auto-hide-header');
+    
+    if (!menuToggle || !dropdown) return;
+    
+    menuToggle.addEventListener('click', function(e) {
+      e.stopPropagation();
+      const isOpen = this.getAttribute('aria-expanded') === 'true';
+      this.setAttribute('aria-expanded', !isOpen);
+      dropdown.classList.toggle('is-open');
+      header.classList.toggle('menu-open');
+    });
+    
+    document.addEventListener('click', function(e) {
+      if (!dropdown.contains(e.target) && !menuToggle.contains(e.target)) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        dropdown.classList.remove('is-open');
+        header.classList.remove('menu-open');
+      }
+    });
+    
+    dropdown.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        dropdown.classList.remove('is-open');
+        header.classList.remove('menu-open');
+      });
+    });
+    
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && dropdown.classList.contains('is-open')) {
+        menuToggle.setAttribute('aria-expanded', 'false');
+        dropdown.classList.remove('is-open');
+        header.classList.remove('menu-open');
+      }
+    });
+  })();
+</script>
+
+<style>
+  .header-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+  }
+  
+  @media (min-width: 1024px) {
+    .header-content {
+      height: 25px;
+    }
+    
+    .logo {
+      margin-left: -10px;
+      gap: 4px;
+    }
+  }
+  
+  /* 桌面导航 */
+  .desktop-nav {
+    display: none;
+  }
+  
+  .desktop-nav .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+    border-bottom: none;
+  }
+  
+  .desktop-nav a {
+    color: #4d4d4d;
+    text-decoration: none !important;
+    border-bottom: none !important;
+    font-size: 15px;
+    transition: color 0.2s ease;
+  }
+  
+  .desktop-nav a:hover,
+  .desktop-nav a.active {
+    color: #000000;
+    text-decoration: none !important;
+    border-bottom: none !important;
+  }
+  
+  /* Logo 右边的暗黑模式切换按钮 - 参考 isming.me 风格 */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .logo-switches {
+    display: inline-flex;
+    margin: auto 4px;
+    flex-wrap: inherit;
+  }
+  
+  #theme-toggle {
+    font-size: 26px;
+    margin: auto 4px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #25283D;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #theme-toggle:focus {
+    outline: 0;
+  }
+  
+  #theme-toggle svg {
+    display: block;
+  }
+  
+  #theme-toggle #sun {
+    display: none;
+  }
+  
+  #theme-toggle #moon {
+    display: block;
+  }
+  
+  html[data-theme="dark"] #theme-toggle {
+    color: #e0e0e0;
+  }
+
+  html[data-theme="dark"] #theme-toggle #sun {
+    display: block;
+  }
+
+  html[data-theme="dark"] #theme-toggle #moon {
+    display: none;
+  }
+  
+  html[data-theme="dark"] .desktop-nav a {
+    color: #e0e0e0;
+  }
+
+  html[data-theme="dark"] .desktop-nav a:hover,
+  html[data-theme="dark"] .desktop-nav a.active {
+    color: #ffffff;
+  }
+  
+  @media (min-width: 1024px) {
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+    }
+  }
+  
+  /* 汉堡菜单按钮 */
+  .mobile-menu-toggle {
+    display: block;
+    width: 24px;
+    height: 18px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+  }
+  
+  .mobile-menu-toggle span {
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: #25283D;
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+    border-radius: 1px;
+  }
+  
+  .mobile-menu-toggle span:nth-child(1) {
+    top: 0;
+  }
+  
+  .mobile-menu-toggle span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .mobile-menu-toggle span:nth-child(3) {
+    bottom: 0;
+  }
+  
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(1) {
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .mobile-menu-toggle[aria-expanded="true"] span:nth-child(3) {
+    bottom: 50%;
+    transform: translateY(50%) rotate(-45deg);
+  }
+  
+  /* 下拉菜单 */
+  .mobile-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #ffffff;
+    border-top: 1px solid #f2f2f2;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+    z-index: 999;
+    overflow: hidden;
+  }
+  
+  .mobile-dropdown-menu.is-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .nav-list li {
+    margin: 0;
+    border-bottom: none;
+  }
+  
+.nav-list[data-astro-cid-ymhdp2rl] a[data-astro-cid-ymhdp2rl] {
+    display: block;
+    padding: 10px 10px;
+    color: #4d4d4d;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+  }
+  
+  .nav-list a:hover,
+  .nav-list a:active {
+    background-color: #f8f8f8;
+    color: #000000;
+  }
+  
+  /* 桌面端隐藏移动控件 */
+  @media only screen and (min-width: 1024px) {
+    .mobile-menu-toggle,
+    .mobile-dropdown-menu {
+      display: none;
+    }
+  }
+  
+  /* 移动端隐藏桌面导航 */
+  @media only screen and (max-width: 1023px) {
+    .desktop-nav {
+      display: none;
+    }
+  }
+  
+  /* 暗黑模式适配 */
+  html[data-theme="dark"] .logo-switches #theme-toggle {
+    color: #e0e0e0;
+  }
+
+  html[data-theme="dark"] .mobile-menu-toggle span {
+    background-color: #e0e0e0;
+  }
+
+  html[data-theme="dark"] .mobile-dropdown-menu {
+    background-color: #1a1a1a !important;
+    border-top-color: #3a3a3a !important;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
+  }
+
+  html[data-theme="dark"] .nav-list li {
+    border-bottom-color: #3a3a3a !important;
+  }
+
+  html[data-theme="dark"] .nav-list a,
+  html[data-theme="dark"] .nav-list[data-astro-cid-ymhdp2rl] a[data-astro-cid-ymhdp2rl] {
+    color: #e0e0e0 !important;
+  }
+
+  html[data-theme="dark"] .nav-list a:hover,
+  html[data-theme="dark"] .nav-list a:active,
+  html[data-theme="dark"] .nav-list[data-astro-cid-ymhdp2rl] a[data-astro-cid-ymhdp2rl]:hover,
+  html[data-theme="dark"] .nav-list[data-astro-cid-ymhdp2rl] a[data-astro-cid-ymhdp2rl]:active {
+    background-color: #2a2a2a !important;
+    color: #fff !important;
+  }
+</style>
