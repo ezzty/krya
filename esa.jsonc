@@ -1,0 +1,14 @@
+{
+  "name": "astro-sintu-theme",
+  "version": "1.0.0",
+  "build": {
+    "command": "npm run build",
+    "outputDir": "dist"
+  },
+  "assets": {
+    "dir": "dist"
+  },
+  "runtime": {
+    "type": "static"
+  }
+}
