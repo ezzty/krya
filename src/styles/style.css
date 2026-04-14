@@ -387,6 +387,11 @@ textarea {
     margin-top: 0;
   }
   
+  /* 移除 post-content 内第一个段落的 margin-top，避免跳动 */
+  .post-content > :first-child {
+    margin-top: 0;
+  }
+  
   /* 作者链接颜色与"作者"文字一致 */
   .post-meta a {
     color: #999;
