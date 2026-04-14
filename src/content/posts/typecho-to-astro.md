@@ -1,5 +1,5 @@
 ---
-title: 从 Typecho 到 Astro：我的博客迁移之路
+title: 搞定一套 Astro 模板
 pubDate: 2026-04-14
 author: Jin
 draft: false
