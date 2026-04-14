@@ -1,6 +1,6 @@
 # Astro Sintu Theme
 
-一个简洁的 Astro 博客主题。
+一个简洁的 Astro 博客主题，基于 [isming.me](https://isming.me) 改造。
 
 ## 特性
 
