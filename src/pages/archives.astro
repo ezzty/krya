@@ -41,7 +41,7 @@ const formatDate = (date: string) => {
               {posts.map((post) => (
                 <li>
                   <span class="archive-date">{formatDate(post.data.pubDate.toISOString())}</span>
-                  <a href={`/blog/${post.id.replace('.md', '')}`}>{post.data.title}</a>
+                  <a href={`/post/${post.id.replace('.md', '')}`}>{post.data.title}</a>
                 </li>
               ))}
             </ul>
