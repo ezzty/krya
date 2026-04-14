@@ -178,6 +178,11 @@ textarea {
   word-wrap: break-word;
 }
 
+/* 移除 post-content 内第一个元素的 margin-top，避免与首页不一致 */
+.post-content > :first-child {
+  margin-top: 0;
+}
+
 .post .tags {
   clear: both;
   color: #999;
