@@ -1,9 +1,11 @@
 ---
 title: 我为什么要买小米股票：一个深度用户的选择
 pubDate: 2026-03-10
-author: Jin
+author: jin
 draft: false
 ---
+
+![](https://i.frc.cc/img/m/260415/wj-2.webp?x-oss-process=style/w950)
 
 2025 年 2 月，我在香港开了银行和股票账户，开始买入小米股票。到现在，我已经持有几千股，计划在未来陆续加仓到 1 万股。
 

@@ -5,6 +5,8 @@ author: Jin
 draft: false
 ---
 
+![](https://i.frc.cc/img/m/260415/ms-1.webp?x-oss-process=style/w950)
+
 ### 01. 财富掩盖不了的饮食底色
 
 我曾以为，那些接近财务自由的人，对于饮食应当分外讲究。虽不至于每餐鲍鱼龙虾，但起码会告别高碳水与重油重盐的粗放。
