@@ -32,6 +32,14 @@ const formattedPosts = paginatedPosts.map((post) => {
     }
   }
   
+  // 为缩略图添加 OSS 处理参数（限制宽度 140px）
+  if (thumbnail) {
+    // 如果已经有参数，不再添加
+    if (!thumbnail.includes('?')) {
+      thumbnail = `${thumbnail}?x-oss-process=style/w140`;
+    }
+  }
+  
   // 清理 Markdown 语法，获取纯文本摘要
   const plainText = stripMarkdown(post.body || '');
   

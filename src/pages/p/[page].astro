@@ -34,6 +34,11 @@ export async function getStaticPaths() {
         }
       }
       
+      // 为缩略图添加 OSS 处理参数（限制宽度 140px）
+      if (thumbnail && !thumbnail.includes('?')) {
+        thumbnail = `${thumbnail}?x-oss-process=style/w140`;
+      }
+      
       // 清理 Markdown 语法，获取纯文本摘要
       const plainText = stripMarkdown(post.body || '');
       
