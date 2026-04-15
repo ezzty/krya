@@ -4,7 +4,7 @@ export const siteConfig = {
   title: '浮生百记',
   subtitle: 'Jin 的个人博客',
   description: '记录生活、技术、旅行和投资',
-  url: 'https://krya.com',
+  url: 'https://blog.frc.cc',
   author: 'Jin',
   language: 'zh-Hans-CN',
   timezone: 'Asia/Shanghai',

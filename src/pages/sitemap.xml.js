@@ -11,7 +11,7 @@ export async function GET() {
     return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
   });
 
-  const siteUrl = 'https://krya.com';
+  const siteUrl = 'https://blog.frc.cc';
   
   // 生成 URL 列表
   const urls = [

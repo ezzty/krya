@@ -1,10 +1,10 @@
-# robots.txt for 浮生百记 (krya.com)
+# robots.txt for 浮生百记 (blog.frc.cc)
 
 User-agent: *
 Allow: /
 
 # 站点地图
-Sitemap: https://krya.com/sitemap.xml
+Sitemap: https://blog.frc.cc/sitemap.xml
 
 # 允许所有搜索引擎抓取
 # 不禁止任何目录
