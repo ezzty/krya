@@ -3,6 +3,8 @@ title: 2025 年云账单：全年开销 7620
 pubDate: 2025-12-09
 author: Jin
 draft: false
+categories: ['生活']
+tags: ['账单', '云服务', '开销']
 ---
 
 ![](https://i.frc.cc/img/m/260415/zd.webp?x-oss-process=style/w950)

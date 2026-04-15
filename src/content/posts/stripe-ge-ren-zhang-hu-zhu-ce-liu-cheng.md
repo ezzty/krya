@@ -3,6 +3,8 @@ title: Stripe 个人账户注册流程
 pubDate: 2025-10-29
 author: Jin
 draft: false
+categories: ['技术']
+tags: ['支付', 'Stripe', '教程']
 ---
 
 ![](https://i.frc.cc/img/m/260415/strip.webp?x-oss-process=style/w950)

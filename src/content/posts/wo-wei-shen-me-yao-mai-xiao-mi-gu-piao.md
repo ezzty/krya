@@ -3,6 +3,8 @@ title: 我为什么要买小米股票：一个深度用户的选择
 pubDate: 2026-03-10
 author: jin
 draft: false
+categories: ['投资']
+tags: ['小米', '股票', '投资']
 ---
 
 ![](https://i.frc.cc/img/m/260415/wj-2.webp?x-oss-process=style/w950)

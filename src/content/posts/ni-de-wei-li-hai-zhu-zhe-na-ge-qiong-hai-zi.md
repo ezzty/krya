@@ -3,6 +3,8 @@ title: 你的胃里，还住着那个穷孩子
 pubDate: 2026-03-31
 author: Jin
 draft: false
+categories: ['生活']
+tags: ['饮食', '健康', '生活感悟']
 ---
 
 ![](https://i.frc.cc/img/m/260415/ms-1.webp?x-oss-process=style/w950)

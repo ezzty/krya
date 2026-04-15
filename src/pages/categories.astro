@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+const posts = await getCollection('posts');
+
+const categoryCount = new Map<string, number>();
+posts.forEach(post => {
+  const categories = post.data.categories || [];
+  categories.forEach(category => {
+    categoryCount.set(category, (categoryCount.get(category) || 0) + 1);
+  });
+});
+
+const categories = Array.from(categoryCount.entries()).sort((a, b) => b[1] - a[1]);
+---
+
+<BaseLayout title="所有分类 | 浮生百记">
+  <div class="container">
+    <div class="col-mb-12">
+      <h1 class="post-title">所有分类</h1>
+      {categories.length > 0 ? (
+        <div class="category-list">
+          {categories.map(([category, count]) => (
+            <a href={`/categories/${encodeURIComponent(category)}`} class="category-item">
+              <span class="category-name">{category}</span>
+              <span class="category-count">{count}</span>
+            </a>
+          ))}
+        </div>
+      ) : (
+        <p class="no-items">暂无分类</p>
+      )}
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  .post-title {
+    margin: 30px 0 20px;
+    font-size: 1.5em;
+    color: #4d4d4d;
+  }
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 20px 0 40px;
+  }
+  .category-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    text-decoration: none !important;
+    transition: all 0.2s ease;
+    border: 1px solid #eee;
+  }
+  .category-item:hover {
+    background-color: #3354AA;
+    border-color: #3354AA;
+  }
+  .category-item:hover .category-name,
+  .category-item:hover .category-count {
+    color: #fff;
+  }
+  .category-name {
+    color: #4d4d4d;
+    font-size: 1em;
+    font-weight: 500;
+  }
+  .category-count {
+    color: #999;
+    font-size: 0.85em;
+    background-color: #eee;
+    padding: 2px 8px;
+    border-radius: 12px;
+    min-width: 24px;
+    text-align: center;
+  }
+  .no-items {
+    color: #999;
+    font-size: 1em;
+    padding: 40px 0;
+    text-align: center;
+  }
+  [data-theme="dark"] .post-title { color: #e0e0e0; }
+  [data-theme="dark"] .category-item { background-color: #2a2a2a; border-color: #3a3a3a; }
+  [data-theme="dark"] .category-name { color: #e0e0e0; }
+  [data-theme="dark"] .category-count { background-color: #3a3a3a; color: #999; }
+  [data-theme="dark"] .category-item:hover { background-color: #3354AA; border-color: #3354AA; }
+</style>

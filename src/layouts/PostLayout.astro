@@ -34,13 +34,74 @@ const formatDate = (date: string) => {
       <div class="col-mb-12 post-content">
         <slot />
       </div>
-      {tags.length > 0 || categories.length > 0 ? (
-        <p class="tags">
-          分类：{categories.join(', ')}  /  标签：{tags.join(', ') || 'none'}
-        </p>
-      ) : null}
+      
+      {(categories.length > 0 || tags.length > 0) && (
+        <div class="post-meta-bottom">
+          {categories.length > 0 && (
+            <span class="meta-item">
+              分类：{
+                categories.map((category, index) => (
+                  <>
+                    {index > 0 && ', '}
+                    <a href={`/categories/${encodeURIComponent(category)}`}>{category}</a>
+                  </>
+                ))
+              }
+            </span>
+          )}
+          {categories.length > 0 && tags.length > 0 && (
+            <span class="meta-separator"> / </span>
+          )}
+          {tags.length > 0 && (
+            <span class="meta-item">
+              标签：{
+                tags.map((tag, index) => (
+                  <>
+                    {index > 0 && ', '}
+                    <a href={`/tags/${encodeURIComponent(tag)}`}>{tag}</a>
+                  </>
+                ))
+              }
+            </span>
+          )}
+        </div>
+      )}
     </article>
     
     <slot name="comments" />
   </div>
 </BaseLayout>
+
+<style>
+.post-meta-bottom {
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee;
+  color: #666;
+  font-size: 0.95em;
+  line-height: 2;
+}
+.meta-item a {
+  color: #3354AA;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+.meta-item a:hover {
+  color: #1a3d8f;
+  text-decoration: underline;
+}
+.meta-separator {
+  color: #999;
+  margin: 0 8px;
+}
+[data-theme="dark"] .post-meta-bottom {
+  border-top-color: #333;
+  color: #999;
+}
+[data-theme="dark"] .meta-item a {
+  color: #5a8bff;
+}
+[data-theme="dark"] .meta-item a:hover {
+  color: #7aa5ff;
+}
+</style>

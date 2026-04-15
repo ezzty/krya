@@ -3,6 +3,8 @@ title: 2014越南旅行记
 pubDate: 2014-03-01
 author: Jin
 draft: false
+categories: ['旅行']
+tags: ['越南', '东南亚', '游记', '春节']
 ---
 
 我去旅游了，越南，在春节。

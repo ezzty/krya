@@ -3,6 +3,8 @@ title: 搞定一套 Astro 模板
 pubDate: 2026-04-14
 author: Jin
 draft: false
+categories: ['技术']
+tags: ['博客', 'Astro', 'Typecho', '迁移']
 ---
 
 多年前，我搭建了也不知道是第几个博客，使用的是 Typecho。这是一款轻量级的 PHP 博客程序，简单、干净、易用。我的 Typecho 博客陪伴了我很多年，记录了大量的旅行游记、技术笔记和生活感悟。从越南到泰国，从青海湖到洛阳，从技术折腾到人生感悟，每一篇文章都是时间的印记。
