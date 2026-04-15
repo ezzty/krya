@@ -7,6 +7,7 @@ const postsCollection = defineCollection({
     title: z.string(),
     description: z.string().optional(),
     pubDate: z.date(),
+    lastUpdated: z.date().optional(),
     author: z.string().optional().default('Jin'),
     wordCount: z.number().optional().default(0),
     thumbnail: z.string().optional(),
