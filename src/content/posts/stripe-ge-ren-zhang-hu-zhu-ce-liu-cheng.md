@@ -5,7 +5,7 @@ author: Jin
 draft: false
 ---
 
-https://i.frc.cc/img/m/260415/strip.webp?x-oss-process=style/w950
+![](https://i.frc.cc/img/m/260415/strip.webp?x-oss-process=style/w950)
 
 如果你做出海应用，工具网站，订阅服务，要做全球收款，以前我们有 Paypal、Wise、万里汇等；但是现在注册最简单，多场景应用最便捷的可能是 Stripe；这家成立于美国的集成收款公司，它是一个面向全球开发者和商户的支付平台，可以接受 Visa、Mastercard 等多种国际信用卡；也可以用 Apple Pay 付款。提现手续费透明，支持 API 和链接收款。虽然中国大陆不能注册，但是只要有香港银行卡就很简单了；实测个人账户（Individual），用大陆护照 + 香港众安银行卡轻松注册成功。
 
