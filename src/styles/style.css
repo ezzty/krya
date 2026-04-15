@@ -194,6 +194,7 @@ textarea {
 .post-content img,
 .post-content video {
   max-width: 100%;
+  padding-top: 10px;
 }
 
 .post-content hr {
