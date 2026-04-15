@@ -11,28 +11,28 @@ draft: false
 
 我们这几年的旅行一直在四川以南的地方晃荡；最北除了到过西安之外；我们都没有去过北方的其他地区。所以一直想去体验广阔的华北平原，感受一下北方的氛围。
 
-![5.jpg](/images/posts/chun-jia-you-luo-yang/bmy.webp "5.jpg")  
-![4.jpg](/images/posts/chun-jia-you-luo-yang/4.webp "4.jpg")  
+![5.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/bmy.webp "5.jpg")  
+![4.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/4.webp "4.jpg")  
 *秦始皇兵马俑*
 
-![11.jpg](/images/posts/chun-jia-you-luo-yang/hh.jpg "11.jpg")  
+![11.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/hh.jpg "11.jpg")  
 *第一次看见黄河，对面是山西省*
 
-![DSC04808.jpg](/images/posts/chun-jia-you-luo-yang/lmsk.jpg "DSC04808.jpg")  
-![DSC04867.jpg](/images/posts/chun-jia-you-luo-yang/lm3.jpg "DSC04867.jpg")  
+![DSC04808.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/lmsk.jpg "DSC04808.jpg")  
+![DSC04867.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/lm3.jpg "DSC04867.jpg")  
 *洛阳龙门石窟卢舍那大佛*
 
-![DSC05043.jpg](/images/posts/chun-jia-you-luo-yang/bm1.jpg "DSC05043.jpg")  
+![DSC05043.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/bm1.jpg "DSC05043.jpg")  
 *洛阳白马寺，佛教传入中原第一座寺庙*
 
-![bms.jpg](/images/posts/chun-jia-you-luo-yang/bms.jpg "bms.jpg")  
+![bms.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/bms.jpg "bms.jpg")  
 *白马寺泰式寺庙*
 
-![12.jpg](/images/posts/chun-jia-you-luo-yang/12.jpg "12.jpg")  
+![12.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/12.jpg "12.jpg")  
 *洛阳牡丹*
 
-![3.jpg](/images/posts/chun-jia-you-luo-yang/3.webp "3.jpg")  
-![pd.jpg](/images/posts/chun-jia-you-luo-yang/pd.jpg "pd.jpg")  
+![3.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/3.webp "3.jpg")  
+![pd.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/pd.jpg "pd.jpg")  
 *许昌胖东来*
 
 去年特别想到许昌参观胖东来，这次如愿以偿。许昌时代广场胖东来，可能是人气最好的一家，但是正因如此，购物体验并不好；主要是人实在太太太多了，落脚的地方都没有，堪比春节前的山姆超市。消费者也不像是买东西，倒像是来进货的，自营的洗洁精、糕点、肉肠被一车又一车买走。
@@ -43,8 +43,8 @@ draft: false
 
 胖东来不但经营超市，也经营金店、眼睛店和药店。胖东来每家超市都经营火爆，价廉物美的商品和食物对许昌人民极其友好；但是对当地其它商家就是灾难了。胖东来通过服务、供应链以及全体员工持股的方案，将商业模式做到极致，其它商家很难与之匹敌。
 
-![1.jpg](/images/posts/chun-jia-you-luo-yang/1.webp "1.jpg")  
-![2.jpg](/images/posts/chun-jia-you-luo-yang/2.webp "2.jpg")  
+![1.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/1.webp "1.jpg")  
+![2.jpg](https://i.frc.cc/img/posts/chun-jia-you-luo-yang/2.webp "2.jpg")  
 *襄阳古城放飞孔明灯*
 
 逛到襄阳古城实属于意外之喜，它虽然不像阆中、丽江古城那么古老，大部分建筑可能是七八十年代建造，但实实在在的生活气息，却是别的古城没有的。早上起来，吃碗襄阳牛肉面，喝杯早酒，漫步到城墙根下，晚上抬头看看漫天的孔明灯，非常浪漫。

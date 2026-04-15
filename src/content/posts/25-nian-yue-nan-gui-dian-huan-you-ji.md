@@ -5,7 +5,7 @@ author: Jin
 draft: false
 ---
 
-![ddf-1.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/ddf-1.jpg "ddf-1.jpg")
+![ddf-1.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/ddf-1.jpg "ddf-1.jpg")
 
 八月的成都骄阳似火，地面被炙烤地像扭曲了一样，在室外活动与修行无异。所以我家小孩幼儿园毕业之后整日关在家里，每当万般无聊之际，她总是问我：“爸爸，我还能玩什么呀？”
 
@@ -20,7 +20,7 @@ draft: false
 
 我们早上8点30从成都出发，中午1点到达茅台镇，花了一个半小时在茅台镇吃带皮羊肉，同时在这里感受了一场突然其来的暴风雨。当天一直开到18点30分，此时天刚黑，我们也到了离开贵州前的最后一个县城罗甸县住宿。第二天8点半出发继续赶路，到下午2点，我们已经到达防城港了。
 
-![mt.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/mt.jpg "mt.jpg")
+![mt.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/mt.jpg "mt.jpg")
 
 **东兴和越南芒街**
 
@@ -28,35 +28,35 @@ draft: false
 
 后来几天我们都住在东兴市；都到了国门，不给护照盖个出境章实在可惜；这里办临时签证特别容易，200多一个人，当天就能出签。持有临时签证进入越南海关的时候需要把护照押给他们，返回中国的时候再找他们归还。由于没有护照，我们只能在芒街活动。
 
-![7-33.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/7-33.jpg "7-33.jpg")
+![7-33.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/7-33.jpg "7-33.jpg")
 
 又进入一个新国家，我以为娃娃有点兴趣探索一番；但在芒街City Walk十多分钟，她就觉得特别无聊了，问我什么时候回东兴，她想去海边玩。 所以芒街的短短的行程，我要把越南的印象快速灌输给她：无处不在的一星红旗、瘦瘦高高的房子、墙壁艳丽的壁画、路上密密麻麻的摩托车震天响、越式滴漏咖啡、斗笠帽子、甚至还有菜市场宰杀的中国保护动物鲎。
 
-![7-31.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/7-31.jpg "7-31.jpg")
+![7-31.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/7-31.jpg "7-31.jpg")
 
 中午我们从返回东兴，驾车去万尾金滩。我们刚到的时候，恰逢夕阳西下；余晖下的金滩满足了我们对大海的一切想象；海浪拍在巨长巨长的沙滩上，渔船的马达啪嗒啪嗒悠闲归港，遥远的落日把地平线上的乌云照出一道道耀眼的金边。实在太美了，干脆就住在金滩吧。
 
-![5829.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/5829.jpg "5829.jpg")
+![5829.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/5829.jpg "5829.jpg")
 
 **峒那屿湾和德天瀑布**
 
 在万尾金滩刨了两天沙子，有点腻了；我们出发去广西的第二个景点，峒那屿湾。它是位于崇左的一片田园景观，离周围的明仕田园、德天瀑布都不远；可以一起游览。峒那屿湾的游玩时间大约半天足够，所以中午到了这里，下午游玩之后直接去德天瀑布内的景区住宿，第二天一早就能进入德天瀑布游玩。
 
-![ms.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/ms.jpg "ms.jpg")
+![ms.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/ms.jpg "ms.jpg")
 
 德天瀑布同时属于中国和越南，我们这边是按照中国景区该有的配置打造，景区内人潮涌动络绎不绝；越南那边就像是一个野景点，道路还没有硬化，游客寥寥，为数不多的几个人也像是卖烟的。
 
-![dt.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/dt.jpg "dt.jpg")
+![dt.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/dt.jpg "dt.jpg")
 
 **靖西县城**
 
 夏季的广西是玩水的天堂，离开德天瀑布之后去往靖西县城一路就有好几个天然瀑布可供游玩。我们特意选择靖西县城靠着大龙潭水库的酒店住宿，这个大龙潭水库特别有意思，它本来是一条10多公里的地下暗河在此冲出地面形成的一个天然水潭，后来经过人工围堰筑堤，形成了一个750亩的水库；由于水量巨大，水坝溢出的水流就形成了一条壮观的瀑布；更绝的是瀑布下游的河底居然铺上了瓷砖——这就是天然的瀑布泳池！
 
-![微信图片_20251025002109.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/微信图片_20251025002109.jpg "微信图片_20251025002109.jpg")
+![微信图片_20251025002109.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/微信图片_20251025002109.jpg "微信图片_20251025002109.jpg")
 
 也许是水太过干净，我带孩子来玩水的时候，看见水上飘过来一些薄荷叶，往上望去，水坝上卖烧烤的商家正在河里洗菜！旁边游泳的人也没有反对意见，可能都习惯了，毕竟这也是靖西县的饮用水源。所以当我看见孩子在游泳的时候，直接喝河里的水喷着玩的时候我也放弃了责备她的念头，玩吧玩吧！
 
-![dlt.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/dlt.jpg "dlt.jpg")
+![dlt.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/dlt.jpg "dlt.jpg")
 
 **西双版纳**
 
@@ -64,7 +64,7 @@ draft: false
 
 靖西县离西双版纳900多公里，需要在建水古城歇一晚上，第二天才能到达。8月份的建水县，傍晚气温只有25度，微风吹过一丝凉意；我们在古城里找了一家云南野生菌汤锅，自然也少不了见手青，小孩担心吃了看见小小人，吃地犹犹豫豫；第二天我问她你看见了小小人了吗？她不好意思地笑了笑。
 
-![js.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/js.jpg "js.jpg")
+![js.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/js.jpg "js.jpg")
 
 建水前往西双版纳山高路急；高速也没有辅道，几乎全程无法使用智能驾驶；令人疲惫不堪。幸好旅途对游人最好的奖励就是你知道那前方美丽的风景和美食在等你；想到这些，又不免兴奋起来！
 
@@ -74,23 +74,23 @@ draft: false
 
 版纳的特色可能不是傣族文化，比如星光夜市，修建风格和泰国没有差别。大街小巷很多游客；不要护照、无需出国，没有割腰子的风险，也能感受泰国风情，挺好的。但是当地的奇形怪状的小吃建议就不要吃了，不知道在哪里吃出了毛病，我们小孩吃了都拉肚子，半夜三更上医院。
 
-![4529.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/4529.jpg "4529.jpg")
+![4529.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/4529.jpg "4529.jpg")
 
 版纳最值得去地方是中科院热带植物园，它是中科学院直属事业单位，是集科学研究、物种保存与科普教育为一体的综合性研究机构和国内外知名的风景名胜区；全园占地面积约1,125公顷，收集活植物13,000多种，建有39个植物专类区，保存有一片面积约250公顷的原始热带雨林我国面积最大、收集物种最丰富、专类园区最多的植物园之一。不过由于确实太大了，加上气温高，我们只把东区走完之后就出园了。
 
-![5002109.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/5002109.jpg "5002109.jpg")
+![5002109.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/5002109.jpg "5002109.jpg")
 
-![d29.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/d29.jpg "d29.jpg")
+![d29.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/d29.jpg "d29.jpg")
 
 **回程**
 
 西双版纳是我们游玩的最后一站，下午两三点在热带植物园外面充满电，我们就往昆明方向出发了，我们的目标是第二天回到成都。今天我们尽量赶路，傍晚经过昆明的时候，巨大的滇池被阳光照的湛蓝，便下了高速又在滇池边逗留一阵。
 
-![km9.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/km9.jpg "km9.jpg")
+![km9.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/km9.jpg "km9.jpg")
 
 直到晚上9点过才在寻甸县城住宿；寻找到一处最热门的昭通小烧烤结束当天的行程。
 
-![x5002109.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/x5002109.jpg "x5002109.jpg")
+![x5002109.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/x5002109.jpg "x5002109.jpg")
 
 第二天10点我们继续出发，沿途到宜宾的合江门喂了鱼，直到晚上8点方才到家。
 
@@ -98,7 +98,7 @@ draft: false
 
 我们的车子是长城的两档插混DHT-PHEV四驱，这趟旅行全程12天，出发里程清零；总计行驶总里程4891公里，全程用油1948元，充电223元；单位油耗0.398元/km，综合能耗0.44元/km. 使用体验非常满意！
 
-![51025002109.jpg](/images/posts/25-nian-yue-nan-gui-dian-huan-you-ji/51025002109.jpg "51025002109.jpg")
+![51025002109.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/51025002109.jpg "51025002109.jpg")
 
 全程过路费约2600元，总计交通成本4771元。酒店住宿大约2-3千元；收费景点玩的不多，可能一两千元左右。全程费用总计一万以内。
 
