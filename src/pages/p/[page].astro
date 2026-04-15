@@ -1,7 +1,7 @@
 ---
 import HomeLayout from '../../layouts/HomeLayout.astro';
 import { getCollection } from 'astro:content';
-import { extractFirstImage, getRandomThumbnailIndex, stripMarkdown, countWords } from '../../lib/utils';
+import { extractFirstImage, getRandomThumbnailIndex, stripMarkdown, countWords, processThumbnailUrl } from '../../lib/utils';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -35,9 +35,8 @@ export async function getStaticPaths() {
       }
       
       // 为缩略图添加 OSS 处理参数（限制宽度 140px）
-      if (thumbnail && !thumbnail.includes('?')) {
-        thumbnail = `${thumbnail}?x-oss-process=style/w140`;
-      }
+      // 如果已有 oss 参数，会自动替换为 w140
+      thumbnail = processThumbnailUrl(thumbnail, 'w140');
       
       // 清理 Markdown 语法，获取纯文本摘要
       const plainText = stripMarkdown(post.body || '');

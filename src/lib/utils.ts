@@ -24,6 +24,17 @@ export function extractFirstImage(content: string): string | null {
   return null;
 }
 
+// 处理缩略图 URL，添加或替换阿里云 OSS 处理参数
+export function processThumbnailUrl(url: string | null, thumbnailStyle: string = 'w140'): string | null {
+  if (!url) return null;
+  
+  // 如果已经有 oss 处理参数，先去掉
+  const withoutOssParam = url.replace(/\?x-oss-process=[^&\s]*/, '');
+  
+  // 添加新的 oss 处理参数
+  return `${withoutOssParam}?x-oss-process=style/${thumbnailStyle}`;
+}
+
 // 生成随机缩略图索引 (0-5)
 export function getRandomThumbnailIndex(seed: string): number {
   let hash = 0;
