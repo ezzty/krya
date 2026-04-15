@@ -133,7 +133,7 @@ textarea {
 }
 
 .post-title {
-  margin: 0 0 0.2em 0;
+  margin: 0 0 0.5em 0;
   font-size: 1.3em;
   letter-spacing: 0.1em;
   text-align: left;
@@ -395,6 +395,11 @@ textarea {
     clear: both;
     width: 100%;
     margin-left: 0;
+  }
+  
+  /* 移动端标题底部间距减小 */
+  .post-title {
+    margin-bottom: 0.2em;
   }
   
   /* 移动端正文顶部间距设为 0，避免跳动 */
