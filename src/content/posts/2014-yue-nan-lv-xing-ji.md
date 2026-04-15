@@ -19,13 +19,13 @@ draft: false
 
 第一顿饭是老友粉，卿推荐的；但是作为南宁本地人的大学室友，在大学四年中一直吹捧的广西美食是螺丝粉；天呐，他居然推荐柳州的特色美食！况且还是南宁人！！老友粉的做法先是将乱七八糟的食材在锅里炒了之后再与粉混成一碗，味道颇为奇特，还带点酸味；假如不是大家都在美滋滋吃，我还以为食材不卫生；不过还好，我吃两三次就习惯了。南宁还有腌水果，有甜味还酸味之分，甜味尚可，酸味真是奇葩。
 
-![](https://images.190808.xyz/bim/23.59.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/23.59.jpg)
 
 第二天，我们在琅东汽车站乘国际大巴到河内，全程七个小时168元，包括在友谊关边检的半个多小时。过关之后换了一辆大巴，汽车在双向两车道的公路上行驶，窗外是郁郁葱葱的小丘陵，五颜六色的越式建筑和戴绿帽子骑摩托的人越来越多。偶尔经过场镇，街道两边摆着数不清的金桔和菊花待售，和广东春节的习俗一样。
 
 晚上九点我们才到河内，跟着同车的人一起溜到了河内标志性景点——还剑湖。天啊！简直就是小水坑，周围还围绕着一圈霓虹灯，人竟然爆多；好吧，这就是河内的市中心。我和小张找好住宿、吃了一碗不知名的粉之后又到还剑湖走了一圈，聊她的爱情和我的喜欢，和周围的越南年轻人一样。我们不打算停留，定了第二天飞胡志明的机票，Vietjet航空才500多人民币一个人；后来才知道这是越南的最廉价的航空，并且不提供免费飞机餐。
 
-![](https://images.190808.xyz/bim/IMG_9089.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9089.jpg)
 
 飞机在接近胡志明市很远之前就能看到大片大片的城市，房屋不高但却错落有致，从海湾一直延伸到市区内的胡志明机场。一落地就是三十几度的热浪，幸好之前查了天气，我穿着T恤上了飞机；而小张胳膊上挂着的大衣亦然暴露她刚从北方飞过来。
 
@@ -41,7 +41,7 @@ draft: false
 
 只有加入西贡的摩托大军，才能真正的融入到他们的生活。我骑着这辆本田摩托，幻想自己置身《罗马假日》的剧情里，载着小张在西贡乱窜；读不懂地图上的文字，于是朝着西贡的最高点金融塔骑过去；虽然这个楼还没我在成都上班的位置高，但是它在西贡却是鹤立鸡群，在城市任何位置都能看到；我以为那是市中心，跑过去看和国内一样，并无奇迹。
 
-![](https://images.190808.xyz/bim/IMG_9143vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9143vn.jpg)
 
 金融塔边上是奔头不息的湄公河，我趴在栏杆上看了很久，此生从未见过如此宽阔的河流；甚至在此之前，除了洱海和滇池，我也没有见过海。湄公河发源于青藏高原，在中国叫澜沧江；在2012年10月，我曾经在德钦县经过澜沧江，河道狭窄，水面浑黄，水流湍急，震撼的咆哮声好像要把我吸下去，令人胆颤心惊；经过数千公里流淌后和沿途发电站的泥沙沉淀之后，西贡的湄公河变得宽阔而且平静。沿岸有一个港口，有一搜海轮正在卸货；那时我想起了《情人》这部电影，女主人公也是在类似的位置，永远地离开了越南，离开了自己的情人；几天之后我也会离开越南，不知道将会抱着什么样的心情离开，不由得愁绪纷繁。
 
@@ -51,24 +51,24 @@ draft: false
 
 夕阳西下，骑了快两个小说摩托，我们还没有从这片农村回到城市。小张坐在后面也累了，趴在我背上让我脖子酸疼，我说：“你看他们摩托上的青年男女趁着斜阳西下匆匆归家有没有觉得温馨”，她“嗯”了一声，我接着说：“我们现在也在回城，要不你也学学他们摩托车上的女青年吧，抱着我吧。”接着，小张在我背上锤了一下，青疼！
 
-![](https://images.190808.xyz/bim/IMG_9127vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9127vn.jpg)
 
-![](https://images.190808.xyz/bim/IMG_9188vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9188vn.jpg)
 
-![](https://images.190808.xyz/bim/IMG_9217vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9217vn.jpg)
 
-![](https://images.190808.xyz/bim/IMG_9496vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9496vn.jpg)
 
-![](https://images.190808.xyz/bim/IMG_9595vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9595vn.jpg)
 
-![](https://images.190808.xyz/bim/IMG_9599vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9599vn.jpg)
 
-![](https://images.190808.xyz/bim/IMG_9556vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9556vn.jpg)
 
-![](https://images.190808.xyz/bim/IMG_9575vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9575vn.jpg)
 
-![](https://images.190808.xyz/bim/IMG_9426vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9426vn.jpg)
 
-![](https://images.190808.xyz/bim/IMG_9754vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9754vn.jpg)
 
-![](https://images.190808.xyz/bim/IMG_9765vn.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](/images/posts/2014-yue-nan-lv-xing-ji/IMG_9765vn.jpg)
