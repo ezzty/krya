@@ -14,43 +14,6 @@ const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
 
 <!-- Twikoo JS -->
 <script is:inline>
-  // 加载 Twikoo SDK
-  function loadTwikoo() {
-    return new Promise((resolve, reject) => {
-      if (typeof twikoo !== 'undefined') {
-        resolve(twikoo);
-        return;
-      }
-      
-      const script = document.createElement('script');
-      script.src = 'https://cdn.jsdelivr.net/npm/twikoo@1.6.39/dist/twikoo.all.min.js';
-      script.onload = () => resolve(twikoo);
-      script.onerror = () => reject(new Error('Failed to load Twikoo'));
-      document.head.appendChild(script);
-    });
-  }
-
-  // 初始化 Twikoo
-  async function initTwikoo() {
-    try {
-      await loadTwikoo();
-      
-      twikoo.init({
-        envId: 'https://twikoo.krya.com.cn/',
-        el: '#twikoo',
-        region: 'ap-guangzhou',
-        lang: 'zh-CN',
-        onCommentLoaded: () => {
-          console.log('Twikoo 评论加载完成');
-          // 检查当前主题并应用暗黑模式
-          applyDarkMode();
-        }
-      });
-    } catch (error) {
-      console.error('Twikoo 初始化失败:', error);
-    }
-  }
-
   // 应用暗黑模式
   function applyDarkMode() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
@@ -80,16 +43,43 @@ const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
     });
   }
 
-  // 页面加载完成后初始化
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => {
-      initTwikoo();
-      watchThemeChange();
+  // 加载 Twikoo SDK
+  function loadTwikooScript() {
+    return new Promise((resolve, reject) => {
+      const script = document.createElement('script');
+      script.src = 'https://cdn.staticfile.org/twikoo/1.6.39/twikoo.all.min.js';
+      script.onload = resolve;
+      script.onerror = () => reject(new Error('Failed to load Twikoo SDK'));
+      document.head.appendChild(script);
     });
-  } else {
-    initTwikoo();
-    watchThemeChange();
   }
+
+  // 初始化 Twikoo
+  async function initTwikoo() {
+    try {
+      await loadTwikooScript();
+      
+      if (typeof window.twikoo === 'undefined') {
+        throw new Error('Twikoo 未定义');
+      }
+      
+      window.twikoo.init({
+        envId: 'https://comment.frc.cc/',
+        el: '#twikoo',
+        lang: 'zh-CN',
+        onCommentLoaded: () => {
+          console.log('Twikoo 评论加载完成');
+          applyDarkMode();
+        }
+      });
+    } catch (error) {
+      console.error('Twikoo 初始化失败:', error);
+    }
+  }
+
+  // 页面加载完成后初始化
+  initTwikoo();
+  watchThemeChange();
 </script>
 
 <!-- Twikoo 全局样式 -->
