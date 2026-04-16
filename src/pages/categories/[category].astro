@@ -1,7 +1,22 @@
 ---
 import { getCollection } from 'astro:content';
-const allPosts = await getCollection('posts');
 
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  
+  const categorySet = new Set<string>();
+  posts.forEach(post => {
+    const categories = post.data.categories || [];
+    categories.forEach(category => categorySet.add(category));
+  });
+  
+  return Array.from(categorySet).map(category => ({
+    params: { category },
+    props: { category }
+  }));
+}
+
+const allPosts = await getCollection('posts');
 const { category } = Astro.params;
 const decodedCategory = decodeURIComponent(category!);
 
