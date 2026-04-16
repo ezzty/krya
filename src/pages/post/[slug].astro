@@ -1,5 +1,6 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
+import Twikoo from '../../components/Twikoo.astro';
 import { getCollection } from 'astro:content';
 import { countWords } from '../../lib/utils';
 
@@ -30,4 +31,5 @@ const { Content } = await post.render();
   categories={post.data.categories || []}
 >
   <Content />
+  <Twikoo slot="comments" />
 </PostLayout>
