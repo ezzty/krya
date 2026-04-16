@@ -1,5 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
 const posts = await getCollection('posts');
 
 const tagCount = new Map<string, number>();
