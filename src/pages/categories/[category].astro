@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import NavBar from '../../components/NavBar.astro';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -30,6 +31,7 @@ const posts = allPosts
 ---
 
 <BaseLayout title={`分类：${decodedCategory} | 浮生百记`}>
+  <NavBar slot="header" />
   <div class="container">
     <div class="col-mb-12">
       <h1 class="post-title">分类：{decodedCategory}</h1>

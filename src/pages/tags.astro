@@ -1,6 +1,8 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import NavBar from '../components/NavBar.astro';
+
 const posts = await getCollection('posts');
 
 const tagCount = new Map<string, number>();
@@ -15,6 +17,7 @@ const tags = Array.from(tagCount.entries()).sort((a, b) => b[1] - a[1]);
 ---
 
 <BaseLayout title="所有标签 | 浮生百记">
+  <NavBar slot="header" />
   <div class="container">
     <div class="col-mb-12">
       <h1 class="post-title">所有标签</h1>
