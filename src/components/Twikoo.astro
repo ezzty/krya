@@ -47,7 +47,7 @@ const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
   function loadTwikooScript() {
     return new Promise((resolve, reject) => {
       const script = document.createElement('script');
-      script.src = 'https://registry.npmmirror.com/twikoo/1.7.7/files/dist/twikoo.min.js';
+      script.src = 'https://s4.zstatic.net/npm/twikoo@1.7.7/dist/twikoo.min.js';
       script.onload = resolve;
       script.onerror = () => reject(new Error('Failed to load Twikoo SDK'));
       document.head.appendChild(script);
