@@ -1,13 +1,20 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import { rehypeImageProcessor } from './src/lib/rehype-image-processor';
 
 export default defineConfig({
   site: 'https://frc.cc',
   output: 'static',
   compressHTML: true,
   markdown: {
-    rehypePlugins: [rehypeImageProcessor],
+    remarkPlugins: [
+      // 尝试使用 remark 插件
+    ],
+    rehypePlugins: [
+      // 尝试使用 rehype 插件
+    ],
+    shikiConfig: {
+      theme: 'dark-plus',
+    },
   },
   vite: {
     build: {
