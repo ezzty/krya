@@ -3,45 +3,48 @@
  * Header auto-hide on scroll down, show on scroll up
  */
 
-jQuery(document).ready(function($) {
-  var mainHeader = $('.cd-auto-hide-header'),
-      headerHeight = mainHeader.height();
+(function() {
+  const mainHeader = document.querySelector('.cd-auto-hide-header');
+  if (!mainHeader) return;
+  
+  let headerHeight = mainHeader.offsetHeight;
   
   // 滚动变量
-  var scrolling = false,
-      previousTop = 0,
+  let previousTop = 0,
       currentTop = 0,
       scrollDelta = 10,
-      scrollOffset = 150;
+      scrollOffset = 150,
+      scrolling = false;
   
   // 滚动检测
-  $(window).on('scroll', function() {
+  function onScroll() {
     if (!scrolling) {
       scrolling = true;
-      (!window.requestAnimationFrame)
-        ? setTimeout(autoHideHeader, 250)
-        : requestAnimationFrame(autoHideHeader);
+      requestAnimationFrame(autoHideHeader);
     }
-  });
+  }
   
   // 窗口大小改变时重新计算 header 高度
-  $(window).on('resize', function() {
-    headerHeight = mainHeader.height();
-  });
+  function onResize() {
+    headerHeight = mainHeader.offsetHeight;
+  }
   
   function autoHideHeader() {
-    var currentTop = $(window).scrollTop();
+    currentTop = window.scrollY;
     
     // 向上滚动 - 显示 header
     if (previousTop - currentTop > scrollDelta) {
-      mainHeader.removeClass('is-hidden');
+      mainHeader.classList.remove('is-hidden');
     } 
     // 向下滚动且超过阈值 - 隐藏 header
     else if (currentTop - previousTop > scrollDelta && currentTop > scrollOffset) {
-      mainHeader.addClass('is-hidden');
+      mainHeader.classList.add('is-hidden');
     }
     
     previousTop = currentTop;
     scrolling = false;
   }
-});
+  
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onResize);
+})();
