@@ -12,22 +12,15 @@ const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
 
 <div class="twikoo-container" id="twikoo"></div>
 
-<!-- Twikoo JS -->
 <script is:inline>
-  // 应用暗黑模式
   function applyDarkMode() {
     const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
     const twikooContainer = document.querySelector('.twikoo-container');
     if (twikooContainer) {
-      if (isDark) {
-        twikooContainer.classList.add('twikoo-dark');
-      } else {
-        twikooContainer.classList.remove('twikoo-dark');
-      }
+      twikooContainer.classList.toggle('twikoo-dark', isDark);
     }
   }
 
-  // 监听主题切换
   function watchThemeChange() {
     const observer = new MutationObserver((mutations) => {
       mutations.forEach((mutation) => {
@@ -36,32 +29,18 @@ const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
         }
       });
     });
-
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['data-theme']
-    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
   }
 
-  // 加载 Twikoo SDK
-  function loadTwikooScript() {
-    return new Promise((resolve, reject) => {
-      const script = document.createElement('script');
-      script.src = 'https://s4.zstatic.net/npm/twikoo@1.7.7/dist/twikoo.min.js';
-      script.onload = resolve;
-      script.onerror = () => reject(new Error('Failed to load Twikoo SDK'));
-      document.head.appendChild(script);
-    });
-  }
-
-  // 初始化 Twikoo
   async function initTwikoo() {
     try {
-      await loadTwikooScript();
-      
-      if (typeof window.twikoo === 'undefined') {
-        throw new Error('Twikoo 未定义');
-      }
+      const script = document.createElement('script');
+      script.src = 'https://s4.zstatic.net/npm/twikoo@1.7.7/dist/twikoo.min.js';
+      await new Promise((resolve, reject) => {
+        script.onload = resolve;
+        script.onerror = () => reject(new Error('Failed to load Twikoo SDK'));
+        document.head.appendChild(script);
+      });
       
       window.twikoo.init({
         envId: 'https://comment.frc.cc/',
@@ -77,14 +56,11 @@ const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
     }
   }
 
-  // 页面加载完成后初始化
   initTwikoo();
   watchThemeChange();
 </script>
 
-<!-- Twikoo 全局样式 -->
 <style is:inline>
-  /* Twikoo 基础样式 */
   .twikoo-container {
     margin-top: 60px;
     padding: 20px;
@@ -93,35 +69,12 @@ const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
   }
 
-  /* Twikoo 暗黑模式样式 */
   .twikoo-container.twikoo-dark {
     background: #1e1e1e;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
   }
 
-  .twikoo-container.twikoo-dark .tk-comments-container,
-  .twikoo-container.twikoo-dark .tk-comment,
-  .twikoo-container.twikoo-dark .tk-comments-title,
-  .twikoo-container.twikoo-dark .tk-submit,
-  .twikoo-container.twikoo-dark .tk-submit-panel,
-  .twikoo-container.twikoo-dark .tk-input,
-  .twikoo-container.twikoo-dark .tk-input textarea,
-  .twikoo-container.twikoo-dark .tk-input input,
-  .twikoo-container.twikoo-dark .tk-actions,
-  .twikoo-container.twikoo-dark .tk-action,
-  .twikoo-container.twikoo-dark .tk-nick,
-  .twikoo-container.twikoo-dark .tk-mail,
-  .twikoo-container.twikoo-dark .tk-submit-row,
-  .twikoo-container.twikoo-dark .tk-submit-action-btn,
-  .twikoo-container.twikoo-dark .tk-tag,
-  .twikoo-container.twikoo-dark .tk-replies,
-  .twikoo-container.twikoo-dark .tk-content,
-  .twikoo-container.twikoo-dark .tk-time,
-  .twikoo-container.twikoo-dark .tk-expand {
-    background-color: #1e1e1e !important;
-    color: #e0e0e0 !important;
-  }
-
+  /* 暗黑模式 - 核心元素 */
   .twikoo-container.twikoo-dark .tk-input textarea,
   .twikoo-container.twikoo-dark .tk-input input {
     background-color: #2a2a2a !important;
@@ -143,20 +96,8 @@ const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
     background-color: #5a8bff !important;
   }
 
-  .twikoo-container.twikoo-dark .tk-action-link {
-    color: #e0e0e0 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-action-link:hover {
-    color: #5a8bff !important;
-  }
-
   .twikoo-container.twikoo-dark .tk-nick {
     color: #5a8bff !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-time {
-    color: #888 !important;
   }
 
   .twikoo-container.twikoo-dark .tk-content {
@@ -167,91 +108,11 @@ const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
     color: #5a8bff !important;
   }
 
-  .twikoo-container.twikoo-dark .tk-content a:hover {
-    color: #7aa5ff !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-expand {
-    color: #888 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-expand:hover {
-    color: #e0e0e0 !important;
-  }
-
   .twikoo-container.twikoo-dark .tk-tag {
     background-color: #3354aa !important;
     color: #fff !important;
   }
 
-  .twikoo-container.twikoo-dark .tk-tag-green {
-    background-color: #2e7d32 !important;
-    color: #fff !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-icon.__comments {
-    fill: #e0e0e0 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-comments-count {
-    color: #e0e0e0 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-comments-title {
-    color: #e0e0e0 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-replies .tk-comment {
-    border-left-color: #444 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-oops {
-    color: #888 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-emoticons {
-    background-color: #2a2a2a !important;
-    border-color: #444 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-emoticons-item {
-    color: #e0e0e0 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-emoticons-item:hover {
-    background-color: #333 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-preview {
-    background-color: #2a2a2a !important;
-    border-color: #444 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-preview-content {
-    color: #e0e0e0 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-admin {
-    background-color: rgba(0, 0, 0, 0.8) !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-admin-container {
-    background-color: #1e1e1e !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-admin-title {
-    color: #e0e0e0 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-admin-close {
-    color: #e0e0e0 !important;
-  }
-
-  .twikoo-container.twikoo-dark .tk-login-msg {
-    color: #888 !important;
-  }
-
-  /* 移动端适配 */
   @media (max-width: 768px) {
     .twikoo-container {
       margin-top: 40px;
