@@ -104,7 +104,7 @@ export function formatPosts(posts: any[], pageSize: number, page: number = 1): F
       if (firstImage) {
         thumbnail = firstImage;
       } else {
-        thumbnail = `/img/random/${getRandomThumbnailIndex(post.id)}.jpg`;
+        thumbnail = `/img/random/${getRandomThumbnailIndex(post.id)}.webp`;
       }
     }
     
