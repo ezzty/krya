@@ -73,7 +73,7 @@ const formatDate = (date: string) => {
 </BaseLayout>
 
 <style>
-.post-meta-bottom[data-astro-cid-gjtny2mx] {
+.post-meta-bottom {
     margin-top: 40px;
     padding-top: 20px;
   color: #666;
@@ -93,13 +93,13 @@ const formatDate = (date: string) => {
   color: #999;
   margin: 0 8px;
 }
-[data-theme="dark"] .post-meta-bottom[data-astro-cid-gjtny2mx] {
+html[data-theme="dark"] .post-meta-bottom {
     color: #999;
   }
-[data-theme="dark"] .meta-item a {
+html[data-theme="dark"] .meta-item a {
   color: #5a8bff;
 }
-[data-theme="dark"] .meta-item a:hover {
+html[data-theme="dark"] .meta-item a:hover {
   color: #7aa5ff;
 }
 </style>

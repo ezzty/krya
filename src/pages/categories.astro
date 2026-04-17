@@ -43,14 +43,14 @@ const categories = Array.from(categoryCount.entries()).sort((a, b) => b[1] - a[1
     font-size: 1.5em;
     color: #4d4d4d;
   }
-.category-list[data-astro-cid-hioekb44] {
+  .category-list {
     display: flex;
     flex-wrap: wrap;
     gap: 12px;
     margin: 90px auto 40px;
     justify-content: center;
     max-width: 800px;
-}
+  }
   .category-item {
     display: flex;
     align-items: center;
@@ -90,9 +90,9 @@ const categories = Array.from(categoryCount.entries()).sort((a, b) => b[1] - a[1
     padding: 40px 0;
     text-align: center;
   }
-  [data-theme="dark"] .post-title { color: #e0e0e0; }
-  [data-theme="dark"] .category-item { background-color: #2a2a2a; border-color: #3a3a3a; }
-  [data-theme="dark"] .category-name { color: #e0e0e0; }
-  [data-theme="dark"] .category-count { background-color: #3a3a3a; color: #999; }
-  [data-theme="dark"] .category-item:hover { background-color: #3354AA; border-color: #3354AA; }
+  html[data-theme="dark"] .post-title { color: #e0e0e0; }
+  html[data-theme="dark"] .category-item { background-color: #2a2a2a; border-color: #3a3a3a; }
+  html[data-theme="dark"] .category-name { color: #e0e0e0; }
+  html[data-theme="dark"] .category-count { background-color: #3a3a3a; color: #999; }
+  html[data-theme="dark"] .category-item:hover { background-color: #3354AA; border-color: #3354AA; }
 </style>
