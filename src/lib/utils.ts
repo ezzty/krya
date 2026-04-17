@@ -117,11 +117,13 @@ export interface FormattedPost {
   thumbnail: string;
 }
 
-export function formatPosts(posts: any[], pageSize: number, page: number = 1): {
+interface FormatPostsResult {
   posts: FormattedPost[];
   totalPages: number;
   currentPage: number;
-} {
+}
+
+export function formatPosts(posts: any[], pageSize: number, page: number = 1): FormatPostsResult {
   const sortedPosts = posts.sort((a, b) => {
     return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
   });
