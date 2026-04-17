@@ -118,6 +118,21 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
 </BaseLayout>
 
 <style>
+  /* 首页缩略图 hover 放大效果 */
+  .index-image {
+    overflow: hidden;
+    border-radius: 12px;
+  }
+  
+  .index-image .thumbnail {
+    transition: transform 0.3s ease;
+    transform-origin: center center;
+  }
+  
+  .index-image:hover .thumbnail {
+    transform: scale(1.1);
+  }
+  
   .pagination {
     margin: 60px 0 40px;
     text-align: center;
