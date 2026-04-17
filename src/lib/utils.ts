@@ -81,7 +81,7 @@ export interface FormattedPost {
   thumbnail: string;
 }
 
-interface FormatPostsResult {
+export interface FormatPostsResult {
   posts: FormattedPost[];
   totalPages: number;
   currentPage: number;

@@ -1,4 +1,4 @@
-// 站点配置
+// 站点配置（保留供未来使用）
 export const siteConfig = {
   // 基本信息
   title: '浮生百记',
