@@ -61,22 +61,24 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
     {posts.map((post) => (
       <article class="post">
         <div class="col-3 index-image">
-          <picture>
-            <source 
-              media="(min-width: 800px)" 
-              srcset={(post.thumbnail || '/images/default-thumbnail.png') + ' 140w'}
-              sizes="140px"
-            />
-            <img 
-              class="thumbnail" 
-              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-              alt={post.title}
-              width="140"
-              height="140"
-              decoding="async"
-              loading="lazy"
-            />
-          </picture>
+          <a href={`/post/${post.slug}`} class="thumbnail-link">
+            <picture>
+              <source 
+                media="(min-width: 800px)" 
+                srcset={(post.thumbnail || '/images/default-thumbnail.png') + ' 140w'}
+                sizes="140px"
+              />
+              <img 
+                class="thumbnail" 
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                alt={post.title}
+                width="140"
+                height="140"
+                decoding="async"
+                loading="lazy"
+              />
+            </picture>
+          </a>
         </div>
         <h1 class="col-9 post-title">
           <a href={`/post/${post.slug}`}>{post.title}</a>
@@ -127,6 +129,16 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
 </BaseLayout>
 
 <style>
+  /* 缩略图链接 - 移除默认下划线 */
+  .thumbnail-link {
+    display: block;
+    border-bottom: none !important;
+  }
+  
+  .thumbnail-link:hover {
+    border-bottom: none !important;
+  }
+  
   /* 首页缩略图 hover 放大效果 */
   .index-image {
     overflow: hidden;
