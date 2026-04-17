@@ -117,8 +117,7 @@ export interface FormattedPost {
   thumbnail: string;
 }
 
-export function formatPosts(posts: any[], pageSize: number, page: number = 1): {
-  posts: FormattedPost[];
+export function formatPosts(posts: any[], pageSize: number, page: number = 1): {\n  posts: FormattedPost[];
   totalPages: number;
   currentPage: number;
 } {
@@ -146,7 +145,7 @@ export function formatPosts(posts: any[], pageSize: number, page: number = 1): {
     
     thumbnail = processThumbnailUrl(thumbnail, 'w140');
     const plainText = stripMarkdown(post.body || '');
-    const wordCount = countWords(post.body || '');
+    const wordCount = countWords(plainText);
     
     return {
       title: post.data.title,
