@@ -13,6 +13,16 @@ export async function GET() {
 
   const siteUrl = 'https://blog.frc.cc';
   
+  // 收集所有分类和标签
+  const categorySet = new Set();
+  const tagSet = new Set();
+  posts.forEach(post => {
+    const categories = post.data.categories || [];
+    const tags = post.data.tags || [];
+    categories.forEach(cat => categorySet.add(cat));
+    tags.forEach(tag => tagSet.add(tag));
+  });
+  
   // 生成 URL 列表
   const urls = [
     // 首页
@@ -36,19 +46,41 @@ export async function GET() {
       changefreq: 'monthly',
       priority: 0.5,
     },
+    // 分类列表页
+    {
+      loc: `${siteUrl}/categories`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'weekly',
+      priority: 0.7,
+    },
+    // 分类详情页
+    ...Array.from(categorySet).map(category => ({
+      loc: `${siteUrl}/categories/${encodeURIComponent(category)}`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'weekly',
+      priority: 0.6,
+    })),
+    // 标签列表页
+    {
+      loc: `${siteUrl}/tags`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'weekly',
+      priority: 0.7,
+    },
+    // 标签详情页
+    ...Array.from(tagSet).map(tag => ({
+      loc: `${siteUrl}/tags/${encodeURIComponent(tag)}`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'weekly',
+      priority: 0.6,
+    })),
     // 所有文章
-    ...publishedPosts.map(post => {
-      const lastmod = post.data.lastUpdated 
-        ? new Date(post.data.lastUpdated).toISOString()
-        : new Date(post.data.pubDate).toISOString();
-      
-      return {
-        loc: `${siteUrl}/post/${post.id.replace('.md', '')}`,
-        lastmod: lastmod,
-        changefreq: 'weekly',
-        priority: 0.6,
-      };
-    }),
+    ...publishedPosts.map(post => ({
+      loc: `${siteUrl}/post/${post.id.replace('.md', '')}`,
+      lastmod: new Date(post.data.pubDate).toISOString(),
+      changefreq: 'weekly',
+      priority: 0.6,
+    })),
   ];
 
   // 生成 XML
