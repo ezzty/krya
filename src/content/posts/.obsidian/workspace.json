@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "test2014.md",
+                "file": "test2026.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "test2014"
+              "title": "test2026"
             }
           }
         ]
@@ -183,15 +183,16 @@
   "active": "53212efc0b6de7e8",
   "lastOpenFiles": [
     "typecho-to-astro.md",
+    "test2026.md",
     "create-a-stripe-account.md",
+    "2025cloudbill.md",
+    "25vietnam-guangxi.md",
     "test2014.md",
     "chengdu-qinghai.md",
     "why-i-buy-xiaomi.md",
     "your-stomach.md",
     "2025tailand.md",
-    "25vietnam-guangxi.md",
     "2014vietnam.md",
-    "2025cloudbill.md",
     "2025hongkongbank.md",
     "chun-jia-you-luo-yang.md"
   ]
