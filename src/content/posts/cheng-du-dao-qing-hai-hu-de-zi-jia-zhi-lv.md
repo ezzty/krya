@@ -1,10 +1,15 @@
 ---
 title: 成都到青海湖的自驾之旅
 pubDate: 2017-10-08
-author: Jin
+author: jin
 draft: false
-categories: ['旅行']
-tags: ['青海湖', '自驾', '西北', '游记']
+categories:
+  - 旅行
+tags:
+  - 青海湖
+  - 自驾
+  - 西北
+  - 游记
 ---
 
 ![请输入图片描述](https://i.frc.cc/img/posts/cheng-du-dao-qing-hai-hu-de-zi-jia-zhi-lv/791042534938310.jpg "请输入图片描述")  

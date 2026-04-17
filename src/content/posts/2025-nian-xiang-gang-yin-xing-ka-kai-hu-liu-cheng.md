@@ -1,10 +1,14 @@
 ---
 title: 2025 年香港银行卡开户流程
 pubDate: 2025-02-24
-author: Jin
+author: jin
 draft: false
-categories: ['金融']
-tags: ['银行', '香港', '开户']
+categories:
+  - 金融
+tags:
+  - 银行
+  - 香港
+  - 开户
 ---
 
 ![](https://i.frc.cc/img/m/260415/hkk.webp?x-oss-process=style/w950)

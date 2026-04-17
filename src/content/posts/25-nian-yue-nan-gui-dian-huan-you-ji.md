@@ -1,10 +1,16 @@
 ---
 title: 25年越南桂滇环游记
 pubDate: 2025-10-19
-author: Jin
+author: jin
 draft: false
-categories: ['旅行']
-tags: ['越南', '广西', '云南', '游记', '自驾']
+categories:
+  - 旅行
+tags:
+  - 越南
+  - 广西
+  - 云南
+  - 游记
+  - 自驾
 ---
 
 ![ddf-1.jpg](https://i.frc.cc/img/posts/25-nian-yue-nan-gui-dian-huan-you-ji/ddf-1.jpg "ddf-1.jpg")
