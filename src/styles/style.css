@@ -336,14 +336,28 @@ textarea {
 }
 
 [data-theme="dark"] .page-link {
-  background-color: #2a2a2a;
-  border-color: #3a3a3a;
-  color: #e0e0e0;
+  display: inline-block;
+  padding: 10px 16px;
+  background-color: #303030;
+  border: 1px solid #3d3d3d;
+  border-radius: 4px;
+  color: #999;
+  text-decoration: none;
+  transition: all .2s ease;
+  min-width: 40px;
+  text-align: center;
 }
 
 [data-theme="dark"] .page-link:hover {
-  background-color: #3a3a3a;
-  border-color: #4a4a4a;
+  background-color: #434343;
+  border-color: #3a3a3a;
+}
+
+[data-theme="dark"] .page-link.active {
+  background-color: #505050;
+  border-color: #4e4e4e;
+  color: #fff;
+  font-weight: 700;
 }
 
 [data-theme="dark"] #footer {
