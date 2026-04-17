@@ -209,16 +209,10 @@ textarea {
   margin-top: 0;
 }
 
-.thumbnail {
-  width: 140px;
-  height: 140px;
-  border-radius: 12px;
-  object-fit: cover;
-}
+/* 缩略图尺寸由 HomeLayout.astro 内联样式控制 */
 
 @media (max-width: 799px) {
-  .index-image,
-  .thumbnail {
+  .index-image {
     display: none;
   }
 }

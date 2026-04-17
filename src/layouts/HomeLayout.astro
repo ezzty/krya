@@ -61,13 +61,22 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
     {posts.map((post) => (
       <article class="post">
         <div class="col-3 index-image">
-          <img 
-            class="thumbnail" 
-            src={post.thumbnail || '/images/default-thumbnail.png'} 
-            alt={post.title}
-            decoding="async"
-            loading="lazy"
-          />
+          <picture>
+            <source 
+              media="(min-width: 800px)" 
+              srcset={(post.thumbnail || '/images/default-thumbnail.png') + ' 140w'}
+              sizes="140px"
+            />
+            <img 
+              class="thumbnail" 
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              alt={post.title}
+              width="140"
+              height="140"
+              decoding="async"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <h1 class="col-9 post-title">
           <a href={`/post/${post.slug}`}>{post.title}</a>
@@ -124,12 +133,20 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
     border-radius: 12px;
   }
   
-  .index-image .thumbnail {
+  .index-image picture,
+  .index-image img.thumbnail {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    object-fit: cover;
+  }
+  
+  .index-image img.thumbnail {
     transition: transform 0.3s ease;
     transform-origin: center center;
   }
   
-  .index-image:hover .thumbnail {
+  .index-image:hover img.thumbnail {
     transform: scale(1.1);
   }
   
