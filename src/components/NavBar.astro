@@ -1,6 +1,5 @@
 ---
 // 导航栏组件 - 支持滚动隐藏和移动端下拉菜单
-import Logo from './Logo.astro';
 
 interface Props {
   links?: Array<{ href: string; label: string }>;
@@ -20,7 +19,9 @@ const {
   <div class="container">
     <div class="header-content">
       <div class="logo">
-        <Logo />
+        <a href="/" class="logo-link">
+          <img src="/logo.svg" alt="浮生百记" class="logo-image" />
+        </a>
         <!-- 暗黑模式切换按钮 - 放在 Logo 右边 -->
         <div class="logo-switches">
           <button id="theme-toggle" aria-label="切换暗黑模式" title="切换暗黑模式 (Alt + T)" accesskey="t">
