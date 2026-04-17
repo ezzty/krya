@@ -335,7 +335,7 @@ textarea {
   color: #c0c0c0;
 }
 
-[data-theme="dark"] .page-link {
+html[data-theme="dark"] .page-link {
   display: inline-block;
   padding: 10px 16px;
   background-color: #303030;
@@ -348,12 +348,12 @@ textarea {
   text-align: center;
 }
 
-[data-theme="dark"] .page-link:hover {
+html[data-theme="dark"] .page-link:hover {
   background-color: #434343;
   border-color: #3a3a3a;
 }
 
-[data-theme="dark"] .page-link.active {
+html[data-theme="dark"] .page-link.active {
   background-color: #505050;
   border-color: #4e4e4e;
   color: #fff;
