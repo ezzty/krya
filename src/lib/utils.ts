@@ -105,3 +105,63 @@ export function countWords(content: string): number {
   
   return chineseCount + englishCount;
 }
+
+// 格式化文章列表（用于分页）
+export interface FormattedPost {
+  title: string;
+  slug: string;
+  author: string;
+  pubDate: string;
+  wordCount: number;
+  excerpt: string;
+  thumbnail: string;
+}
+
+export function formatPosts(posts: any[], pageSize: number, page: number = 1): {
+  posts: FormattedPost[];
+  totalPages: number;
+  currentPage: number;
+} {
+  const sortedPosts = posts.sort((a, b) => {
+    return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
+  });
+  
+  const totalPages = Math.ceil(sortedPosts.length / pageSize);
+  const start = (page - 1) * pageSize;
+  const end = page * pageSize;
+  const paginatedPosts = sortedPosts.slice(start, end);
+  
+  const formattedPosts = paginatedPosts.map((post) => {
+    let thumbnail = post.data.thumbnail;
+    
+    if (!thumbnail) {
+      const firstImage = extractFirstImage(post.body || '');
+      if (firstImage) {
+        thumbnail = firstImage;
+      } else {
+        const randomIndex = getRandomThumbnailIndex(post.id);
+        thumbnail = `/img/random/${randomIndex}.jpg`;
+      }
+    }
+    
+    thumbnail = processThumbnailUrl(thumbnail, 'w140');
+    const plainText = stripMarkdown(post.body || '');
+    const wordCount = countWords(post.body || '');
+    
+    return {
+      title: post.data.title,
+      slug: post.id.replace('.md', ''),
+      author: post.data.author || 'Jin',
+      pubDate: post.data.pubDate.toISOString(),
+      wordCount: wordCount,
+      excerpt: post.data.description || plainText.slice(0, 70),
+      thumbnail: thumbnail,
+    };
+  });
+  
+  return {
+    posts: formattedPosts,
+    totalPages,
+    currentPage: page,
+  };
+}

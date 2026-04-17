@@ -1,57 +1,13 @@
 ---
 import HomeLayout from '../layouts/HomeLayout.astro';
 import { getCollection } from 'astro:content';
-import { extractFirstImage, getRandomThumbnailIndex, stripMarkdown, countWords, processThumbnailUrl } from '../lib/utils';
+import { formatPosts } from '../lib/utils';
 
 const posts = await getCollection('posts');
-
-// 按日期排序
-const sortedPosts = posts.sort((a, b) => {
-  return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
-});
-
-// 分页配置
 const PAGE_SIZE = 10;
-const totalPages = Math.ceil(sortedPosts.length / PAGE_SIZE);
-const currentPage = 1;
 
-// 第一页文章
-const paginatedPosts = sortedPosts.slice(0, PAGE_SIZE);
-
-const formattedPosts = paginatedPosts.map((post) => {
-  // 优先级：Front Matter 中的 thumbnail > 文章内第一张图片 > 随机图片
-  let thumbnail = post.data.thumbnail;
-  
-  if (!thumbnail) {
-    const firstImage = extractFirstImage(post.body || '');
-    if (firstImage) {
-      thumbnail = firstImage;
-    } else {
-      const randomIndex = getRandomThumbnailIndex(post.id);
-      thumbnail = `/img/random/${randomIndex}.jpg`;
-    }
-  }
-  
-  // 为缩略图添加 OSS 处理参数（限制宽度 140px）
-  // 如果已有 oss 参数，会自动替换为 w140
-  thumbnail = processThumbnailUrl(thumbnail, 'w140');
-  
-  // 清理 Markdown 语法，获取纯文本摘要
-  const plainText = stripMarkdown(post.body || '');
-  
-  // 计算字数
-  const wordCount = countWords(post.body || '');
-  
-  return {
-    title: post.data.title,
-    slug: post.id.replace('.md', ''),
-    author: post.data.author || 'Jin',
-    pubDate: post.data.pubDate.toISOString(),
-    wordCount: wordCount,
-    excerpt: post.data.description || plainText.slice(0, 70),
-    thumbnail: thumbnail,
-  };
-});
+// 格式化第一页文章
+const { posts: formattedPosts, totalPages } = formatPosts(posts, PAGE_SIZE, 1);
 ---
 
-<HomeLayout posts={formattedPosts} currentPage={currentPage} totalPages={totalPages} />
+<HomeLayout posts={formattedPosts} currentPage={1} totalPages={totalPages} />
