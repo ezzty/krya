@@ -26,13 +26,8 @@ export async function GET(context) {
         .replace(/\*(.*)\*/gim, '<i>$1</i>')
         .replace(/\n/gim, '<br />');
       
-      // 提取纯文本内容（去除 HTML 标签）
-      const textContent = htmlString.replace(/<[^>]+>/g, '');
-      
-      // 截取最多 300 字，不足 300 字则全文
-      const description = textContent.length <= 300 
-        ? textContent 
-        : textContent.substring(0, 300) + '...';
+      // 全文输出
+      const description = htmlString;
       
       return {
         title: post.data.title,
