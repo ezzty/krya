@@ -348,6 +348,10 @@ textarea {
   color: #888;
 }
 
+[data-theme="dark"] #footer .footer-link {
+  color: #888;
+}
+
 [data-theme="dark"] #footer .social-link {
   color: #888;
 }
