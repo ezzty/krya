@@ -4,10 +4,10 @@ import { getCollection } from 'astro:content';
 export async function GET(context) {
   const posts = await getCollection('posts');
   
-  // 按日期排序
+  // 按日期排序，只输出最近 20 篇
   const sortedPosts = posts.sort((a, b) => {
     return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
-  });
+  }).slice(0, 20);
   
   return rss({
     title: '浮生百记 | Jin 的个人博客',
@@ -38,7 +38,7 @@ export async function GET(context) {
         title: post.data.title,
         description: description,
         pubDate: post.data.pubDate,
-        link: `/blog/${post.id.replace('.md', '')}/`,
+        link: `/post/${post.id.replace('.md', '')}`,
         author: post.data.author || 'Jin',
       };
     })),
