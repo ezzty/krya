@@ -22,6 +22,22 @@ import '../styles/style.css';
     <title>{title}</title>
     <meta name="description" content={description} />
     
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://blog.frc.cc" />
+    <meta property="og:image" content="https://blog.frc.cc/og-image.png" />
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="https://blog.frc.cc/og-image.png" />
+    
+    <!-- Canonical URL (文章页会覆盖) -->
+    <link rel="canonical" href={`https://blog.frc.cc${Astro.url.pathname}`} />
+    
     <!-- CSS (imported for Vite bundling) -->
     
     <!-- Favicon -->

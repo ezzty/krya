@@ -137,14 +137,18 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
   .page-link {
     display: inline-block;
     padding: 10px 16px;
-    background-color: #f8f8f8;
-    border: 1px solid #ddd;
     border-radius: 4px;
-    color: #333;
     text-decoration: none;
     transition: all 0.2s ease;
     min-width: 40px;
     text-align: center;
+  }
+  
+  /* 亮色模式 */
+  .page-link {
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    color: #333;
   }
   
   .page-link:hover {
@@ -158,25 +162,19 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
     color: #fff;
     font-weight: bold;
   }
-
+  
+  /* 暗黑模式 */
   html[data-theme="dark"] .page-link {
-    display: inline-block;
-    padding: 10px 16px;
     background-color: #303030;
     border: 1px solid #3d3d3d;
-    border-radius: 4px;
     color: #999;
-    text-decoration: none;
-    transition: all .2s ease;
-    min-width: 40px;
-    text-align: center;
   }
-
+  
   html[data-theme="dark"] .page-link:hover {
     background-color: #434343;
     border-color: #3a3a3a;
   }
-
+  
   html[data-theme="dark"] .page-link.active {
     background-color: #505050;
     border-color: #4e4e4e;

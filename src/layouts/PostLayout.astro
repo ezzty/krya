@@ -21,6 +21,20 @@ const formatDate = (date: string) => {
 <BaseLayout title={title}>
   <NavBar slot="header" />
   
+  <!-- 文章页 SEO 元数据 -->
+  <script is:inline type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": title,
+    "author": {
+      "@type": "Person",
+      "name": author
+    },
+    "datePublished": pubDate,
+    "description": Astro.props.description || '',
+    "url": Astro.url.href
+  })} />
+  
   <div class="col-mb-12" id="main" role="main">
     <article class="post">
       <h1 class="col-mb-12 post-title">
