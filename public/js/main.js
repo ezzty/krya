@@ -4,6 +4,14 @@
  */
 
 (function() {
+  // 检测 CSS scroll-state 支持，如果支持则跳过 JS 绑定（避免重复监听）
+  if (CSS.supports('container-type', 'scroll-state')) {
+    console.log('✅ CSS scroll-state 支持，已由纯 CSS 处理导航栏隐藏');
+    return;
+  }
+  
+  console.log('ℹ️ CSS scroll-state 不支持，使用 JS fallback 方案');
+  
   const mainHeader = document.querySelector('.cd-auto-hide-header');
   if (!mainHeader) return;
   

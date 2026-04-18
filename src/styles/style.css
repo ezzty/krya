@@ -107,6 +107,37 @@ textarea {
   }
 }
 
+/* ====================== 滚动隐藏导航栏 - 纯 CSS 方案（渐进增强）====================== */
+@supports (container-type: scroll-state) {
+  html {
+    container-type: scroll-state;   /* 启用滚动状态查询 */
+  }
+
+  .cd-auto-hide-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);  /* 自然滑动曲线 */
+    transform: translateY(0);       /* 默认显示 */
+  }
+
+  /* 向下滚动时隐藏 */
+  @container scroll-state(scrolled: bottom) {
+    .cd-auto-hide-header {
+      transform: translateY(-100%);
+    }
+  }
+
+  /* 向上滚动时显示 */
+  @container scroll-state(scrolled: top) {
+    .cd-auto-hide-header {
+      transform: translateY(0);
+    }
+  }
+}
+
 /* -----------------------------------------------------
    Content Styles
    ----------------------------------------------------- */
