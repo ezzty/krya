@@ -6,8 +6,8 @@ const postsCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string().optional(),
-    pubDate: z.date(),
-    lastUpdated: z.date().optional(),
+    pubDate: z.coerce.date(),
+    lastUpdated: z.coerce.date().optional(),
     author: z.string().optional().default('Jin'),
     wordCount: z.number().optional().default(0),
     thumbnail: z.string().optional(),
@@ -17,4 +17,6 @@ const postsCollection = defineCollection({
   }),
 });
 
-export const posts = postsCollection;
+export const collections = {
+  posts: postsCollection,
+};

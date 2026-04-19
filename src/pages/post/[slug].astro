@@ -1,7 +1,7 @@
 ---
 import PostLayout from '../../layouts/PostLayout.astro';
 import Twikoo from '../../components/Twikoo.astro';
-import { getCollection } from 'astro:content';
+import { getEntry, render, getCollection } from 'astro:content';
 import { countWords } from '../../lib/utils';
 
 export async function getStaticPaths() {
@@ -12,14 +12,15 @@ export async function getStaticPaths() {
       slug: post.id.replace('.md', ''),
     },
     props: {
-      post,
+      postId: post.id,
       wordCount: countWords(post.body || ''),
     },
   }));
 }
 
-const { post, wordCount } = Astro.props;
-const { Content } = await post.render();
+const { postId, wordCount } = Astro.props;
+const post = await getEntry('posts', postId);
+const { Content } = await render(post);
 ---
 
 <PostLayout
