@@ -78,32 +78,23 @@ const {
 <script is:inline>
   (function() {
     // 暗黑模式切换 - 桌面端
+    // 主题已在 BaseLayout.astro 的 <head> 中初始化，这里只处理切换按钮
     const themeToggleDesktop = document.querySelector('#theme-toggle');
-    
     const html = document.documentElement;
-    
-    function getPreferredTheme() {
-      const stored = localStorage.getItem('theme');
-      if (stored) return stored;
-      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-    }
-    
-    function applyTheme(theme) {
-      if (theme === 'dark') {
-        html.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-      } else {
-        html.removeAttribute('data-theme');
-        localStorage.setItem('theme', 'light');
-      }
-    }
-    
-    applyTheme(getPreferredTheme());
     
     themeToggleDesktop?.addEventListener('click', function(e) {
       e.stopPropagation();
       const current = html.getAttribute('data-theme');
-      applyTheme(current === 'dark' ? 'light' : 'dark');
+      
+      if (current === 'dark') {
+        html.removeAttribute('data-theme');
+        html.style.colorScheme = 'light';
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        html.style.colorScheme = 'dark';
+        localStorage.setItem('theme', 'dark');
+      }
     });
     
     // 导航菜单
