@@ -21,6 +21,39 @@ export function extractFirstImage(content: string): string | null {
   return null;
 }
 
+// 格式化日期：2026-04-18
+export function formatDate(date: string | Date): string {
+  const d = typeof date === 'string' ? new Date(date) : date;
+  return d.toISOString().split('T')[0];
+}
+
+// 截取摘要（减少 4 个字符）
+export function truncateExcerpt(excerpt: string, length: number = 116): string {
+  if (!excerpt) return '';
+  return excerpt.slice(0, length);
+}
+
+// 生成页码列表（最多显示 5 个页码）
+export function getPageNumbers(current: number, total: number): number[] {
+  if (total <= 5) {
+    // 总页数 <= 5，显示所有页码
+    return Array.from({ length: total }, (_, i) => i + 1);
+  }
+  
+  if (current <= 3) {
+    // 当前页在前 3 页，显示 1-5
+    return [1, 2, 3, 4, 5];
+  }
+  
+  if (current >= total - 2) {
+    // 当前页在后 3 页，显示最后 5 页
+    return [total - 4, total - 3, total - 2, total - 1, total];
+  }
+  
+  // 当前页在中间，显示当前页前后各 2 页
+  return [current - 2, current - 1, current, current + 1, current + 2];
+}
+
 // 处理缩略图 URL
 export function processThumbnailUrl(url: string | null, thumbnailStyle: string = 'w140'): string | null {
   if (!url) return null;

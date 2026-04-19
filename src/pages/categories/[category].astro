@@ -34,7 +34,7 @@ const posts = allPosts
   <NavBar slot="header" />
   <div class="container">
     <div class="col-mb-12">
-      <h1 class="post-title">分类：{decodedCategory}</h1>
+      <h1 class="categories-title">分类：{decodedCategory}</h1>
       {posts.length > 0 ? (
         <div class="post-list">
           {posts.map(post => (
@@ -49,24 +49,8 @@ const posts = allPosts
           ))}
         </div>
       ) : (
-        <p class="no-posts">该分类下暂无文章</p>
+        <p class="no-items">该分类下暂无文章</p>
       )}
     </div>
   </div>
 </BaseLayout>
-
-<style>
-  .post-title { margin: 30px 0 20px; font-size: 1.5em; color: #4d4d4d; }
-  .post-list { margin: 50px 0 40px; }
-  .post-item { padding: 15px 0; border-bottom: 1px solid #eee; }
-  .post-item:last-child { border-bottom: none; }
-  .post-title-small { margin: 0 0 8px; font-size: 1.1em; }
-  .post-title-small a { color: #4d4d4d; text-decoration: none !important; }
-  .post-title-small a:hover { color: #3354AA; }
-  .post-meta { color: #999; font-size: 0.9em; }
-  .no-posts { color: #999; font-size: 1em; padding: 40px 0; text-align: center; }
-  html[data-theme="dark"] .post-title { color: #e0e0e0; }
-  html[data-theme="dark"] .post-item { border-bottom-color: #3a3a3a; }
-  html[data-theme="dark"] .post-title-small a { color: #e0e0e0; }
-  html[data-theme="dark"] .post-title-small a:hover { color: #5a8bff; }
-</style>

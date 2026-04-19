@@ -1,6 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import NavBar from '../components/NavBar.astro';
+import { formatDate } from '../lib/utils';
 
 interface Props {
   title: string;
@@ -13,10 +14,6 @@ interface Props {
 }
 
 const { title, description, author, pubDate, wordCount = 0, tags = [], categories = [] } = Astro.props;
-
-const formatDate = (date: string) => {
-  return new Date(date).toISOString().split('T')[0];
-};
 ---
 
 <BaseLayout title={title} description={description || 'Jin 的个人博客'}>
