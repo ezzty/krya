@@ -40,7 +40,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical",
+                "sortOrder": "byCreatedTimeReverse",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -180,20 +180,20 @@
       "bases:新建数据库": false
     }
   },
-  "active": "33480dab1c77ce28",
+  "active": "53212efc0b6de7e8",
   "lastOpenFiles": [
+    "why-i-buy-xiaomi.md",
+    "2025hongkongbank.md",
+    "2025cloudbill.md",
+    "2014vietnam.md",
+    "25vietnam-guangxi.md",
+    "your-stomach.md",
     "astro-sintu-theme.md",
     "test2026.md",
     "create-a-stripe-account.md",
-    "2025cloudbill.md",
-    "25vietnam-guangxi.md",
     "test2014.md",
     "chengdu-qinghai.md",
-    "why-i-buy-xiaomi.md",
-    "your-stomach.md",
     "2025tailand.md",
-    "2014vietnam.md",
-    "2025hongkongbank.md",
     "chun-jia-you-luo-yang.md"
   ]
 }
