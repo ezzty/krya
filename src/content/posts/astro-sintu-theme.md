@@ -11,7 +11,7 @@ tags:
   - Typecho
   - 迁移
 ---
-![astro](https://i.frc.cc/img/m/260415/astro.png)
+![astro](https://i.frc.cc/img/m/260415/as-1.jpg)
 
 之前用动态博客总是担心服务器忘了续费，或者程序升级出问题；接触了静态博客之后，认为这是非常理想的解决方式，在Hugo、Hexo和Astro几个方案比较之后，最终选择了Astro.
 
