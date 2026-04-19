@@ -35,7 +35,50 @@ import '../styles/style.css';
     <!-- CSS (imported for Vite bundling) -->
     
     <!-- 主题初始化 - 防止暗黑模式闪白 -->
-    <script src="/js/theme.js" is:inline></script>
+    <script is:inline>
+      (function() {
+        const html = document.documentElement;
+        
+        /**
+         * 设置主题
+         */
+        function setTheme(theme) {
+          if (theme === 'dark') {
+            html.setAttribute('data-theme', 'dark');
+            html.style.colorScheme = 'dark';
+          } else {
+            html.removeAttribute('data-theme');
+            html.style.colorScheme = 'light';
+          }
+          localStorage.setItem('theme', theme);
+        }
+        
+        /**
+         * 获取当前主题
+         */
+        function getTheme() {
+          return localStorage.getItem('theme') || 
+                 (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        }
+        
+        /**
+         * 切换主题
+         */
+        function toggleTheme() {
+          const current = html.getAttribute('data-theme');
+          const newTheme = current === 'dark' ? 'light' : 'dark';
+          setTheme(newTheme);
+          return newTheme;
+        }
+        
+        // 暴露到全局
+        window.ThemeManager = { setTheme, getTheme, toggleTheme };
+        
+        // 自动初始化
+        const theme = getTheme();
+        setTheme(theme);
+      })();
+    </script>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
