@@ -34,29 +34,8 @@ import '../styles/style.css';
     
     <!-- CSS (imported for Vite bundling) -->
     
-    <!-- 暗黑模式初始化 - 在 CSS 加载后，body 渲染前执行，防止闪白 -->
-    <script is:inline>
-      (function() {
-        const html = document.documentElement;
-        
-        // 优先级：localStorage > 系统偏好
-        let theme = localStorage.getItem('theme');
-        
-        if (!theme) {
-          // 没有保存的值时，才用系统偏好，并保存到 localStorage
-          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-          localStorage.setItem('theme', theme);
-        }
-        
-        if (theme === 'dark') {
-          html.setAttribute('data-theme', 'dark');
-          html.style.colorScheme = 'dark';
-        } else {
-          html.removeAttribute('data-theme');
-          html.style.colorScheme = 'light';
-        }
-      })();
-    </script>
+    <!-- 主题初始化 - 防止暗黑模式闪白 -->
+    <script src="/js/theme.js" is:inline></script>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
