@@ -4,6 +4,7 @@ import NavBar from '../components/NavBar.astro';
 
 interface Props {
   title: string;
+  description?: string;
   author: string;
   pubDate: string;
   wordCount?: number;
@@ -11,14 +12,14 @@ interface Props {
   categories?: string[];
 }
 
-const { title, author, pubDate, wordCount = 0, tags = [], categories = [] } = Astro.props;
+const { title, description, author, pubDate, wordCount = 0, tags = [], categories = [] } = Astro.props;
 
 const formatDate = (date: string) => {
   return new Date(date).toISOString().split('T')[0];
 };
 ---
 
-<BaseLayout title={title}>
+<BaseLayout title={title} description={description || 'Jin 的个人博客'}>
   <NavBar slot="header" />
   
   <!-- 文章页 SEO 元数据 -->

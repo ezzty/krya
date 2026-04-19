@@ -2,7 +2,7 @@
 import PostLayout from '../../layouts/PostLayout.astro';
 import Twikoo from '../../components/Twikoo.astro';
 import { getEntry, render, getCollection } from 'astro:content';
-import { countWords } from '../../lib/utils';
+import { countWords, stripMarkdown } from '../../lib/utils';
 
 export async function getStaticPaths() {
   const posts = await getCollection('posts');
@@ -14,17 +14,20 @@ export async function getStaticPaths() {
     props: {
       postId: post.id,
       wordCount: countWords(post.body || ''),
+      // 混合方案：优先使用 frontmatter 中的 description，没有则自动提取
+      description: post.data.description || stripMarkdown(post.body || '').slice(0, 150),
     },
   }));
 }
 
-const { postId, wordCount } = Astro.props;
+const { postId, wordCount, description } = Astro.props;
 const post = await getEntry('posts', postId);
 const { Content } = await render(post);
 ---
 
 <PostLayout
   title={post.data.title}
+  description={description}
   author={post.data.author || 'Jin'}
   pubDate={post.data.pubDate.toISOString()}
   wordCount={wordCount}
