@@ -1,0 +1,13 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/feed"
+  to = "/feed/index.xml"
+  status = 200
+
+[[redirects]]
+  from = "/feed/"
+  to = "/feed/index.xml"
+  status = 200
