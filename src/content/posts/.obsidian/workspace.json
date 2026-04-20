@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "1007.md",
+                "file": "1292.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1007"
+              "title": "1292"
             }
           }
         ]
@@ -182,6 +182,7 @@
   },
   "active": "53212efc0b6de7e8",
   "lastOpenFiles": [
+    "1007.md",
     "1026.md",
     "110.md",
     "108.md",
@@ -206,7 +207,6 @@
     "202.md",
     "228.md",
     "221.md",
-    "236.md",
-    "33.md"
+    "236.md"
   ]
 }
