@@ -20,7 +20,7 @@ const {
     <div class="header-content">
       <div class="logo">
         <a href="/" class="logo-link">
-          <img src="/logo.svg" alt="浮生百记" class="logo-image" />
+          <span class="logo-text">krya</span>
         </a>
         <!-- 暗黑模式切换按钮 - 放在 Logo 右边 -->
         <div class="logo-switches">
@@ -197,11 +197,17 @@ const {
     gap: 4px;
   }
   
-  /* Logo 统一高度 43px */
-  .logo-image {
-    height: 40px;
-    width: auto;
-    margin-top: 4px;
+  /* Logo 样式 */
+  .logo-text {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #25283D;
+    text-decoration: none !important;
+    letter-spacing: 1px;
+  }
+  
+  html[data-theme="dark"] .logo-text {
+    color: #e0e0e0;
   }
   
   .logo-switches {

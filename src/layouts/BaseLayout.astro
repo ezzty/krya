@@ -4,7 +4,7 @@ interface Props {
   description?: string;
 }
 
-const { title, description = "Jin 的个人博客" } = Astro.props;
+const { title, description = "krya" } = Astro.props;
 
 // 导入 CSS 文件（Vite 会自动打包）
 import '../styles/normalize.css';
@@ -26,11 +26,11 @@ import '../styles/style.css';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://blog.frc.cc" />
-    <meta property="og:image" content="https://i.frc.cc/img/m/s/og-image.webp" />
+    <meta property="og:url" content="https://krya.com" />
+    <meta property="og:image" content="https://krya.com/og-image.png" />
     
     <!-- Canonical URL (文章页会覆盖) -->
-    <link rel="canonical" href={`https://blog.frc.cc${Astro.url.pathname}`} />
+    <link rel="canonical" href={`https://krya.com${Astro.url.pathname}`} />
     
     <!-- CSS (imported for Vite bundling) -->
     
@@ -84,7 +84,7 @@ import '../styles/style.css';
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
     <!-- RSS Feed -->
-    <link rel="alternate" type="application/rss+xml" title="浮生百记 | Jin 的个人博客" href="/rss.xml" />
+    <link rel="alternate" type="application/rss+xml" title="krya" href="/rss.xml" />
   </head>
   <body>
     <slot name="header" />
