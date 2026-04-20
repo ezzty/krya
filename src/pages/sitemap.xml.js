@@ -11,7 +11,7 @@ export async function GET() {
     return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
   });
 
-  const siteUrl = 'https://blog.frc.cc';
+  const siteUrl = 'https://krya.com';
   
   // 收集所有分类和标签
   const categorySet = new Set();

@@ -20,6 +20,12 @@ const { title, description, author, pubDate, wordCount = 0, tags = [], categorie
   <NavBar slot="header" />
   
   <!-- 文章页 SEO 元数据 -->
+  <meta property="og:type" content="article" />
+  <meta property="article:published_time" content={pubDate} />
+  {tags.length > 0 && (
+    <meta property="article:tag" content={tags.join(', ')} />
+  )}
+  
   <script is:inline type="application/ld+json" set:html={JSON.stringify({
     "@context": "https://schema.org",
     "@type": "BlogPosting",

@@ -12,7 +12,7 @@ export async function GET(context) {
   return rss({
     title: 'krya |jin 的个人博客',
     description: 'Jin 的个人博客 - 旅行、生活、感悟',
-    site: context.site,
+    site: 'https://krya.com',
     items: await Promise.all(sortedPosts.map(async (post) => {
       // 直接使用 post.content 获取 Markdown 内容
       const markdownContent = post.body || '';
