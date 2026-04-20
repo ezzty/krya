@@ -10,7 +10,7 @@ export async function GET(context) {
   }).slice(0, 20);
   
   return rss({
-    title: '浮生百记 | Jin 的个人博客',
+    title: 'krya |jin 的个人博客',
     description: 'Jin 的个人博客 - 旅行、生活、感悟',
     site: context.site,
     items: await Promise.all(sortedPosts.map(async (post) => {
