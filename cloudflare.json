@@ -1,9 +1,0 @@
-{
-  "build": {
-    "command": "npm run build",
-    "output_directory": "dist"
-  },
-  "env": {
-    "NODE_VERSION": "20"
-  }
-}
