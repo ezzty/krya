@@ -7,10 +7,19 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build && node scripts/post-build-image-processor.js",
-    "preview": "astro preview"
+    "preview": "npm run build && wrangler dev",
+    "generate-types": "wrangler types",
+    "deploy": "npm run build && wrangler deploy"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "^13.1.10",
     "@astrojs/rss": "^4.0.18",
     "astro": "^6.1.8"
+  },
+  "devDependencies": {
+    "wrangler": "^4.83.0"
+  },
+  "overrides": {
+    "vite": "^7"
   }
 }

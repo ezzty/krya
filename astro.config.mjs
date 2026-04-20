@@ -1,10 +1,13 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 
+import cloudflare from '@astrojs/cloudflare';
+
 export default defineConfig({
   site: 'https://krya.com',
   output: 'static',
   compressHTML: true,
+
   markdown: {
     remarkPlugins: [
       // 尝试使用 remark 插件
@@ -16,6 +19,7 @@ export default defineConfig({
       theme: 'dark-plus',
     },
   },
+
   vite: {
     build: {
       // 合并所有 CSS 到一个文件
@@ -29,4 +33,6 @@ export default defineConfig({
       },
     },
   },
+
+  adapter: cloudflare(),
 });
