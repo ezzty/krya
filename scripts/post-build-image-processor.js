@@ -1,8 +1,17 @@
 // 构建后处理：为文章页面的图片添加阿里云 OSS w950 参数
-import { readdirSync, readFileSync, writeFileSync } from 'fs';
+import { readdirSync, readFileSync, writeFileSync, existsSync } from 'fs';
 import { join } from 'path';
+import { fileURLToPath } from 'url';
 
-const distDir = './dist/post';
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = join(__filename, '..');
+const distDir = join(__dirname, '..', 'dist', 'post');
+
+// 检查目录是否存在
+if (!existsSync(distDir)) {
+  console.log(`Skip: ${distDir} does not exist`);
+  process.exit(0);
+}
 
 // 处理文章图片 URL - 添加 w950 参数
 function processArticleImageUrl(url) {
