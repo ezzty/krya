@@ -7,7 +7,7 @@ interface Props {
   region?: string;
 }
 
-const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
+const { envId = 'https://cm.krya.com/', region = '' } = Astro.props;
 ---
 
 <div class="twikoo-container" id="twikoo"></div>
@@ -43,7 +43,7 @@ const { envId = 'https://comment.frc.cc/', region = '' } = Astro.props;
       });
       
       window.twikoo.init({
-        envId: 'https://comment.frc.cc/',
+        envId: 'https://cm.krya.com/',
         el: '#twikoo',
         lang: 'zh-CN',
         onCommentLoaded: () => {
