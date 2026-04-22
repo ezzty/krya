@@ -37,7 +37,9 @@ Perilla oil, camellia oil, and olive oil are relatively expensive, with prices o
 Based on these seven factors, we can scientifically select healthy and relatively safe cooking oils:
 
 According to data from the China Industry Research Institute, the main cooking oils consumed in China are soybean oil, rapeseed oil, palm oil (mainly used in industrial foods and fast-food restaurants), peanut oil, and sunflower oil. In 2022, soybean oil accounted for 29.6% of China's edible vegetable oil consumption, followed by rapeseed oil at 14.5%, and palm oil at 8.8%.
-![output.png](https://images.190808.xyz/typecho/2024/07/12/output.png?x-oss-process=style/826px)
+
+![1](https://i.190808.xyz/typecho/2024/07/12/output.png)
+
 High-consumption oils have more manufacturers and sales channels, making them more prone to contamination during transport. Therefore, soybean oil and rapeseed oil should be avoided. Due to aflatoxins, erucic acid, and GMO concerns, avoid soybean oil and rapeseed oil, and also exclude corn oil and peanut oil. Oils priced over 30 RMB per liter, such as grape seed oil and olive oil, are too expensive for regular use. Therefore, sunflower oil and flaxseed oil are excellent options. Both are typically non-GMO; sunflower oil is rich in unsaturated fatty acids and vitamin E, while flaxseed oil contains alpha-linolenic acid, a plant-based omega-3 fatty acid that helps reduce inflammation and supports heart and brain health.
 
 The author previously favored sunflower oil, but due to the Russo-Ukrainian War, a favored Ukrainian sunflower oil is no longer available. Considering recent mineral oil contamination events, less popular oils like flaxseed oil may be safer.
