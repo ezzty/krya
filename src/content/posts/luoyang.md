@@ -12,7 +12,7 @@ draft: false
 我们这几年的旅行一直在四川以南的地方晃荡；最北除了到过西安之外；我们都没有去过北方的其他地区。所以一直想去体验广阔的华北平原，感受一下北方的氛围。
 
 ![5.avif](https://user0102.cn.imgto.link/public/20260422/5-1.avif)
-![4.jpg](https://images.190808.xyz/typecho/2026/04/07/4.jpg)
+![4.jpg](https://i.190808.xyz/typecho/2026/04/07/4.jpg)
 
 > 📷 秦始皇兵马俑
 
@@ -25,7 +25,7 @@ draft: false
 
 > 📷 洛阳龙门石窟卢舍那大佛
 
-![DSC05043.jpg](https://images.190808.xyz/typecho/2026/04/07/DSC05043.jpg)
+![DSC05043.jpg](https://i.190808.xyz/typecho/2026/04/07/DSC05043.jpg)
 
 > 📷 洛阳白马寺，佛教传入中原第一座寺庙
 

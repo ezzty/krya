@@ -9,80 +9,80 @@ draft: false
 
 不得不承认宋冬野非常火，不过这种燥热的音乐会更需要节奏，重塑雕像的权利临场感很好。老狼都是怀旧歌曲：《模范情书》、《睡在我上铺的兄弟》，当然少不了全场大合唱《同桌的你》。
 
-![](https://images.190808.xyz/bim/_MG_0517.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0517.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0519.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0519.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0533.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0533.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0534.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0534.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0539.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0539.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0547.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0547.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0559.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0559.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0567.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0567.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0569.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0569.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0581.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0581.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0590.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0590.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0593.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0593.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0594.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0594.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0612.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0612.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0597.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0597.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0598.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0598.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0606.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0606.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0607.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0607.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0608.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0608.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0609.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0609.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0612.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0612.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0616.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0616.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0624.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0624.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0628.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0628.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0631.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0631.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0638.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0638.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0639.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0639.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0644.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0644.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0649.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0649.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0671.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0671.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0673.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0673.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0676.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0676.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0682.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0682.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0687.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0687.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0691.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0691.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0693.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0693.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0695.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0695.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0697.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0697.jpg)
 
-![](https://images.190808.xyz/bim/_MG_0698.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![](https://i.190808.xyz/bim/_MG_0698.jpg)

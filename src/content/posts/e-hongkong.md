@@ -11,18 +11,18 @@ draft: false
 
 ![DSC01977.jpg](https://i.190808.xyz/typecho/2025/10/25/DSC01977.jpg)
 
-![DSC02011.jpg](https://images.190808.xyz/typecho/2025/10/25/DSC02011.jpg)
+![DSC02011.jpg](https://i.190808.xyz/typecho/2025/10/25/DSC02011.jpg)
 
 ![DSC02292.jpg](https://i.190808.xyz/typecho/2025/10/25/DSC02292.jpg)
 
 ![photo_2025-10-28_23-41-43 (2).jpg](https://i.190808.xyz/typecho/2025/10/29/photo_2025-10-28_23-41-43%20(2).jpg)
 
-![photo_2025-10-28_23-40-31.jpg](https://images.190808.xyz/typecho/2025/10/29/photo_2025-10-28_23-40-31.jpg)
+![photo_2025-10-28_23-40-31.jpg](https://i.190808.xyz/typecho/2025/10/29/photo_2025-10-28_23-40-31.jpg)
 
 ![photo_2025-10-28_23-44-39.jpg](https://i.190808.xyz/typecho/2025/10/29/photo_2025-10-28_23-44-39.jpg)
 
-![photo_2025-10-28_23-47-39.jpg](https://images.190808.xyz/typecho/2025/10/29/photo_2025-10-28_23-47-39.jpg)
+![photo_2025-10-28_23-47-39.jpg](https://i.190808.xyz/typecho/2025/10/29/photo_2025-10-28_23-47-39.jpg)
 
-![photo_2025-10-28_23-43-44.jpg](https://images.190808.xyz/typecho/2025/10/29/photo_2025-10-28_23-43-44.jpg)
+![photo_2025-10-28_23-43-44.jpg](https://i.190808.xyz/typecho/2025/10/29/photo_2025-10-28_23-43-44.jpg)
 
-![photo_2025-10-28_23-46-38.jpg](https://images.190808.xyz/typecho/2025/10/29/photo_2025-10-28_23-46-38.jpg)
+![photo_2025-10-28_23-46-38.jpg](https://i.190808.xyz/typecho/2025/10/29/photo_2025-10-28_23-46-38.jpg)

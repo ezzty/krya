@@ -52,7 +52,7 @@ OpenClaw的安装可以不需要爆火的 Mac mini电脑，不需要高性能的
 
 而且，腾讯云现在提供了首月7.9元的大模型套餐，性价比非常高。更让人惊喜的是，OpenClaw 不仅支持 Telegram，还可以接入 QQ 进行聊天操作！这对于国内用户来说无疑更加方便。
 
-![小主机.jpg](https://images.190808.xyz/typecho/2026/03/09/%E5%B0%8F%E4%B8%BB%E6%9C%BA.jpg)
+![小主机.jpg](https://i.190808.xyz/typecho/2026/03/09/%E5%B0%8F%E4%B8%BB%E6%9C%BA.jpg)
 
 > 📷 博主的小主机
 

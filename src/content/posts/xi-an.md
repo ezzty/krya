@@ -23,7 +23,7 @@ draft: false
 
 开车要爬升一千多米海拔，用三档或四档到最高点。满山遍野白茫茫一片，其实没有雪，而是冰凌冻住了树枝，是这样子的。我们选了一段平直的道路拍了几张照片，大家畏畏缩缩，都被冻成狗了。
 
-![1427475223726372.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1427475223726372.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![1427475223726372.jpg](https://i.190808.xyz/bim/1427475223726372.jpg)
 
 巴中旁边是汉中，没想到光雾山就在两省交界处，由于大年初一的原因，光雾山镇几乎没有人，也没有见到游客；来的都不是时候，我问弟弟妹妹们，现在前方两百公里是汉中， 后方两百公里是家，愿不愿意一路向北？玩还不愿意吗？自然高票同意！那我们就继续行驶！
 
@@ -47,8 +47,8 @@ draft: false
 
 市中心有小吃街的城市都牛逼，成都就缺这样一个地方，所以我觉得成都特无聊，不知道哪些外地人瞎扯成都美食什么劲儿，火锅、冒菜、串串、烧烤、川菜，都特么辣的要命；虽然如此，还是得一边抱怨一边吃。所以一到回民街，看到周围都是我爱吃的面食，biangbiang面，羊肉泡馍，裤带面，幸福得骨头都在冒泡泡。所以我们兄妹几人在回民街拉通吃了一遍，撑得底朝天。
 
-![1427474866279491.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1427474866279491.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![1427474866279491.jpg](https://i.190808.xyz/bim/1427474866279491.jpg)
 
-![1427474990823827.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1427474990823827.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
+![1427474990823827.jpg](https://i.190808.xyz/bim/1427474990823827.jpg)
 
 由于时间很紧，第二天我们必须回南充，所以西安的景点逛不了几个。中午又在回民街溜了一圈，买了一大袋干粮；七小时全程高速回到老家，单程才270元油费。［THE END］
