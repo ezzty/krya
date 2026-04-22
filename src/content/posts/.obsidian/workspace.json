@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "oilselectionguide.md",
+                "file": "goodmovie.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "oilselectionguide"
+              "title": "goodmovie"
             }
           }
         ]
@@ -182,6 +182,7 @@
   },
   "active": "53212efc0b6de7e8",
   "lastOpenFiles": [
+    "oilselectionguide.md",
     "Strawberry-Music-Festival.md",
     "astro-sintu-theme.md",
     "e-hongkong.md",
@@ -206,7 +207,6 @@
     "nanbu.md",
     "bloghistory.md",
     "goodmovie.md",
-    "angry.md",
-    "earninternet.md"
+    "angry.md"
   ]
 }
