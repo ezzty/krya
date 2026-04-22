@@ -71,7 +71,7 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
           {/* 上一页 */}
           {currentPage > 1 && (
             <li class="page-item">
-              <a href="/" class="page-link">&laquo; 上页</a>
+              <a href="/" class="page-link">&laquo;</a>
             </li>
           )}
           
@@ -90,7 +90,7 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
           {/* 下一页 */}
           {currentPage < totalPages && (
             <li class="page-item">
-              <a href={`/p/${currentPage + 1}`} class="page-link">下页 &raquo;</a>
+              <a href={`/p/${currentPage + 1}`} class="page-link">&raquo;</a>
             </li>
           )}
         </ul>
