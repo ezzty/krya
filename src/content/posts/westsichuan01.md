@@ -28,7 +28,7 @@ draft: false
 
 ![1430671056245277.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1430671056245277.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
 
-第二天我们去了松坪沟，海拔2600米左右，风景可以，目前正在修建上山的柏油路，一路平平坦坦就可以走完，虽然轻松，但是完全没有探险的感觉，少了很多收获的乐趣，相对于七折后56元的门票来说有点不值。虽然我一直坚持“不以风景为目的的旅行就是耍流氓”，但是景区的村民随便修一个大门，搞条栈道就开始收门票这种行为比流氓还强盗。可是既然来了又不能刻一个“赵某某到处一游”即走吧，只能忍痛进去；人生就是这样无奈，当你一番辛苦快要达成目标时却发现这不是你期待的结果；能怎么办呢？还不是哭着也要做完。
+第二天我们去了松坪沟，海拔2600米左右，风景可以，目前正在修建上山的柏油路，一路平平坦坦就可以走完，虽然轻松，但是完全没有探险的感觉，少了很多收获的乐趣，相对于七折后56元的门票来说有点不值。虽然我一直坚持“不以风景为目的的旅行就是耍流氓”，但是景区的村民随便修一个大门，搞条栈道就开始收门票这种行为比流氓还强盗。可是既然来了又不能刻一个“某某到处一游”即走吧，只能忍痛进去；人生就是这样无奈，当你一番辛苦快要达成目标时却发现这不是你期待的结果；能怎么办呢？还不是哭着也要做完。
 
 ![1430671897630812.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1430671897630812.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
 
@@ -58,8 +58,6 @@ draft: false
 
 ![1430672012830372.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1430672012830372.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
 
-![1430671996894962.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1430671996894962.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
-
 接下来是二八溪村草原，这里没有柏油路，只能随着悬崖峭壁的碎石路慢慢开上去，海拔3000米，半山腰有乡民拦路收钱，根据地形推测这个草原不会很大，就懒的去更上面了。
 
 这一路我最喜欢的地方就是这里，因为可以看见雪山，可以看见很远的地方。
@@ -70,4 +68,3 @@ draft: false
 
 ![1430672004216031.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1430672004216031.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
 
-![1430672005969582.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1430672005969582.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)

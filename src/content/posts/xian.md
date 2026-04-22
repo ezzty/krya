@@ -5,10 +5,7 @@ categories: ["旅游"]
 tags: ["西安", "巴中光雾山"]
 draft: false
 ---
-
-你特么竟然没去过北方！
-
-对此，我毫无办法，谁叫地理上把秦岭——淮河一线作为中国南北分界线呢！
+地理上把秦岭——淮河一线作为中国南北分界线呢！
 
 一个同事从内蒙回来，吹嘘在草原吃羊肉；一个同事从山西回来，描绘那边好大的雪。一想到此生到过最北的地方不过是绵阳市而已；不禁咬牙切齿，愤然于胸。
 
@@ -27,8 +24,6 @@ draft: false
 开车要爬升一千多米海拔，用三档或四档到最高点。满山遍野白茫茫一片，其实没有雪，而是冰凌冻住了树枝，是这样子的。我们选了一段平直的道路拍了几张照片，大家畏畏缩缩，都被冻成狗了。
 
 ![1427475223726372.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1427475223726372.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
-
-![1427474576714902.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90](https://images.190808.xyz/bim/1427474576714902.jpg?x-oss-process=image/auto-orient,1/interlace,1/resize,m_lfit,w_826/quality,q_90)
 
 巴中旁边是汉中，没想到光雾山就在两省交界处，由于大年初一的原因，光雾山镇几乎没有人，也没有见到游客；来的都不是时候，我问弟弟妹妹们，现在前方两百公里是汉中， 后方两百公里是家，愿不愿意一路向北？玩还不愿意吗？自然高票同意！那我们就继续行驶！
 
