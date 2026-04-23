@@ -127,8 +127,8 @@ def main():
             tags = [t.strip() for t in tags_raw.split(',') if t.strip()]
         
         # 生成摘要（取正文前 200 字符，移除 Markdown 图片）
-        body_text = re.sub(r'!\\[[^\\]]*\\]\\([^)]+\\)', '', body)  # 移除 Markdown 图片
-        body_text = re.sub(r'\\s+', ' ', body_text).strip()
+        body_text = re.sub(r'!\[[^\]]*\]\([^)]+\)', '', body)  # 移除 Markdown 图片
+        body_text = re.sub(r'\s+', ' ', body_text).strip()
         excerpt = body_text[:200] + '...' if len(body_text) > 200 else body_text
         
         articles.append({
