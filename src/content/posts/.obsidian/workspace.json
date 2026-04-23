@@ -11,15 +11,10 @@
             "id": "2d45f29cc5442fe5",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "astro-sintu-theme.md",
-                "mode": "source",
-                "source": true,
-                "backlinks": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "astro-sintu-theme"
+              "title": "新标签页"
             }
           }
         ]
@@ -41,7 +36,7 @@
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "byCreatedTime",
+                "sortOrder": "alphabetical",
                 "autoReveal": false
               },
               "icon": "lucide-folder-closed",
@@ -182,12 +177,22 @@
       "bases:新建数据库": false
     }
   },
-  "active": "2d45f29cc5442fe5",
+  "active": "33480dab1c77ce28",
   "lastOpenFiles": [
-    "xi-an.md",
-    "raydalio.md",
-    "astro-sintu-theme.md",
+    "familyhistoy.md",
+    "_Templates/Bloglink.md",
+    "_Templates",
     "2014vitnam.md",
+    "未命名.md",
+    "yourstomch.md",
+    "yangshen.md",
+    "xi-an.md",
+    "xiaomi.md",
+    "2018report.md",
+    "25vitenam.md",
+    "openclaw.md",
+    "astro-sintu-theme.md",
+    "raydalio.md",
     "express.md",
     "cheers.md",
     "bill2024.md",
@@ -198,19 +203,10 @@
     "tospace.md",
     "thailand.md",
     "e-hongkong.md",
-    "yangshen.md",
-    "xiaomi.md",
     "blog10years.md",
     "oilselectionguide.md",
     "october.md",
-    "disappear.md",
-    "Strawberry-Music-Festival.md",
-    "night.md",
     "未命名.base",
-    "未命名.canvas",
-    "yourstomch.md",
-    "25vitenam.md",
-    "hongkongbanks.md",
-    "Drawingdaughter.md"
+    "未命名.canvas"
   ]
 }
