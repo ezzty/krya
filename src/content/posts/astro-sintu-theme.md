@@ -1,5 +1,5 @@
 ---
-title: 已将博客从Typecho迁移到Astro
+title: 从Typecho迁移到Astro
 pubDate: 2026-04-20
 author: jin
 draft: false
