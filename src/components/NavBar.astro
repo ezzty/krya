@@ -355,18 +355,14 @@ const {
     transform: translateY(0);
   }
   
-  .mobile-dropdown-menu .nav-list {
+  /* 通用导航列表样式（桌面端和移动端共用） */
+  .nav-list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
   
-  .mobile-dropdown-menu .nav-list li {
-    text-align: center;
-    border-bottom: 1px solid #ececec;
-  }
-  
-  .mobile-dropdown-menu .nav-list a {
+  .nav-list a {
     display: block;
     padding: 10px 10px;
     color: #4d4d4d;
@@ -375,8 +371,8 @@ const {
     transition: background-color 0.2s ease;
   }
   
-  .mobile-dropdown-menu .nav-list a:hover,
-  .mobile-dropdown-menu .nav-list a:active {
+  .nav-list a:hover,
+  .nav-list a:active {
     background-color: #f8f8f8;
     color: #000000;
   }
@@ -394,6 +390,37 @@ const {
     .desktop-nav {
       display: none;
     }
+    
+    /* 移动端下拉菜单特有样式 */
+    .mobile-dropdown-menu .nav-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .mobile-dropdown-menu .nav-list li {
+      text-align: center;
+      border-bottom: 1px solid #ececec;
+    }
+    
+    .mobile-dropdown-menu .nav-list a {
+      display: block;
+      padding: 10px 10px;
+      color: #4d4d4d;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background-color 0.2s ease;
+    }
+    
+    .mobile-dropdown-menu .nav-list a:hover,
+    .mobile-dropdown-menu .nav-list a:active {
+      background-color: #f8f8f8;
+      color: #000000;
+    }
+    
+    html[data-theme="dark"] .mobile-dropdown-menu .nav-list li {
+      border-bottom-color: #3a3a3a !important;
+    }
   }
   
   /* 暗黑模式适配 */
@@ -406,17 +433,14 @@ const {
     border-top-color: #3a3a3a !important;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
   }
-
-  html[data-theme="dark"] .mobile-dropdown-menu .nav-list li {
-    border-bottom-color: #3a3a3a !important;
-  }
-
-  html[data-theme="dark"] .mobile-dropdown-menu .nav-list a {
+  
+  /* 通用暗黑模式样式 */
+  html[data-theme="dark"] .nav-list a {
     color: #e0e0e0 !important;
   }
 
-  html[data-theme="dark"] .mobile-dropdown-menu .nav-list a:hover,
-  html[data-theme="dark"] .mobile-dropdown-menu .nav-list a:active {
+  html[data-theme="dark"] .nav-list a:hover,
+  html[data-theme="dark"] .nav-list a:active {
     background-color: #2a2a2a !important;
     color: #fff !important;
   }
