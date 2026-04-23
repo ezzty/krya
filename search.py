@@ -113,12 +113,17 @@ def main():
         else:
             tags = [t.strip() for t in tags_raw.split(',') if t.strip()]
         
+        # 生成摘要（取正文前 200 字符）
+        body_text = re.sub(r'\s+', ' ', body).strip()
+        excerpt = body_text[:200] + '...' if len(body_text) > 200 else body_text
+        
         articles.append({
             'id': md_file.stem,
             'title': frontmatter.get('title', md_file.stem),
             'date': frontmatter.get('date', ''),
             'categories': categories,
             'tags': tags,
+            'excerpt': excerpt,
             'tokens': tokens,
         })
         
@@ -139,6 +144,7 @@ def main():
                 'date': art['date'],
                 'categories': art['categories'],
                 'tags': art['tags'],
+                'excerpt': art['excerpt'],
             }
             for art in articles
         ],

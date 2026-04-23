@@ -67,6 +67,14 @@ title: '搜索'
     text-decoration: underline;
   }
 
+  .result-excerpt {
+    font-size: 14px;
+    color: var(--text-color);
+    margin-top: 8px;
+    line-height: 1.6;
+    opacity: 0.8;
+  }
+
   .result-score {
     display: inline-block;
     padding: 2px 8px;
@@ -224,12 +232,14 @@ title: '搜索'
       ${results.map(([docId, score]) => {
         const post = searchEngine.posts.find(p => p.id === docId);
         const title = post ? post.title : docId;
+        const excerpt = post ? post.excerpt : '';
         return `
           <li class="result-item">
             <a href="/post/${docId}" class="result-title">
               ${escapeHtml(title)}
               <span class="result-score">${score.toFixed(2)}</span>
             </a>
+            ${excerpt ? `<p class="result-excerpt">${escapeHtml(excerpt)}</p>` : ''}
           </li>
         `;
       }).join('')}
