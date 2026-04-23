@@ -29,17 +29,30 @@ def extract_frontmatter(content: str) -> dict:
     return frontmatter
 
 def tokenize(text: str) -> list:
-    """中文分词（简单版：按字符和常用词）"""
+    """中文分词：使用 2-3 字 n-gram（与前端一致）"""
     # 移除 HTML 标签
     text = re.sub(r'<[^>]+>', '', text)
-    # 移除特殊字符
+    # 移除特殊字符，保留中文、英文、数字
     text = re.sub(r'[^\w\s\u4e00-\u9fff]', ' ', text)
-    # 分词（简单：按空格和中文单字）
-    words = []
-    for word in text.split():
-        if len(word) > 0:
-            words.append(word.lower())
-    return words
+    
+    tokens = []
+    
+    # 英文单词
+    words = re.findall(r'[a-zA-Z]+', text)
+    tokens.extend([w.lower() for w in words])
+    
+    # 中文 2-3 字 n-gram
+    chinese_text = re.sub(r'[a-zA-Z0-9\s]', '', text)
+    for i in range(len(chinese_text) - 1):
+        char = chinese_text[i]
+        if '\u4e00' <= char <= '\u9fff':
+            # 2-gram
+            tokens.append(chinese_text[i:i+2])
+            # 3-gram
+            if i < len(chinese_text) - 2:
+                tokens.append(chinese_text[i:i+3])
+    
+    return tokens
 
 def calculate_bm25_index(documents: list, k1: float = 1.5, b: float = 0.75) -> dict:
     """
