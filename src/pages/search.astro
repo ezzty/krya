@@ -230,12 +230,12 @@ title: '搜索'
 
     const html = `<ul class="results">
       ${results.map(([docId, score]) => {
-        const post = searchEngine.posts.find(p => p.id === docId);
+        const post = searchEngine.posts[docId];
         const title = post ? post.title : docId;
         const excerpt = post ? post.excerpt : '';
         return `
           <li class="result-item">
-            <a href="/post/${docId}" class="result-title">
+            <a href="/post/${post ? post.id : docId}" class="result-title">
               ${escapeHtml(title)}
               <span class="result-score">${score.toFixed(2)}</span>
             </a>
