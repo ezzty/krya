@@ -52,6 +52,14 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     border-radius: 8px;
     background: var(--card-bg);
     transition: transform 0.2s, box-shadow 0.2s;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  .result-item img,
+  .result-item a {
+    max-width: 100%;
+    overflow: hidden;
   }
 
   .result-item:hover {
