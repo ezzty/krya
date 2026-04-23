@@ -28,3 +28,7 @@ backup/
 
 # Astro
 .astro/
+
+# Obsidian
+.obsidian/
+.trash/
