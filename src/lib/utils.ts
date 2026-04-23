@@ -33,25 +33,25 @@ export function truncateExcerpt(excerpt: string, length: number = 116): string {
   return excerpt.slice(0, length);
 }
 
-// 生成页码列表（最多显示 5 个页码）
+// 生成页码列表（最多显示 3 个页码）
 export function getPageNumbers(current: number, total: number): number[] {
-  if (total <= 5) {
-    // 总页数 <= 5，显示所有页码
+  if (total <= 3) {
+    // 总页数 <= 3，显示所有页码
     return Array.from({ length: total }, (_, i) => i + 1);
   }
   
-  if (current <= 3) {
-    // 当前页在前 3 页，显示 1-5
-    return [1, 2, 3, 4, 5];
+  if (current <= 2) {
+    // 当前页在前 2 页，显示 1-3
+    return [1, 2, 3];
   }
   
-  if (current >= total - 2) {
-    // 当前页在后 3 页，显示最后 5 页
-    return [total - 4, total - 3, total - 2, total - 1, total];
+  if (current >= total - 1) {
+    // 当前页在后 2 页，显示最后 3 页
+    return [total - 2, total - 1, total];
   }
   
-  // 当前页在中间，显示当前页前后各 2 页
-  return [current - 2, current - 1, current, current + 1, current + 2];
+  // 当前页在中间，显示当前页前后各 1 页
+  return [current - 1, current, current + 1];
 }
 
 // 处理缩略图 URL
