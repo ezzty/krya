@@ -53,4 +53,5 @@ tags:
 ### 开源
 
 本主题开源，如果喜欢也可以给作者打赏：
+
 [https://github.com/ezzty/typecho-sintu-theme](https://github.com/ezzty/typecho-sintu-theme)
