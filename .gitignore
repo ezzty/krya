@@ -32,3 +32,4 @@ backup/
 # Obsidian
 .obsidian/
 .trash/
+src/content/posts/.obsidian/
