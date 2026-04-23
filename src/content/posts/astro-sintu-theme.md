@@ -49,3 +49,8 @@ tags:
 2. 给Hermes Agent发送消息推送到github仓库（或者自己用github推送也行）
 3. 腾讯Edgeone、Vercel、Netlify 、Cloudflare Pages自动拉取更新并构建。
 4. 自动部署到全球 CDN 节点。
+
+### 开源
+
+本主题开源，如果喜欢也可以给作者打赏：
+[https://github.com/ezzty/typecho-sintu-theme](https://github.com/ezzty/typecho-sintu-theme)
