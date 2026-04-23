@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Krya 博客搜索索引生成器
-直接生成 JSON 索引文件，无需数据库依赖
+生成前端兼容的 BM25 索引格式
 """
 
 import json
@@ -41,10 +41,9 @@ def tokenize(text: str) -> list:
             words.append(word.lower())
     return words
 
-def calculate_bm25(documents: list, k1: float = 1.5, b: float = 0.75) -> dict:
+def calculate_bm25_index(documents: list, k1: float = 1.5, b: float = 0.75) -> dict:
     """
-    计算 BM25 索引
-    返回：{term: {doc_id: score}}
+    计算 BM25 索引，返回前端兼容的格式
     """
     # 文档长度
     doc_lengths = [len(doc['tokens']) for doc in documents]
@@ -62,20 +61,19 @@ def calculate_bm25(documents: list, k1: float = 1.5, b: float = 0.75) -> dict:
     n_docs = len(documents)
     idf = {}
     for term, df in doc_freq.items():
-        idf[term] = math.log((n_docs - df + 0.5) / (df + 0.5) + 1)
+        idf[term] = round(math.log((n_docs - df + 0.5) / (df + 0.5) + 1), 4)
     
-    # 构建索引
-    index = {}
+    # 构建文档索引（前端需要的格式）
+    docs_index = {}
     for doc_id, tf in enumerate(term_freq):
-        for term, freq in tf.items():
-            if term not in index:
-                index[term] = {}
-            
-            # BM25 分数
-            score = (idf[term] * freq * (k1 + 1)) / (freq + k1 * (1 - b + b * doc_lengths[doc_id] / avg_doc_length))
-            index[term][doc_id] = round(score, 4)
+        docs_index[str(doc_id)] = dict(tf)
     
-    return index
+    return {
+        'documents': docs_index,
+        'doc_lengths': {str(i): length for i, length in enumerate(doc_lengths)},
+        'avg_doc_length': round(avg_doc_length, 4),
+        'idf': idf,
+    }
 
 def main():
     print("🔍 Krya 博客搜索索引生成器")
@@ -94,12 +92,33 @@ def main():
         body = re.sub(r'^---\s*\n.*?\n---\s*\n', '', content, flags=re.DOTALL)
         tokens = tokenize(body)
         
+        # 处理 categories 和 tags
+        categories_raw = frontmatter.get('categories', '[]')
+        tags_raw = frontmatter.get('tags', '[]')
+        
+        # 解析 YAML 数组格式
+        if categories_raw.startswith('['):
+            try:
+                categories = json.loads(categories_raw)
+            except:
+                categories = [c.strip() for c in categories_raw.strip('[]').split(',') if c.strip()]
+        else:
+            categories = [c.strip() for c in categories_raw.split(',') if c.strip()]
+        
+        if tags_raw.startswith('['):
+            try:
+                tags = json.loads(tags_raw)
+            except:
+                tags = [t.strip() for t in tags_raw.strip('[]').split(',') if t.strip()]
+        else:
+            tags = [t.strip() for t in tags_raw.split(',') if t.strip()]
+        
         articles.append({
             'id': md_file.stem,
             'title': frontmatter.get('title', md_file.stem),
             'date': frontmatter.get('date', ''),
-            'categories': frontmatter.get('categories', '').split(','),
-            'tags': frontmatter.get('tags', '').split(','),
+            'categories': categories,
+            'tags': tags,
             'tokens': tokens,
         })
         
@@ -109,17 +128,17 @@ def main():
     
     # 计算 BM25 索引
     print("\n⚙️  计算 BM25 索引...")
-    bm25_index = calculate_bm25(articles)
+    bm25_index = calculate_bm25_index(articles)
     
-    # 构建输出格式
+    # 构建输出格式（前端兼容）
     output = {
-        'articles': [
+        'posts': [
             {
                 'id': art['id'],
                 'title': art['title'],
                 'date': art['date'],
-                'categories': [c.strip() for c in art['categories'] if c.strip()],
-                'tags': [t.strip() for t in art['tags'] if t.strip()],
+                'categories': art['categories'],
+                'tags': art['tags'],
             }
             for art in articles
         ],
@@ -133,7 +152,7 @@ def main():
     
     print(f"\n✅ 索引已保存到：{OUTPUT_FILE}")
     print(f"📦 文件大小：{OUTPUT_FILE.stat().st_size / 1024:.1f} KB")
-    print(f"📈 索引词数：{len(bm25_index)}")
+    print(f"📈 索引词数：{len(bm25_index['idf'])}")
 
 if __name__ == "__main__":
     main()
