@@ -1,0 +1,274 @@
+---
+layout: '../layouts/Base.astro'
+title: '搜索'
+---
+
+<style>
+  .search-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  }
+
+  .search-box {
+    margin-bottom: 30px;
+  }
+
+  .search-input {
+    width: 100%;
+    padding: 15px 20px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: border-color 0.3s;
+  }
+
+  .search-input:focus {
+    outline: none;
+    border-color: #4a90d9;
+  }
+
+  .search-hint {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #888;
+  }
+
+  .results {
+    list-style: none;
+    padding: 0;
+  }
+
+  .result-item {
+    padding: 20px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background: var(--card-bg);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .result-item:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .result-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--link-color);
+    text-decoration: none;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .result-title:hover {
+    text-decoration: underline;
+  }
+
+  .result-score {
+    display: inline-block;
+    padding: 2px 8px;
+    font-size: 12px;
+    background: #4a90d9;
+    color: white;
+    border-radius: 4px;
+    margin-left: 10px;
+  }
+
+  .no-results {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+  }
+
+  .loading {
+    text-align: center;
+    padding: 40px;
+    color: #888;
+  }
+
+  @media (max-width: 768px) {
+    .search-page {
+      padding: 20px 15px;
+    }
+
+    .search-input {
+      font-size: 16px;
+      padding: 12px 15px;
+    }
+  }
+</style>
+
+<div class="search-page">
+  <h1>搜索</h1>
+  
+  <div class="search-box">
+    <input 
+      type="text" 
+      class="search-input" 
+      id="searchInput"
+      placeholder="输入关键词搜索文章..."
+      autofocus
+    />
+    <p class="search-hint">支持中文和英文关键词，例如："越南 旅行"、"博客"、"小米"</p>
+  </div>
+
+  <div id="results">
+    <p class="loading">正在加载搜索索引...</p>
+  </div>
+</div>
+
+<script>
+  // BM25 搜索算法（前端版）
+  class BM25Search {
+    constructor(data) {
+      this.posts = data.posts;
+      this.documents = {};
+      this.docLengths = {};
+      this.avgDocLength = data.index.avg_doc_length;
+      this.idf = data.index.idf;
+      this.k1 = 1.5;
+      this.b = 0.75;
+
+      // 重建文档索引
+      for (const [docId, tokens] of Object.entries(data.index.documents)) {
+        this.documents[docId] = {};
+        for (const [token, count] of Object.entries(tokens)) {
+          this.documents[docId][token] = count;
+        }
+      }
+      this.docLengths = data.index.doc_lengths;
+    }
+
+    tokenize(text) {
+      // 英文单词
+      const words = (text.match(/[a-zA-Z]+/g) || []).map(w => w.toLowerCase());
+      // 中文 2-3 字 n-gram
+      const chinese = [];
+      for (let i = 0; i < text.length - 1; i++) {
+        const char = text[i];
+        if (/[\u4e00-\u9fff]/.test(char)) {
+          chinese.push(text.slice(i, i + 2));
+          if (i < text.length - 2) {
+            chinese.push(text.slice(i, i + 3));
+          }
+        }
+      }
+      return [...words, ...chinese];
+    }
+
+    search(query, topK = 10) {
+      const queryTokens = this.tokenize(query);
+      const scores = {};
+
+      for (const [docId, docTokens] of Object.entries(this.documents)) {
+        let score = 0;
+        const docLen = this.docLengths[docId];
+
+        for (const term of queryTokens) {
+          if (!(term in docTokens)) continue;
+
+          const tf = docTokens[term];
+          const idf = this.idf[term] || 0;
+          const numerator = tf * (this.k1 + 1);
+          const denominator = tf + this.k1 * (1 - this.b + this.b * docLen / this.avgDocLength);
+          score += idf * numerator / denominator;
+        }
+
+        if (score > 0) {
+          scores[docId] = score;
+        }
+      }
+
+      // 排序
+      return Object.entries(scores)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, topK);
+    }
+  }
+
+  let searchEngine = null;
+
+  // 加载索引
+  async function loadIndex() {
+    try {
+      const response = await fetch('/search-index.json');
+      const data = await response.json();
+      searchEngine = new BM25Search(data);
+      document.getElementById('results').innerHTML = '<p class="loading">输入关键词开始搜索</p>';
+    } catch (error) {
+      document.getElementById('results').innerHTML = 
+        '<p class="no-results">加载索引失败，请稍后重试</p>';
+      console.error('Failed to load search index:', error);
+    }
+  }
+
+  // 执行搜索
+  function performSearch(query) {
+    if (!searchEngine || !query.trim()) {
+      document.getElementById('results').innerHTML = '';
+      return;
+    }
+
+    const results = searchEngine.search(query, 20);
+    const resultsDiv = document.getElementById('results');
+
+    if (results.length === 0) {
+      resultsDiv.innerHTML = '<p class="no-results">没有找到相关文章</p>';
+      return;
+    }
+
+    const html = `<ul class="results">
+      ${results.map(([docId, score]) => {
+        const post = searchEngine.posts.find(p => p.id === docId);
+        const title = post ? post.title : docId;
+        return `
+          <li class="result-item">
+            <a href="/post/${docId}" class="result-title">
+              ${escapeHtml(title)}
+              <span class="result-score">${score.toFixed(2)}</span>
+            </a>
+          </li>
+        `;
+      }).join('')}
+    </ul>`;
+
+    resultsDiv.innerHTML = html;
+  }
+
+  // HTML 转义
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
+  }
+
+  // 初始化
+  loadIndex();
+
+  // 搜索输入
+  let debounceTimer;
+  document.getElementById('searchInput').addEventListener('input', (e) => {
+    clearTimeout(debounceTimer);
+    const query = e.target.value.trim();
+    
+    if (!query) {
+      document.getElementById('results').innerHTML = '';
+      return;
+    }
+
+    debounceTimer = setTimeout(() => {
+      performSearch(query);
+    }, 300);
+  });
+
+  // 支持 URL 参数搜索
+  const urlParams = new URLSearchParams(window.location.search);
+  const q = urlParams.get('q');
+  if (q) {
+    document.getElementById('searchInput').value = q;
+    performSearch(q);
+  }
+</script>
