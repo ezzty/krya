@@ -10,7 +10,7 @@ interface Props {
 const { envId = 'https://cm.krya.com/', region = '' } = Astro.props;
 ---
 
-<div class="twikoo-container" id="twikoo"></div>
+<div class="twikoo-container" id="twikoo" data-env-id={envId}></div>
 
 <script is:inline>
   function applyDarkMode() {
@@ -34,6 +34,9 @@ const { envId = 'https://cm.krya.com/', region = '' } = Astro.props;
 
   async function initTwikoo() {
     try {
+      const container = document.getElementById('twikoo');
+      const envId = container?.getAttribute('data-env-id') || 'https://cm.krya.com/';
+      
       const script = document.createElement('script');
       script.src = 'https://s4.zstatic.net/npm/twikoo@1.7.7/dist/twikoo.min.js';
       await new Promise((resolve, reject) => {
@@ -43,7 +46,7 @@ const { envId = 'https://cm.krya.com/', region = '' } = Astro.props;
       });
       
       window.twikoo.init({
-        envId: 'https://cm.krya.com/',
+        envId: envId,
         el: '#twikoo',
         lang: 'zh-CN',
         onCommentLoaded: () => {

@@ -18,7 +18,7 @@ import '../styles/style.css';
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
     <meta name="renderer" content="webkit" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
     
@@ -26,7 +26,7 @@ import '../styles/style.css';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://krya.com" />
+    <meta property="og:url" content={Astro.url.href} />
     
     <!-- Canonical URL (文章页会覆盖) -->
     <link rel="canonical" href={`https://krya.com${Astro.url.pathname}`} />

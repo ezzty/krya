@@ -9,7 +9,7 @@ marked.setOptions({
 });
 
 export async function GET(context) {
-  const posts = await getCollection('posts');
+  const posts = (await getCollection('posts')).filter(post => !post.data.draft);
   
   // 按日期排序，只输出最近 20 篇
   const sortedPosts = posts.sort((a, b) => {

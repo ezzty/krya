@@ -13,10 +13,10 @@ export async function GET() {
 
   const siteUrl = 'https://krya.com';
   
-  // 收集所有分类和标签
+  // 收集所有分类和标签（使用已发布的文章）
   const categorySet = new Set();
   const tagSet = new Set();
-  posts.forEach(post => {
+  publishedPosts.forEach(post => {
     const categories = post.data.categories || [];
     const tags = post.data.tags || [];
     categories.forEach(cat => categorySet.add(cat));
