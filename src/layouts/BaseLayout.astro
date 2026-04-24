@@ -31,6 +31,9 @@ import '../styles/style.css';
     <!-- Canonical URL (文章页会覆盖) -->
     <link rel="canonical" href={`https://krya.com${Astro.url.pathname}`} />
     
+    <!-- 插入额外 head 内容（如 OG meta） -->
+    <slot name="head" />
+    
     <!-- CSS (imported for Vite bundling) -->
     
     <!-- 主题初始化 - 防止暗黑模式闪白 -->
