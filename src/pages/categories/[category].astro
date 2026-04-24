@@ -30,7 +30,7 @@ const posts = allPosts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
-<BaseLayout title={`分类：${decodedCategory} | 浮生百记`}>
+<BaseLayout title={`分类：${decodedCategory} | krya`}>
   <NavBar slot="header" />
   <div class="container">
     <div class="col-mb-12">
@@ -40,7 +40,7 @@ const posts = allPosts
           {posts.map(post => (
             <article class="post-item">
               <h2 class="post-title-small">
-                <a href={`/post/${post.id.replace('.md', '')}`}>{post.data.title}</a>
+                <a href={`/post/${post.id.replace(/\.[^.]+$/, '')}`}>{post.data.title}</a>
               </h2>
               <div class="post-meta">
                 <span>{new Date(post.data.pubDate).toISOString().split('T')[0]}</span>

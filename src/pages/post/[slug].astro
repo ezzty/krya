@@ -2,25 +2,27 @@
 import PostLayout from '../../layouts/PostLayout.astro';
 import Twikoo from '../../components/Twikoo.astro';
 import { getEntry, render, getCollection } from 'astro:content';
-import { countWords, stripMarkdown } from '../../lib/utils';
+import { countWords, stripMarkdown, extractFirstImage, processThumbnailUrl } from '../../lib/utils';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('posts')).filter(post => !post.data.draft);
   
   return posts.map((post) => ({
-    params: {
-      slug: post.id.replace('.md', ''),
-    },
+      params: {
+        slug: post.id.replace(/\.[^.]+$/, ''),
+      },
     props: {
       postId: post.id,
       wordCount: countWords(post.body || ''),
       // 混合方案：优先使用 frontmatter 中的 description，没有则自动提取
       description: post.data.description || stripMarkdown(post.body || '').slice(0, 150),
+      // 缩略图用于 og:image
+      thumbnail: processThumbnailUrl(post.data.thumbnail || extractFirstImage(post.body || '')) || undefined,
     },
   }));
 }
 
-const { postId, wordCount, description } = Astro.props;
+const { postId, wordCount, description, thumbnail } = Astro.props;
 const post = await getEntry('posts', postId);
 const { Content } = await render(post);
 ---
@@ -33,6 +35,7 @@ const { Content } = await render(post);
   wordCount={wordCount}
   tags={post.data.tags || []}
   categories={post.data.categories || []}
+  thumbnail={thumbnail}
 >
   <Content />
   <Twikoo slot="comments" />

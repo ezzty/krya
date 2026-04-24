@@ -11,15 +11,20 @@ interface Props {
   wordCount?: number;
   tags?: string[];
   categories?: string[];
+  thumbnail?: string;
 }
 
-const { title, description, author, pubDate, wordCount = 0, tags = [], categories = [] } = Astro.props;
+const { title, description, author, pubDate, wordCount = 0, tags = [], categories = [], thumbnail } = Astro.props;
+
+// 处理 og:image URL
+const ogImage = thumbnail || 'https://krya.com/og-image.png';
 ---
 
 <BaseLayout title={title} description={description || 'Jin 的个人博客'}>
   <NavBar slot="header" />
   
   <!-- 文章页 SEO 元数据 - 放在 head 中 -->
+  <meta slot="head" property="og:image" content={ogImage} />
   <meta slot="head" property="og:type" content="article" />
   <meta slot="head" property="article:published_time" content={pubDate} />
   {tags.length > 0 && (

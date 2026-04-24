@@ -38,7 +38,7 @@ posts.sort((a, b) => {
               {posts.map((post) => (
                 <li>
                   <span class="archive-date">{formatDate(post.data.pubDate.toISOString())}</span>
-                  <a href={`/post/${post.id.replace('.md', '')}`}>{post.data.title}</a>
+                  <a href={`/post/${post.id.replace(/\.[^.]+$/, '')}`}>{post.data.title}</a>
                 </li>
               ))}
             </ul>

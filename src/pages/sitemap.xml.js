@@ -74,9 +74,23 @@ export async function GET() {
       changefreq: 'weekly',
       priority: 0.6,
     })),
+    // 搜索页
+    {
+      loc: `${siteUrl}/search`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'monthly',
+      priority: 0.5,
+    },
+    // 分页页面
+    ...Array.from({ length: Math.max(0, Math.ceil(publishedPosts.length / 8) - 1) }, (_, i) => ({
+      loc: `${siteUrl}/p/${i + 2}`,
+      lastmod: new Date().toISOString(),
+      changefreq: 'weekly',
+      priority: 0.5,
+    })),
     // 所有文章
     ...publishedPosts.map(post => ({
-      loc: `${siteUrl}/post/${post.id.replace('.md', '')}`,
+      loc: `${siteUrl}/post/${post.id.replace(/\.[^.]+$/, '')}`,
       lastmod: new Date(post.data.pubDate).toISOString(),
       changefreq: 'weekly',
       priority: 0.6,

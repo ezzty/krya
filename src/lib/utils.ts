@@ -147,7 +147,7 @@ export function formatPosts(posts: any[], pageSize: number, page: number = 1): F
     
     return {
       title: post.data.title,
-      slug: post.id.replace('.md', ''),
+      slug: post.id.replace(/\.[^.]+$/, ''),
       author: post.data.author || 'Jin',
       pubDate: post.data.pubDate.toISOString(),
       wordCount,
