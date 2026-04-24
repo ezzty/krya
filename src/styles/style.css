@@ -638,3 +638,48 @@ html[data-theme="dark"] .archive-list a {
 html[data-theme="dark"] .archive-list a:hover {
   color: #bbb;
 }
+
+/* 表格样式 */
+.post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5em 0;
+  font-size: 0.95em;
+}
+
+.post table th,
+.post table td {
+  padding: 0.6em 1em;
+  border: 1px solid #e5e5e5;
+  text-align: left;
+}
+
+.post table th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
+
+.post table tr:nth-child(even) {
+  background: #fafafa;
+}
+
+.post table tr:hover {
+  background: #f0f0f0;
+}
+
+html[data-theme="dark"] .post table th,
+html[data-theme="dark"] .post table td {
+  border-color: #3b3b3b;
+}
+
+html[data-theme="dark"] .post table th {
+  background: #1a1a2e;
+}
+
+html[data-theme="dark"] .post table tr:nth-child(even) {
+  background: #12121f;
+}
+
+html[data-theme="dark"] .post table tr:hover {
+  background: #1a1a2e;
+}
