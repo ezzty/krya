@@ -251,6 +251,15 @@ textarea {
 
 #footer .footer-social {
   margin-top: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.3em;
+}
+
+#footer .footer-divider {
+  color: #999;
+  user-select: none;
 }
 
 #footer .social-link {
