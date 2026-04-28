@@ -1,4 +1,4 @@
-# Astro Sintu Theme
+# KRYA - jin的个人博客
 
 一个简洁的 Astro 博客主题，作者原创设计。
 
