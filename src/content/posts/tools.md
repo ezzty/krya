@@ -19,8 +19,7 @@ tags:
 
 故事要从一个图床说起。
 
-![hot-20269-948.avif](https://user0102.cn.imgto.link/public/20260429/hot-20269-948.avif)
-
+![948.avif](https://user0102.cn.imgto.link/public/20260429/948.avif)
 ### 从图床开始
 
 我自己写博客，有时候会用到 Markdown 去插入图片。每次用别人的图床，担忧很多；用自己的阿里云OSS 客户端，又觉得上传方式太过繁琐；始终没有Web方案信手拈来的爽快。
