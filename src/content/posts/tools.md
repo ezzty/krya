@@ -19,7 +19,7 @@ tags:
 
 故事要从一个图床说起。
 
-![](https://i.frc.cc/img/m/20260429/hot_20269_948.png)
+![hot-20269-948.avif](https://user0102.cn.imgto.link/public/20260429/hot-20269-948.avif)
 
 ### 从图床开始
 
