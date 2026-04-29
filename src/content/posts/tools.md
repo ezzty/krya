@@ -1,5 +1,5 @@
 ---
-title: 有了Ai，出门再也不用担心门没关了
+title: 有了Ai，出门都不用担心忘了关门
 pubDate: 2026-04-29
 author: jin
 draft: false
