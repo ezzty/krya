@@ -24,7 +24,7 @@ function normalizePubDate(date) {
       const year = date.getUTCFullYear();
       const month = date.getUTCMonth();
       const day = date.getUTCDate();
-      return new Date(Date.UTC(year, month, day, 4, 0, 0)); // UTC 04:00 = 北京时间 12:00
+      return new Date(Date.UTC(year, month, day, 8, 0, 0)); // UTC 08:00 = 北京时间 16:00
     }
     
     // 如果已经有时间信息，直接返回
