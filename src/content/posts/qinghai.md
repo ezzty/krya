@@ -4,7 +4,7 @@ pubDate: 2017-10-08
 author: jin
 draft: false
 categories:
-  - 旅行
+  - 旅游
 tags:
   - 青海湖
   - 成都青海湖
