@@ -524,6 +524,11 @@ html[data-theme="dark"] .post-content hr {
   color: #fff;
 }
 
+.category-item:hover .category-count,
+.tag-item:hover .tag-count {
+  background-color: transparent;
+}
+
 .category-name,
 .tag-name {
   color: var(--heading-color);
@@ -535,11 +540,12 @@ html[data-theme="dark"] .post-content hr {
 .tag-count {
   color: var(--text-muted);
   font-size: 0.85em;
-  background-color: #eee;
+  background-color: var(--border-color);
   padding: 2px 8px;
   border-radius: 12px;
   min-width: 24px;
   text-align: center;
+  transition: all 0.2s ease;
 }
 
 .no-items {
@@ -604,7 +610,7 @@ html[data-theme="dark"] .tag-name {
 
 html[data-theme="dark"] .category-count,
 html[data-theme="dark"] .tag-count {
-  background-color: #3a3a3a;
+  background-color: var(--border-color);
   color: var(--text-muted);
 }
 
