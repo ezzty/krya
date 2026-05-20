@@ -28,7 +28,7 @@ export function formatDate(date: string | Date): string {
 }
 
 // 截取摘要（减少 4 个字符）
-export function truncateExcerpt(excerpt: string, length: number = 116): string {
+export function truncateExcerpt(excerpt: string, length: number = 90): string {
   if (!excerpt) return '';
   return excerpt.slice(0, length);
 }
@@ -147,7 +147,7 @@ export function formatPosts(posts: any[], pageSize: number, page: number = 1): F
       author: post.data.author || 'Jin',
       pubDate: post.data.pubDate.toISOString(),
       wordCount,
-      excerpt: post.data.description || plainText.slice(0, 116),
+      excerpt: post.data.description || plainText.slice(0, 90),
       thumbnail,
     };
   });
