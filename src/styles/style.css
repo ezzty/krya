@@ -9,17 +9,34 @@
 :root {
   --bg-color: #fff;
   --text-color: #444;
+  --text-muted: #999;
+  --text-secondary: #666;
   --card-bg: #f8f8f8;
   --link-color: #3354AA;
+  --heading-color: #4d4d4d;
+  --border-color: #eee;
+  --border-light: #efefef;
+  --header-bg: #f9f9f9;
+  --code-color: #3354AA;
+  --blockquote-border: #F3F3F0;
+  --footer-color: #999;
 }
 
 html[data-theme="dark"] {
   --bg-color: #252525;
   --text-color: #e0e0e0;
+  --text-muted: #999;
+  --text-secondary: #aaa;
   --card-bg: #2a2a2a;
   --link-color: #6b9eff;
+  --heading-color: #e0e0e0;
+  --border-color: #3a3a3a;
+  --border-light: #3a3a3a;
+  --header-bg: #1a1a1a;
+  --code-color: #6b9eff;
+  --blockquote-border: #3a3a3a;
+  --footer-color: #888;
 }
-
 /* -----------------------------------------------------
    Base Styles
    ----------------------------------------------------- */
@@ -28,8 +45,8 @@ html[data-theme="dark"] {
 }
 
 body {
-  background-color: #fff;
-  color: #444;
+  background-color: var(--bg-color);
+  color: var(--text-color);
   font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Noto Sans CJK Regular", sans-serif;
   font-size: 100%;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -38,17 +55,17 @@ body {
 }
 
 a {
-  color: #3354AA;
+  color: var(--link-color);
   text-decoration: none;
 }
 
 a:hover, a:active {
-  color: #444;
+  color: var(--text-color);
 }
 
 /* 作者链接颜色与"作者"文字一致 */
 .post-meta a {
-  color: #999;
+  color: var(--text-muted);
 }
 
 pre, code {
@@ -59,7 +76,7 @@ pre, code {
 }
 
 code {
-  color: #3354AA;
+  color: var(--link-color);
 }
 
 pre {
@@ -71,19 +88,19 @@ pre {
 
 pre code {
   padding: 0;
-  color: #444;
+  color: var(--text-color);
   background: none;
 }
 
 blockquote {
   margin: 1em 1em;
   padding-left: 1.5em;
-  border-left: 2px solid #F3F3F0;
+  border-left: 2px solid var(--blockquote-border);
 }
 
 input[type="text"], input[type="email"], input[type="url"], input[type="password"], textarea {
   padding: 5px;
-  border: 1px solid #E9E9E9;
+  border: 1px solid var(--border-color);
   width: 100%;
   border-radius: 2px;
   box-sizing: border-box;
@@ -105,8 +122,8 @@ textarea {
   left: 0;
   width: 100%;
   height: 60px;
-  background-color: #f9f9f9;
-  border-bottom: 1px solid #efefef;
+  background-color: var(--header-bg);
+  border-bottom: 1px solid var(--border-light);
   transform: translateZ(0);
   will-change: transform;
   transition: transform 0.3s ease;
@@ -133,7 +150,7 @@ textarea {
 
 .post {
   padding: 15px 0 25px;
-  border-bottom: 1px solid #EEE;
+  border-bottom: 1px solid var(--border-color);
 }
 
 @media (min-width: 800px) {
@@ -163,14 +180,14 @@ textarea {
 }
 
 .post-title a {
-  color: #4d4d4d;
+  color: var(--heading-color);
 }
 
 .post-meta {
   text-align: left;
   padding: 0;
   margin: 0.3em 0;
-  color: #999;
+  color: var(--text-muted);
   font-size: 1em;
   list-style: none;
 }
@@ -179,7 +196,7 @@ textarea {
   display: inline-block;
   margin: 0 8px 0 0;
   padding-left: 12px;
-  border-left: 1px solid #EEE;
+  border-left: 1px solid var(--border-color);
 }
 
 .post-meta li:first-child {
@@ -204,7 +221,7 @@ textarea {
 
 .post .tags {
   clear: both;
-  color: #999;
+  color: var(--text-muted);
   font-size: 0.8em;
 }
 
@@ -217,7 +234,7 @@ textarea {
 .post-content hr {
   margin: 2em auto;
   width: 100px;
-  border: 1px solid #E9E9E9;
+  border: 1px solid var(--border-color);
   border-width: 2px 0 0 0;
 }
 
@@ -245,7 +262,7 @@ textarea {
   padding: 3em 0;
   line-height: 1.5;
   text-align: center;
-  color: #999;
+  color: var(--text-muted);
   clear: both;
 }
 
@@ -257,18 +274,18 @@ textarea {
 }
 
 #footer .footer-divider {
-  color: #999;
+  color: var(--text-muted);
   user-select: none;
 }
 
 #footer .social-link {
   display: inline-block;
-  color: #999;
+  color: var(--text-muted);
   transition: color 0.2s ease;
 }
 
 #footer .social-link:hover {
-  color: #3354AA;
+  color: var(--link-color);
 }
 
 .footer-link {
@@ -288,8 +305,8 @@ textarea {
 }
 
 html[data-theme="dark"] body {
-  background-color: #252525;
-  color: #e0e0e0;
+  background-color: var(--bg-color);
+  color: var(--text-color);
 }
 
 /* 暗黑模式下 Logo 颜色与正文一致 */
@@ -317,7 +334,7 @@ html[data-theme="dark"] code {
 }
 
 html[data-theme="dark"] pre code {
-  color: #e0e0e0;
+  color: var(--text-color);
 }
 
 html[data-theme="dark"] blockquote {
@@ -329,30 +346,30 @@ html[data-theme="dark"] input[type="email"],
 html[data-theme="dark"] input[type="url"],
 html[data-theme="dark"] input[type="password"],
 html[data-theme="dark"] textarea {
-  background-color: #2a2a2a;
-  border-color: #3a3a3a;
-  color: #e0e0e0;
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
+  color: var(--text-color);
 }
 
 html[data-theme="dark"] .cd-auto-hide-header {
-  background-color: #1a1a1a;
-  border-bottom-color: #3a3a3a;
+  background-color: var(--header-bg);
+  border-bottom-color: var(--border-color);
 }
 
 html[data-theme="dark"] .post {
-  border-bottom-color: #3a3a3a;
+  border-bottom-color: var(--border-color);
 }
 
 html[data-theme="dark"] .post-title a {
-  color: #e0e0e0;
+  color: var(--text-color);
 }
 
 html[data-theme="dark"] .post-meta {
-  color: #999;
+  color: var(--text-muted);
 }
 
 html[data-theme="dark"] .post-meta a {
-  color: #999;
+  color: var(--text-muted);
 }
 
 html[data-theme="dark"] .post-meta li {
@@ -364,15 +381,15 @@ html[data-theme="dark"] .post-content {
 }
 
 html[data-theme="dark"] #footer {
-  color: #888;
+  color: var(--footer-color);
 }
 
 html[data-theme="dark"] #footer .footer-link {
-  color: #888;
+  color: var(--footer-color);
 }
 
 html[data-theme="dark"] #footer .social-link {
-  color: #888;
+  color: var(--footer-color);
 }
 
 html[data-theme="dark"] #footer .social-link:hover {
@@ -380,7 +397,7 @@ html[data-theme="dark"] #footer .social-link:hover {
 }
 
 html[data-theme="dark"] .post-content hr {
-  border-color: #3a3a3a;
+  border-color: var(--border-color);
 }
 
 /* -----------------------------------------------------
@@ -435,7 +452,7 @@ html[data-theme="dark"] .post-content hr {
   
   /* 作者链接颜色与"作者"文字一致 */
   .post-meta a {
-    color: #999;
+    color: var(--text-muted);
   }
 }
 
@@ -475,17 +492,17 @@ html[data-theme="dark"] .post-content hr {
   align-items: center;
   gap: 8px;
   padding: 10px 16px;
-  background-color: #f8f8f8;
+  background-color: var(--card-bg);
   border-radius: 8px;
   text-decoration: none !important;
   transition: all 0.2s ease;
-  border: 1px solid #eee;
+  border: 1px solid var(--border-color);
 }
 
 .category-item:hover,
 .tag-item:hover {
-  background-color: #3354AA;
-  border-color: #3354AA;
+  background-color: var(--link-color);
+  border-color: var(--link-color);
 }
 
 .category-item:hover .category-name,
@@ -497,14 +514,14 @@ html[data-theme="dark"] .post-content hr {
 
 .category-name,
 .tag-name {
-  color: #4d4d4d;
+  color: var(--heading-color);
   font-size: 1em;
   font-weight: 500;
 }
 
 .category-count,
 .tag-count {
-  color: #999;
+  color: var(--text-muted);
   font-size: 0.85em;
   background-color: #eee;
   padding: 2px 8px;
@@ -514,7 +531,7 @@ html[data-theme="dark"] .post-content hr {
 }
 
 .no-items {
-  color: #999;
+  color: var(--text-muted);
   font-size: 1em;
   padding: 40px 0;
   text-align: center;
@@ -525,7 +542,7 @@ html[data-theme="dark"] .post-content hr {
 .tags-title {
   margin: 30px 0 20px;
   font-size: 1.5em;
-  color: #4d4d4d;
+  color: var(--heading-color);
 }
 
 /* 文章列表（分类/标签详情页） */
@@ -535,7 +552,7 @@ html[data-theme="dark"] .post-content hr {
 
 .post-item {
   padding: 15px 0;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .post-item:last-child {
@@ -548,49 +565,49 @@ html[data-theme="dark"] .post-content hr {
 }
 
 .post-title-small a {
-  color: #4d4d4d;
+  color: var(--heading-color);
   text-decoration: none !important;
 }
 
 .post-title-small a:hover {
-  color: #3354AA;
+  color: var(--link-color);
 }
 
 /* 暗黑模式 */
 html[data-theme="dark"] .categories-title,
 html[data-theme="dark"] .tags-title {
-  color: #e0e0e0;
+  color: var(--text-color);
 }
 
 html[data-theme="dark"] .category-item,
 html[data-theme="dark"] .tag-item {
-  background-color: #2a2a2a;
-  border-color: #3a3a3a;
+  background-color: var(--card-bg);
+  border-color: var(--border-color);
 }
 
 html[data-theme="dark"] .category-name,
 html[data-theme="dark"] .tag-name {
-  color: #e0e0e0;
+  color: var(--text-color);
 }
 
 html[data-theme="dark"] .category-count,
 html[data-theme="dark"] .tag-count {
   background-color: #3a3a3a;
-  color: #999;
+  color: var(--text-muted);
 }
 
 html[data-theme="dark"] .category-item:hover,
 html[data-theme="dark"] .tag-item:hover {
-  background-color: #3354AA;
-  border-color: #3354AA;
+  background-color: var(--link-color);
+  border-color: var(--link-color);
 }
 
 html[data-theme="dark"] .post-item {
-  border-bottom-color: #3a3a3a;
+  border-bottom-color: var(--border-color);
 }
 
 html[data-theme="dark"] .post-title-small a {
-  color: #e0e0e0;
+  color: var(--text-color);
 }
 
 html[data-theme="dark"] .post-title-small a:hover {
@@ -604,14 +621,14 @@ html[data-theme="dark"] .post-title-small a:hover {
 
 .archive-year {
   font-size: 1.2em;
-  color: #999;
+  color: var(--text-muted);
   margin-bottom: 0.5em;
   padding-bottom: 0.3em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
 }
 
 html[data-theme="dark"] .archive-year {
-  border-bottom-color: #3b3b3b;
+  border-bottom-color: var(--border-color);
 }
 
 .archive-list {
@@ -626,13 +643,13 @@ html[data-theme="dark"] .archive-year {
 }
 
 .archive-date {
-  color: #999;
+  color: var(--text-muted);
   font-size: 0.9em;
   min-width: 100px;
 }
 
 .archive-list a {
-  color: #444;
+  color: var(--text-color);
 }
 
 .archive-list a:hover {
@@ -640,7 +657,7 @@ html[data-theme="dark"] .archive-year {
 }
 
 html[data-theme="dark"] .archive-list a {
-  color: #999;
+  color: var(--text-muted);
 }
 
 html[data-theme="dark"] .archive-list a:hover {
@@ -663,31 +680,31 @@ html[data-theme="dark"] .archive-list a:hover {
 }
 
 .post table th {
-  background: #f7f7f7;
+  background: var(--card-bg);
   font-weight: 600;
 }
 
 .post table tr:nth-child(even) {
-  background: #fafafa;
+  background: var(--card-bg);
 }
 
 .post table tr:hover {
-  background: #f0f0f0;
+  background: var(--card-bg);
 }
 
 html[data-theme="dark"] .post table th,
 html[data-theme="dark"] .post table td {
-  border-color: #3b3b3b;
+  border-color: var(--border-color);
 }
 
 html[data-theme="dark"] .post table th {
-  background: #1a1a2e;
+  background: var(--card-bg);
 }
 
 html[data-theme="dark"] .post table tr:nth-child(even) {
-  background: #12121f;
+  background: var(--card-bg);
 }
 
 html[data-theme="dark"] .post table tr:hover {
-  background: #1a1a2e;
+  background: var(--card-bg);
 }
