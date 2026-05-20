@@ -70,26 +70,26 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
         <ul class="page-list">
           {/* 上一页 */}
           {currentPage > 1 && (
-            <li class="page-item">
+            <li class="page-item page-nav">
               <a href={currentPage === 2 ? '/' : `/p/${currentPage - 1}`} class="page-link">&laquo;</a>
             </li>
           )}
           
           {/* 页码列表 */}
-          {pageNumbers.map((page) => (
-            <li class="page-item">
+          <li class="page-numbers">
+            {pageNumbers.map((page) => (
               <a 
                 href={page === 1 ? '/' : `/p/${page}`} 
                 class={`page-link ${page === currentPage ? 'active' : ''}`}
               >
                 {page}
               </a>
-            </li>
-          ))}
+            ))}
+          </li>
           
           {/* 下一页 */}
           {currentPage < totalPages && (
-            <li class="page-item">
+            <li class="page-item page-nav">
               <a href={`/p/${currentPage + 1}`} class="page-link">&raquo;</a>
             </li>
           )}
@@ -143,6 +143,12 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
     padding: 0;
     margin: 0;
     display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .page-numbers {
+    display: flex;
     gap: 8px;
   }
   
@@ -198,10 +204,5 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
     font-weight: 700;
   }
   
-  /* 移动端：最多显示 3 个页码，隐藏第 4 个及以后 */
-  @media (max-width: 767px) {
-    .page-list .page-item:nth-child(n+4) {
-      display: none;
-    }
-  }
+
 </style>
