@@ -21,12 +21,10 @@ export function extractFirstImage(content: string): string | null {
   return null;
 }
 
-// 格式化日期：2026-04-18 或 2026-04-18 14:30
+// 格式化日期：2026-04-18（只显示日期）
 export function formatDate(date: string | Date): string {
   const d = typeof date === 'string' ? new Date(date) : date;
-  const dateStr = d.toISOString().split('T')[0];
-  const timeStr = d.toISOString().split('T')[1]?.substring(0, 5);
-  return timeStr && timeStr !== '00:00' ? `${dateStr} ${timeStr}` : dateStr;
+  return d.toISOString().split('T')[0];
 }
 
 // 截取摘要（减少 4 个字符）
