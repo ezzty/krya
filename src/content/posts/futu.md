@@ -10,8 +10,9 @@ tags:
   - 港股开户
   - 投资避坑
   - 盈透证券
+author: jin
 ---
-![image](https://i.frc.cc/img/m/20260523/fe4972.png)
+![image](https://i.frc.cc/img/m/20260523/d78921.png)
 
 2020年我开了美国华美银行账户，但是这个账户的维护成本过于高昂，后来就关闭了。
 
