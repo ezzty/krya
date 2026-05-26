@@ -7,16 +7,6 @@ categories:
 tags: []
 draft: false
 ---
-
-
-![image](https://i0.wp.com/farm7.staticflickr.com/6158/6210024524_42ed367f19.jpg)
-
-![image](https://i0.wp.com/farm7.staticflickr.com/6222/6209496141_06f28fc166.jpg)
-
-![image](https://i0.wp.com/farm7.staticflickr.com/6179/6209510407_8c1e2b560f.jpg)
-
-![image](https://i0.wp.com/farm7.staticflickr.com/6099/6210029274_2bdf083322.jpg)
-
 我表弟也是一个闲的蛋疼的人，每到月末最后一天他就开始四处散播问候和祝福。这次放国庆前一天他给我打电话说他在西昌，因为舅舅在那里投了一个工程，于是他被下放到这里跟着做点事情，至少比天天在家里玩天龙八部强得多。在我正犹豫国庆到哪里玩的时候，这个消息来得恰到好处，再没有比出门闲逛住不花钱吃不花钱更爽的事情了。
 
 班上同学原计划国庆骑游二滩，我也想去，便求他们十一行动，响应者寥寥。于是我十一下午我就去了西昌。
