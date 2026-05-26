@@ -1,9 +1,9 @@
 ---
 title: 西昌小略
-pubDate: '2011-10-06'
+pubDate: 2011-10-06
 author: jin
 categories:
-- 生活
+  - 旅游
 tags: []
 draft: false
 ---

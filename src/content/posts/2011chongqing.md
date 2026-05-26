@@ -1,9 +1,9 @@
 ---
 title: 解放碑上的劳力士——重庆
-pubDate: '2011-09-06'
+pubDate: 2011-09-06
 author: jin
 categories:
-- 生活
+  - 旅游
 tags: []
 draft: false
 ---

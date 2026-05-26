@@ -3,7 +3,7 @@ title: 滇西行记：丽江
 pubDate: 2012-10-14
 author: jin
 categories:
-  - 生活
+  - 旅游
 tags: []
 draft: false
 ---
