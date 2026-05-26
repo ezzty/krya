@@ -3,7 +3,7 @@ title: 解放碑上的劳力士——重庆
 pubDate: '2011-09-06'
 author: jin
 categories:
-- 随笔
+- 生活
 tags: []
 draft: false
 ---

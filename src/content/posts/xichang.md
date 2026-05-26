@@ -3,7 +3,7 @@ title: 西昌小略
 pubDate: '2011-10-06'
 author: jin
 categories:
-- 随笔
+- 生活
 tags: []
 draft: false
 ---

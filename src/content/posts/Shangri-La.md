@@ -3,7 +3,7 @@ title: 滇西行记：香格里拉——德钦
 pubDate: '2012-10-13'
 author: jin
 categories:
-- 随笔
+- 生活
 tags: []
 draft: false
 ---
