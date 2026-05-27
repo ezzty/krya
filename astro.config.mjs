@@ -6,12 +6,6 @@ export default defineConfig({
   output: 'static',
   compressHTML: true,
   markdown: {
-    remarkPlugins: [
-      // 尝试使用 remark 插件
-    ],
-    rehypePlugins: [
-      // 尝试使用 rehype 插件
-    ],
     shikiConfig: {
       theme: 'dark-plus',
     },
