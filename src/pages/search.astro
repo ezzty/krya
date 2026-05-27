@@ -21,47 +21,174 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding-bottom: 40px;
   }
 
-  /* Pagefind UI 样式覆盖 */
-  :global(.pagefind-ui) {
-    --pagefind-ui-scale: 1;
-    --pagefind-ui-primary: #3354aa;
-    --pagefind-ui-text: var(--text-color, #444);
-    --pagefind-ui-background: var(--bg-color, #fff);
-    --pagefind-ui-border: var(--border-color, #eee);
-    --pagefind-ui-tag: var(--card-bg, #f8f8f8);
-    --pagefind-ui-border-width: 1px;
-    --pagefind-ui-border-radius: 8px;
-  }
-
-  :global(.pagefind-ui .pagefind-ui__search-input) {
-    font-size: 16px;
-    padding: 12px 16px;
-  }
-
-  :global(.pagefind-ui .pagefind-ui__result-title) {
-    font-size: 1.1em;
-  }
-
-  :global(.pagefind-ui .pagefind-ui__result-excerpt) {
-    font-size: 0.95em;
-    line-height: 1.6;
-  }
-
-  /* 暗黑模式 */
-  :global(html[data-theme="dark"] .pagefind-ui) {
-    --pagefind-ui-text: #e0e0e0;
-    --pagefind-ui-background: #252525;
-    --pagefind-ui-border: #3a3a3a;
-    --pagefind-ui-tag: #2a2a2a;
-    --pagefind-ui-primary: #5a8bff;
-  }
-
   @media (max-width: 768px) {
     .search-page {
       padding-top: 80px;
       padding-left: 15px;
       padding-right: 15px;
     }
+  }
+</style>
+
+<style is:inline>
+  /* Pagefind UI - 匹配博客风格 */
+  
+  /* 搜索容器 */
+  .pagefind-ui {
+    --pagefind-ui-scale: 1;
+    --pagefind-ui-primary: var(--link-color, #3354aa);
+    --pagefind-ui-text: var(--text-color, #444);
+    --pagefind-ui-background: transparent;
+    --pagefind-ui-border: var(--border-color, #eee);
+    --pagefind-ui-tag: var(--card-bg, #f8f8f8);
+    --pagefind-ui-border-width: 0;
+    --pagefind-ui-border-radius: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Noto Sans CJK Regular", sans-serif;
+  }
+
+  /* 搜索输入框 - 参考博客风格 */
+  .pagefind-ui .pagefind-ui__search-input {
+    font-size: 16px;
+    padding: 12px 16px;
+    width: 100%;
+    border: 2px solid var(--border-color, #ddd);
+    border-radius: 8px;
+    background: var(--bg-color, #fff);
+    color: var(--text-color, #444);
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+  }
+
+  .pagefind-ui .pagefind-ui__search-input:focus {
+    outline: none;
+    border-color: var(--link-color, #4a90d9);
+  }
+
+  .pagefind-ui .pagefind-ui__search-input::placeholder {
+    color: var(--text-muted, #999);
+  }
+
+  /* 清除按钮 */
+  .pagefind-ui .pagefind-ui__search-clear {
+    display: none;
+  }
+
+  /* 搜索结果计数 */
+  .pagefind-ui .pagefind-ui__results-message {
+    font-size: 14px;
+    color: var(--text-muted, #999);
+    padding: 20px 0 10px;
+    border: none;
+  }
+
+  /* 结果列表 */
+  .pagefind-ui .pagefind-ui__results {
+    padding: 0;
+    list-style: none;
+  }
+
+  /* 单个结果项 - 参考 .post 样式 */
+  .pagefind-ui .pagefind-ui__result {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-color, #eee);
+    margin: 0;
+    background: transparent;
+  }
+
+  .pagefind-ui .pagefind-ui__result:last-child {
+    border-bottom: none;
+  }
+
+  /* 结果标题 */
+  .pagefind-ui .pagefind-ui__result-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    margin: 0 0 8px;
+  }
+
+  .pagefind-ui .pagefind-ui__result-title a {
+    color: var(--heading-color, #4d4d4d);
+    text-decoration: none;
+    border-bottom: none;
+  }
+
+  .pagefind-ui .pagefind-ui__result-title a:hover {
+    color: var(--link-color, #3354aa);
+  }
+
+  /* 结果摘要 */
+  .pagefind-ui .pagefind-ui__result-excerpt {
+    font-size: 0.95em;
+    line-height: 1.8;
+    color: var(--text-secondary, #666);
+    margin: 0;
+    overflow-wrap: break-word;
+  }
+
+  /* 搜索高亮 */
+  .pagefind-ui .pagefind-ui__result-excerpt mark,
+  .pagefind-ui mark {
+    background-color: transparent;
+    color: var(--link-color, #3354aa);
+    font-weight: 600;
+    padding: 0;
+  }
+
+  /* 子结果 */
+  .pagefind-ui .pagefind-ui__result-nested {
+    padding-left: 16px;
+    border-left: 2px solid var(--border-color, #eee);
+    margin-top: 12px;
+  }
+
+  /* 隐藏不需要的元素 */
+  .pagefind-ui .pagefind-ui__result-link {
+    border-bottom: none;
+    text-decoration: none;
+  }
+
+  .pagefind-ui .pagefind-ui__search-clear {
+    display: none;
+  }
+
+  /* 暗黑模式 */
+  html[data-theme="dark"] .pagefind-ui {
+    --pagefind-ui-text: #e0e0e0;
+    --pagefind-ui-background: transparent;
+    --pagefind-ui-border: #3a3a3a;
+    --pagefind-ui-tag: #2a2a2a;
+    --pagefind-ui-primary: #5a8bff;
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__search-input {
+    background: var(--bg-color, #252525);
+    border-color: var(--border-color, #3a3a3a);
+    color: #e0e0e0;
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__search-input:focus {
+    border-color: var(--link-color, #5a8bff);
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__result-title a {
+    color: var(--text-color, #e0e0e0);
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__result-title a:hover {
+    color: #5a8bff;
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__result-excerpt {
+    color: #aaa;
+  }
+
+  html[data-theme="dark"] .pagefind-ui mark {
+    color: #5a8bff;
+  }
+
+  html[data-theme="dark"] .pagefind-ui .pagefind-ui__result-nested {
+    border-left-color: #3a3a3a;
   }
 </style>
 
@@ -80,7 +207,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       new PagefindUI({ 
         element: '#search',
         showSubResults: true,
-        showImages: false
+        showImages: false,
+        resetStyles: false
       });
     };
     document.body.appendChild(script);
