@@ -31,8 +31,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 </style>
 
 <style is:inline>
-  /* Pagefind UI - 匹配博客风格 */
-  
+  /* Pagefind UI - 匹配博客 style.css 风格 */
+
   /* 搜索容器 */
   .pagefind-ui {
     --pagefind-ui-scale: 1;
@@ -46,10 +46,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Noto Sans CJK Regular", sans-serif;
   }
 
-  /* 搜索输入框 - 匹配 category-list 标签高度 */
+  /* 搜索输入框 - 高度匹配 category-item */
   .pagefind-ui .pagefind-ui__search-input {
-    padding: 10px 16px;
+    height: auto;
+    padding: 8px 16px 8px 36px;
     font-size: 1em;
+    font-weight: 400;
     width: 100%;
     border: 1px solid var(--border-color, #ddd);
     border-radius: 8px;
@@ -66,6 +68,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
   .pagefind-ui .pagefind-ui__search-input::placeholder {
     color: var(--text-muted, #999);
+  }
+
+  /* 搜索图标 - 垂直居中 */
+  .pagefind-ui .pagefind-ui__form::before {
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
   }
 
   /* 清除按钮 */
@@ -142,7 +151,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-top: 12px;
   }
 
-  /* 隐藏不需要的元素 */
+  /* 去掉链接下划线 */
   .pagefind-ui .pagefind-ui__result-link {
     border-bottom: none;
     text-decoration: none;
