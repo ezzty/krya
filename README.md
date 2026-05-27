@@ -4,7 +4,7 @@
 
 ## 特性
 
-- 🚀 基于 Astro 5.x，性能优异
+- 🚀 基于 Astro 6.x，性能优异
 - 🌙 暗黑模式支持
 - 📱 响应式设计，移动端优化
 - 🎨 简洁优雅的设计风格
@@ -30,7 +30,7 @@ npm run preview
 
 ### 网站信息
 
-编辑 `astro.config.mjs` 或 `src/config.ts` 修改：
+编辑 `astro.config.mjs` 修改：
 
 - 网站标题
 - 网站描述

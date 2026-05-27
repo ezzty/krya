@@ -100,6 +100,21 @@ export function countWords(content: string): number {
 }
 
 // 格式化文章列表
+export interface PostData {
+  title: string;
+  pubDate: Date;
+  author?: string;
+  description?: string;
+  thumbnail?: string;
+  draft?: boolean;
+}
+
+export interface PostEntry {
+  id: string;
+  data: PostData;
+  body?: string;
+}
+
 export interface FormattedPost {
   title: string;
   slug: string;
@@ -116,7 +131,7 @@ export interface FormatPostsResult {
   currentPage: number;
 }
 
-export function formatPosts(posts: any[], pageSize: number, page: number = 1): FormatPostsResult {
+export function formatPosts(posts: PostEntry[], pageSize: number, page: number = 1): FormatPostsResult {
   const sortedPosts = posts.sort((a, b) => {
     return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
   });

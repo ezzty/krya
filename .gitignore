@@ -12,6 +12,7 @@ __pycache__/
 *.pyc
 
 # OS files
+._*
 .DS_Store
 Thumbs.db
 

@@ -113,7 +113,7 @@ def main():
         if categories_raw.startswith('['):
             try:
                 categories = json.loads(categories_raw)
-            except:
+            except (json.JSONDecodeError, ValueError):
                 categories = [c.strip() for c in categories_raw.strip('[]').split(',') if c.strip()]
         else:
             categories = [c.strip() for c in categories_raw.split(',') if c.strip()]
@@ -121,7 +121,7 @@ def main():
         if tags_raw.startswith('['):
             try:
                 tags = json.loads(tags_raw)
-            except:
+            except (json.JSONDecodeError, ValueError):
                 tags = [t.strip() for t in tags_raw.strip('[]').split(',') if t.strip()]
         else:
             tags = [t.strip() for t in tags_raw.split(',') if t.strip()]
