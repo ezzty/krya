@@ -506,7 +506,7 @@ html[data-theme="dark"] .post-content hr {
   padding: 10px 16px;
   background-color: var(--card-bg);
   border-radius: 8px;
-  text-decoration: none !important;
+  text-decoration: none;
   transition: all 0.2s ease;
   border: 1px solid var(--border-color);
 }
@@ -583,7 +583,7 @@ html[data-theme="dark"] .post-content hr {
 
 .post-title-small a {
   color: var(--heading-color);
-  text-decoration: none !important;
+  text-decoration: none;
 }
 
 .post-title-small a:hover {
