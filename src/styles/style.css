@@ -214,6 +214,13 @@ textarea {
   word-wrap: break-word;
 }
 
+.post-content h2 {
+  font-size: 1.1em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: var(--heading-color);
+}
+
 /* 移除 post-content 内第一个元素的 margin-top，避免与首页不一致 */
 .post-content > :first-child {
   margin-top: 0;
