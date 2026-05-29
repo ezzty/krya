@@ -215,9 +215,16 @@ textarea {
 }
 
 .post-content h2 {
-  font-size: 1.1em;
+  font-size: 1.18em;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
+  color: var(--heading-color);
+}
+
+.post-content h3 {
+  font-size: 1.1em;
+  margin-top: 1.2em;
+  margin-bottom: 0.4em;
   color: var(--heading-color);
 }
 
