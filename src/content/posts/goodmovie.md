@@ -55,7 +55,7 @@ draft: false
 
 8、《当幸福来敲门》
 
-[![](https://images.190808.xyz/bim2019/10/09/215603935220704.jpg?x-oss-process=style/826px)](https://movie.douban.com/subject/1849031/)
+[![](https://i.190808.xyz/bim2019/10/09/215603935220704.jpg)](https://movie.douban.com/subject/1849031/)
 
 一个平淡的关于幸福的电影，由威尔·史密斯和儿子出演。
 
