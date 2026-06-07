@@ -11,7 +11,7 @@ tags:
   - 苹果显示器
 _width: normal
 ---
-![BlockNote image](https://i.frc.cc/img/m/20260507/DSC06520.JPG)
+![BlockNote image](https://user0102.cn.imgto.link/public/20260607/dsc06520.avif)
 
 今年由于Ai浪潮，这两个月一下买了好几个东西。以下是一个记录。
 
