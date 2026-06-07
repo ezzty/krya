@@ -1,5 +1,5 @@
 ---
-title: 升级桌面硬件设备
+title: 电子设备集中更新
 description: 最近我沉迷Vibe coding，尝试用Windows电脑上的GTX 1650 4G内存的显卡运行qwen2.5vl:3b视觉模型识别物品，没想到720P的图片居然需要
 pubDate: 2026-05-08
 heroImage: ""
