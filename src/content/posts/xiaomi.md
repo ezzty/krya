@@ -5,7 +5,7 @@ categories: ["生活"]
 tags: ["小米股票", "小米新款su7", "小米发展"]
 draft: false
 ---
-![wj-2.avif](https://user0102.cn.imgto.link/public/20260422/wj-2.avif)
+![image](https://i.190808.xyz/img/m/20260608/06a042.jpg)
 
 2025年2月，我在香港开了银行和股票账户，开始买入小米股票。到现在，我已经持有几千股，计划在未来陆续加仓到1万股。
 
