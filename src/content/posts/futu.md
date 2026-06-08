@@ -12,7 +12,7 @@ tags:
   - 盈透证券
 author: jin
 ---
-![BlockNote image](https://user0102.cn.imgto.link/public/20260607/d78921.avif)
+![BlockNote image](https://i.190808.xyz/img/m/20260608/4da365.png)
 
 由于Ai浪潮，这两个月买了几个东西。以下是一个记录。
 
