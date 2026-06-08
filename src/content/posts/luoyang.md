@@ -11,7 +11,7 @@ draft: false
 
 我们这几年的旅行一直在四川以南的地方晃荡；最北除了到过西安之外；我们都没有去过北方的其他地区。所以一直想去体验广阔的华北平原，感受一下北方的氛围。
 
-![5.avif](https://user0102.cn.imgto.link/public/20260422/5-1.avif)
+![image](https://i.190808.xyz/img/m/20260608/68c6b7.png)
 ![4.jpg](https://i.190808.xyz/typecho/2026/04/07/4.jpg)
 
 > 📷 秦始皇兵马俑
