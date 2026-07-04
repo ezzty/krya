@@ -102,6 +102,7 @@ const {
       this.setAttribute('aria-expanded', !isOpen);
       dropdown.classList.toggle('is-open');
       header.classList.toggle('menu-open');
+      document.body.classList.toggle('menu-open');
     });
     
     document.addEventListener('click', function(e) {
@@ -109,6 +110,7 @@ const {
         menuToggle.setAttribute('aria-expanded', 'false');
         dropdown.classList.remove('is-open');
         header.classList.remove('menu-open');
+        document.body.classList.remove('menu-open');
       }
     });
     
@@ -117,6 +119,7 @@ const {
         menuToggle.setAttribute('aria-expanded', 'false');
         dropdown.classList.remove('is-open');
         header.classList.remove('menu-open');
+        document.body.classList.remove('menu-open');
       });
     });
     
@@ -125,6 +128,7 @@ const {
         menuToggle.setAttribute('aria-expanded', 'false');
         dropdown.classList.remove('is-open');
         header.classList.remove('menu-open');
+        document.body.classList.remove('menu-open');
       }
     });
   })();
@@ -442,5 +446,10 @@ const {
   html[data-theme="dark"] .nav-list a:active {
     background-color: #2a2a2a;
     color: #fff;
+  }
+
+  /* 菜单打开时隐藏 Pagefind 搜索图标 */
+  body.menu-open .pagefind-ui .pagefind-ui__form::before {
+    opacity: 0 !important;
   }
 </style>
