@@ -498,6 +498,7 @@ html[data-theme="dark"] .post-content hr {
   gap: 12px;
   justify-content: center;
   max-width: 800px;
+  margin: 15px auto;
 }
 
 .category-list {
