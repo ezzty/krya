@@ -707,7 +707,7 @@ html[data-theme="dark"] .archive-year {
 }
 
 .archive-list a:hover {
-  color: #3354aa;
+  color: var(--link-color);
   transform: translateX(2px);
 }
 
@@ -716,7 +716,7 @@ html[data-theme="dark"] .archive-list a {
 }
 
 html[data-theme="dark"] .archive-list a:hover {
-  color: #bbb;
+  color: var(--text-muted);
 }
 
 /* 表格样式 */
