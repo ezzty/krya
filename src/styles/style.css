@@ -553,7 +553,7 @@ html[data-theme="dark"] .post-content hr {
 .category-name,
 .tag-name {
   color: var(--heading-color);
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: 500;
 }
 
@@ -780,7 +780,7 @@ html[data-theme="dark"] .archive-categories {
 }
 
 .section-title {
-  font-size: 1em;
+  font-size: 1.2em;
   font-weight: 600;
   margin-bottom: 0.8em;
   color: #333;
