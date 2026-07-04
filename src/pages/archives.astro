@@ -1,9 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NavBar from '../components/NavBar.astro';
-import { buildCategoryCounts } from '../lib/utils';
 import { getCollection } from 'astro:content';
-import { formatDate } from '../lib/utils';
+import { buildCategoryCounts, formatDate } from '../lib/utils';
 
 const posts = (await getCollection('posts')).filter(post => !post.data.draft);
 
