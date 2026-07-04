@@ -182,12 +182,7 @@ export function formatPosts(posts: PostEntry[], pageSize: number, page: number =
       title: post.data.title,
       slug: post.id.replace(/\.[^.]+$/, ''),
       author: post.data.author || 'Jin',
-      pubDate: (() => {
-        const d = new Date(post.data.pubDate);
-        const offset = d.getTimezoneOffset() * 60000;
-        const local = new Date(d.getTime() + offset + 8 * 3600000);
-        return local.toISOString();
-      })(),
+      pubDate: post.data.pubDate.toISOString(),
       wordCount,
       excerpt: post.data.description || plainText.slice(0, 67),
       thumbnail,
