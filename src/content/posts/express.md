@@ -1,6 +1,6 @@
 ---
 title: "怎样让快递员送货上门"
-pubDate: 2025-12-05T11:14:29+08:00
+pubDate: 2025-12-05
 categories: ["生活"]
 tags: ["快递员货上门", "快递员放驿站"]
 draft: false

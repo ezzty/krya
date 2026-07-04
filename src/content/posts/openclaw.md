@@ -1,6 +1,6 @@
 ---
 title: "我用 OpenClaw 干了这些事"
-pubDate: 2026-03-09T13:47:44+08:00
+pubDate: 2026-03-09
 categories: ["技术"]
 tags: ["openclaw实践", "openclaw安装", "openclaw技能"]
 draft: false

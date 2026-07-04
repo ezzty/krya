@@ -1,6 +1,6 @@
 ---
 title: "你的胃里，还住着那个穷孩子"
-pubDate: 2026-04-01T07:29:33+08:00
+pubDate: 2026-04-01
 categories: ["生活"]
 tags: ["穷孩子"]
 draft: false
