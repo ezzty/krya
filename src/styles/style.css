@@ -186,7 +186,7 @@ textarea {
 }
 
 .post-title a:hover {
-  transform: translateX(4px);
+  transform: translateX(2px);
 }
 
 .post-meta {
@@ -610,7 +610,7 @@ html[data-theme="dark"] .post-content hr {
 
 .post-title-small a:hover {
   color: var(--link-color);
-  transform: translateX(4px);
+  transform: translateX(2px);
 }
 
 /* 暗黑模式 */
@@ -696,7 +696,7 @@ html[data-theme="dark"] .archive-year {
 
 .archive-list a:hover {
   color: #3354aa;
-  transform: translateX(4px);
+  transform: translateX(2px);
 }
 
 html[data-theme="dark"] .archive-list a {
