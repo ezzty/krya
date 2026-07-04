@@ -448,8 +448,23 @@ const {
     color: #fff;
   }
 
-  /* 菜单打开时隐藏 Pagefind 搜索图标 */
+  /* 菜单打开时隐藏 Pagefind 搜索图标和搜索内容 */
   body.menu-open .pagefind-ui .pagefind-ui__form::before {
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+  body.menu-open .pagefind-ui {
+    visibility: hidden !important;
+  }
+</style>
+
+<style is:inline>
+  /* 全局样式 - 菜单打开时隐藏搜索组件 */
+  body.menu-open .pagefind-ui {
+    visibility: hidden !important;
+  }
+  body.menu-open .pagefind-ui .pagefind-ui__form::before {
+    visibility: hidden !important;
     opacity: 0 !important;
   }
 </style>
