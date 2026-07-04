@@ -15,6 +15,7 @@
   --link-color: #3354AA;
   --heading-color: #4d4d4d;
   --border-color: #eee;
+  --border-input: #ccc;
   --border-light: #efefef;
   --header-bg: #f9f9f9;
   --code-color: #3354AA;
@@ -31,6 +32,7 @@ html[data-theme="dark"] {
   --link-color: #6b9eff;
   --heading-color: #e0e0e0;
   --border-color: #3a3a3a;
+  --border-input: #555;
   --border-light: #3a3a3a;
   --header-bg: #1a1a1a;
   --code-color: #6b9eff;
