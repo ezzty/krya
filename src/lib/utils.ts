@@ -20,14 +20,21 @@ export function extractFirstImage(content: string): string | null {
   
   return null;
 }
-
-// 格式化日期：2026-04-18（只显示日期，使用东八区）
+// 格式化日期：2026-04-18 或 2026-04-18 14:30（东八区，有时间则显示）
 export function formatDate(date: string | Date): string {
   const d = typeof date === 'string' ? new Date(date) : date;
   // 使用东八区 (UTC+8) 避免跨天问题
   const offset = d.getTimezoneOffset() * 60000;
   const local = new Date(d.getTime() + offset + 8 * 3600000);
-  return local.toISOString().split('T')[0];
+  const dateStr = local.toISOString().split('T')[0];
+  // 如果原始输入包含时间（T 分隔），则显示时间
+  const raw = typeof date === 'string' ? date : date.toISOString();
+  if (raw.includes('T') && !raw.endsWith('T00:00:00')) {
+    const hh = String(local.getUTCHours()).padStart(2, '0');
+    const mm = String(local.getUTCMinutes()).padStart(2, '0');
+    return `${dateStr} ${hh}:${mm}`;
+  }
+  return dateStr;
 }
 
 // 截取摘要（减少 4 个字符）
