@@ -571,8 +571,8 @@ html[data-theme="dark"] .post-content hr {
 /* 分类/标签列表页标题 */
 .categories-title,
 .tags-title {
-  margin: 60px 0 20px;
-  font-size: 1.5em;
+  margin: 150px 0 20px;
+  font-size: 1.2em;
   color: var(--heading-color);
 }
 
