@@ -21,10 +21,13 @@ export function extractFirstImage(content: string): string | null {
   return null;
 }
 
-// 格式化日期：2026-04-18（只显示日期）
+// 格式化日期：2026-04-18（只显示日期，使用东八区）
 export function formatDate(date: string | Date): string {
   const d = typeof date === 'string' ? new Date(date) : date;
-  return d.toISOString().split('T')[0];
+  // 使用东八区 (UTC+8) 避免跨天问题
+  const offset = d.getTimezoneOffset() * 60000;
+  const local = new Date(d.getTime() + offset + 8 * 3600000);
+  return local.toISOString().split('T')[0];
 }
 
 // 截取摘要（减少 4 个字符）
@@ -108,6 +111,19 @@ export interface PostData {
   draft?: boolean;
 }
 
+
+// 获取文章集合的分类计数（去重，按数量降序）
+export function buildCategoryCounts(posts: PostEntry[]) {
+  const count = new Map<string, number>();
+  posts.forEach(post => {
+    const categories = post.data.categories || [];
+    categories.forEach(cat => {
+      count.set(cat, (count.get(cat) || 0) + 1);
+    });
+  });
+  return Array.from(count.entries()).sort((a, b) => b[1] - a[1]);
+}
+
 export interface PostEntry {
   id: string;
   data: PostData;
@@ -159,7 +175,12 @@ export function formatPosts(posts: PostEntry[], pageSize: number, page: number =
       title: post.data.title,
       slug: post.id.replace(/\.[^.]+$/, ''),
       author: post.data.author || 'Jin',
-      pubDate: post.data.pubDate.toISOString(),
+      pubDate: (() => {
+        const d = new Date(post.data.pubDate);
+        const offset = d.getTimezoneOffset() * 60000;
+        const local = new Date(d.getTime() + offset + 8 * 3600000);
+        return local.toISOString();
+      })(),
       wordCount,
       excerpt: post.data.description || plainText.slice(0, 67),
       thumbnail,

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NavBar from '../../components/NavBar.astro';
+import { buildCategoryCounts } from '../../lib/utils';
 import { getCollection } from 'astro:content';
 import { formatDate } from '../../lib/utils';
 
@@ -24,14 +25,7 @@ const { category } = Astro.params;
 const decodedCategory = decodeURIComponent(category!);
 
 // 所有分类统计
-const categoryCount = new Map<string, number>();
-allPosts.forEach(post => {
-  const categories = post.data.categories || [];
-  categories.forEach(cat => {
-    categoryCount.set(cat, (categoryCount.get(cat) || 0) + 1);
-  });
-});
-const categories = Array.from(categoryCount.entries()).sort((a, b) => b[1] - a[1]);
+const categories = buildCategoryCounts(allPosts);
 
 // 筭选当前分类的文章
 const posts = allPosts

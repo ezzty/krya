@@ -1,20 +1,13 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NavBar from '../components/NavBar.astro';
+import { buildCategoryCounts } from '../lib/utils';
 import { getCollection } from 'astro:content';
 import { formatDate } from '../lib/utils';
 
 const posts = (await getCollection('posts')).filter(post => !post.data.draft);
 
-// 分类统计
-const categoryCount = new Map<string, number>();
-posts.forEach(post => {
-  const categories = post.data.categories || [];
-  categories.forEach(category => {
-    categoryCount.set(category, (categoryCount.get(category) || 0) + 1);
-  });
-});
-const categories = Array.from(categoryCount.entries()).sort((a, b) => b[1] - a[1]);
+const categories = buildCategoryCounts(posts);
 
 // 按年份和月份分组
 const groupedPosts: Record<string, typeof posts> = {};
