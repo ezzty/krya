@@ -181,6 +181,12 @@ textarea {
 
 .post-title a {
   color: var(--heading-color);
+  transition: transform 0.15s ease;
+  display: inline-block;
+}
+
+.post-title a:hover {
+  transform: translateX(4px);
 }
 
 .post-meta {
@@ -598,10 +604,13 @@ html[data-theme="dark"] .post-content hr {
 .post-title-small a {
   color: var(--heading-color);
   text-decoration: none;
+  transition: transform 0.15s ease;
+  display: inline-block;
 }
 
 .post-title-small a:hover {
   color: var(--link-color);
+  transform: translateX(4px);
 }
 
 /* 暗黑模式 */
@@ -681,10 +690,13 @@ html[data-theme="dark"] .archive-year {
 
 .archive-list a {
   color: var(--text-color);
+  transition: transform 0.15s ease;
+  display: inline-block;
 }
 
 .archive-list a:hover {
   color: #3354aa;
+  transform: translateX(4px);
 }
 
 html[data-theme="dark"] .archive-list a {
