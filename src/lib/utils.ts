@@ -27,14 +27,14 @@ export function formatDate(date: string | Date): string {
   const offset = d.getTimezoneOffset() * 60000;
   const local = new Date(d.getTime() + offset + 8 * 3600000);
   const dateStr = local.toISOString().split('T')[0];
-  // 如果原始输入包含时间（T 分隔），则显示时间
-  const raw = typeof date === 'string' ? date : date.toISOString();
-  if (raw.includes('T') && !raw.endsWith('T00:00:00')) {
-    const hh = String(local.getUTCHours()).padStart(2, '0');
-    const mm = String(local.getUTCMinutes()).padStart(2, '0');
-    return `${dateStr} ${hh}:${mm}`;
+  // UTC 00:00 表示没有设置时间，只显示日期
+  if (d.getUTCHours() === 0 && d.getUTCMinutes() === 0) {
+    return dateStr;
   }
-  return dateStr;
+  // 有具体时间，显示日期+时间
+  const hh = String(local.getUTCHours()).padStart(2, '0');
+  const mm = String(local.getUTCMinutes()).padStart(2, '0');
+  return `${dateStr} ${hh}:${mm}`;
 }
 
 // 截取摘要（减少 4 个字符）
