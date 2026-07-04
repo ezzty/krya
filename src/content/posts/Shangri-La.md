@@ -4,7 +4,10 @@ pubDate: 2012-10-13
 author: jin
 categories:
   - 旅游
-tags: []
+tags:
+  - 旅行
+  - 香格里拉
+  - 滇西
 draft: false
 ---
 **D1：香格里拉**
