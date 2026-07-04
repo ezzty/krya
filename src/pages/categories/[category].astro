@@ -44,19 +44,20 @@ const posts = allPosts
   <NavBar slot="header" />
   <div class="container">
     <div class="col-mb-12">
-      <!-- 分类标签导航 -->
-      <div class="archive-categories">
-        <div class="category-list">
-          {categories.map(([cat, count]) => (
-            <a href={`/categories/${encodeURIComponent(cat)}`} class={`category-item${cat === decodedCategory ? ' active' : ''}`}>
-              <span class="category-name">{cat}</span>
-              <span class="category-count">{count}</span>
-            </a>
-          ))}
+      <article class="post">
+        <!-- 分类标签导航 -->
+        <div class="archive-categories">
+          <div class="category-list">
+            {categories.map(([cat, count]) => (
+              <a href={`/categories/${encodeURIComponent(cat)}`} class={`category-item${cat === decodedCategory ? ' active' : ''}`}>
+                <span class="category-name">{cat}</span>
+                <span class="category-count">{count}</span>
+              </a>
+            ))}
+          </div>
         </div>
-      </div>
 
-      <h1 class="categories-title">分类：{decodedCategory}</h1>
+        <h1 class="categories-title">分类：{decodedCategory}</h1>
       {posts.length > 0 ? (
         <div class="post-list">
           {posts.map(post => (
@@ -73,14 +74,14 @@ const posts = allPosts
       ) : (
         <p class="no-items">该分类下暂无文章</p>
       )}
+      </article>
     </div>
   </div>
 </BaseLayout>
 
 <style>
   .archive-categories {
-    margin-top: 60px;
-    margin-bottom: 0;
+    margin-bottom: 2em;
     padding-bottom: 1.5em;
     border-bottom: 1px solid #eee;
   }
