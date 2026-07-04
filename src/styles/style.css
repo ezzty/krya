@@ -669,8 +669,10 @@ html[data-theme="dark"] .post-title-small a:hover {
 }
 
 .archive-year {
-  font-size: 1.2em;
+  font-size: 1.1em;
+  font-weight: 600;
   color: var(--text-muted);
+  margin-top: 1.5em;
   margin-bottom: 0.5em;
   padding-bottom: 0.3em;
   border-bottom: 1px solid var(--border-color);
@@ -765,7 +767,7 @@ html[data-theme="dark"] .post table tr:hover {
 .archive-categories {
   margin-bottom: 2em;
   padding-bottom: 1.5em;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color);
 }
 
 @media (max-width: 1023px) {
@@ -776,35 +778,18 @@ html[data-theme="dark"] .post table tr:hover {
 }
 
 html[data-theme="dark"] .archive-categories {
-  border-bottom-color: #3a3a3a;
+  border-bottom-color: var(--border-color);
 }
 
 .section-title {
   font-size: 1.2em;
   font-weight: 600;
   margin-bottom: 0.8em;
-  color: #333;
+  color: var(--heading-color);
 }
 
 html[data-theme="dark"] .section-title {
-  color: #e0e0e0;
+  color: var(--text-color);
 }
 
-.category-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 20px 0;
-}
 
-.archive-year {
-  font-size: 1.1em;
-  font-weight: 600;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
-  color: #555;
-}
-
-html[data-theme="dark"] .archive-year {
-  color: #ccc;
-}
