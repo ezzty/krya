@@ -1,7 +1,7 @@
 ---
 title: "人类能不能星际飞行"
 pubDate: 2015-05-30
-categories: ["生活"]
+categories: ["科技"]
 tags: ["人类飞出太阳系", "人类最快速度", "星际飞行"]
 draft: false
 ---

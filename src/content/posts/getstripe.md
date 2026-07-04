@@ -1,7 +1,7 @@
 ---
 title: "Stripe个人账户注册流程"
 pubDate: 2025-10-29
-categories: ["技术"]
+categories: ["金融"]
 tags: ["Stripe香港", "Stripe收款注册", "Stripe支付"]
 draft: false
 ---

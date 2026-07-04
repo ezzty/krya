@@ -4,7 +4,7 @@ description: 最近我沉迷Vibe coding，尝试用Windows电脑上的GTX 1650 4
 pubDate: 2026-05-08
 heroImage: ""
 categories:
-  - 生活
+  - 科技
 tags:
   - macmini
   - 苹果电脑

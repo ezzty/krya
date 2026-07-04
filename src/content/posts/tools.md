@@ -4,7 +4,7 @@ pubDate: 2026-04-29
 author: jin
 draft: false
 categories:
-  - 技术
+  - 科技
 tags:
   - AI
   - Home Assistant

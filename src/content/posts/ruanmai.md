@@ -1,7 +1,7 @@
 ---
 title: "《软埋》读后感"
 pubDate: 2018-01-28
-categories: ["生活"]
+categories: ["读书"]
 tags: ["软埋", "胡黛玉"]
 draft: false
 ---

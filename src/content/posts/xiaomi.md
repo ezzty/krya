@@ -1,7 +1,7 @@
 ---
 title: "我为什么要买小米股票：一个深度用户的选择"
 pubDate: 2026-03-17
-categories: ["生活"]
+categories: ["金融"]
 tags: ["小米股票", "小米新款su7", "小米发展"]
 draft: false
 ---

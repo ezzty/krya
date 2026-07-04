@@ -4,7 +4,7 @@ description: 香港本地银行买股票完全不受影响。这次政策并没�
 pubDate: 2026-05-23
 heroImage: ""
 categories:
-  - 生活
+  - 金融
 tags:
   - 跨境理财
   - 港股开户

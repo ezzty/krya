@@ -1,7 +1,7 @@
 ---
 title: "2025年香港银行卡开户流程"
 pubDate: 2025-02-24
-categories: ["生活"]
+categories: ["金融"]
 tags: ["香港银行卡开户", "香港开户", "香港汇丰银行开户", "香港中银开户"]
 draft: false
 ---

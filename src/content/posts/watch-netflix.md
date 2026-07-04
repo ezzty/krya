@@ -1,7 +1,7 @@
 ---
 title: "Netflix观影技术指南"
 pubDate: 2019-03-03
-categories: ["技术"]
+categories: ["科技"]
 tags: ["中国看netflix", "电视看Netflix", "国内网飞", "国内看奶飞"]
 draft: false
 ---

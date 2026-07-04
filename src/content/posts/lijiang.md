@@ -4,7 +4,7 @@ pubDate: 2012-10-14
 author: jin
 categories:
   - 旅游
-tags: []
+tags: ["丽江", "lijiang"]
 draft: false
 ---
 **D6：古城**

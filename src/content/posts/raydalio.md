@@ -1,7 +1,7 @@
 ---
 title: "Ray Dalio写给所有人的《原则》"
 pubDate: 2018-07-01
-categories: ["生活"]
+categories: ["读书"]
 tags: ["Ray-Dalio的原则"]
 draft: false
 ---

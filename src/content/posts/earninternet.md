@@ -2,7 +2,7 @@
 title: 通过网络赚钱
 pubDate: 2024-07-03
 categories:
-  - 技术
+  - 科技
 tags:
   - 解锁流媒体
   - 网络花销
