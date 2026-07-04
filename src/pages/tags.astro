@@ -19,7 +19,7 @@ const tags = Array.from(tagCount.entries()).sort((a, b) => b[1] - a[1]);
 <BaseLayout title="所有标签 | krya">
   <NavBar slot="header" />
   <div class="container">
-    <div class="col-mb-12">
+    <div class="col-mb-12" id="main" role="main">
       <h1 class="tags-title">所有标签</h1>
       {tags.length > 0 ? (
         <div class="tag-cloud">
