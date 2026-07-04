@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import NavBar from '../components/NavBar.astro';
-
+import { formatDate } from '../lib/utils';
 
 interface Props {
   title: string;
@@ -51,7 +51,7 @@ const ogImage = thumbnail || 'https://krya.com/og-image.png';
       </h1>
       <ul class="col-mb-12 post-meta">
         <li>作者：<a href="/about">{author}</a></li>
-
+        <li>{formatDate(pubDate)}</li>
         <li>{wordCount}字</li>
       </ul>
       <div class="col-mb-12 post-content">

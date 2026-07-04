@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NavBar from '../components/NavBar.astro';
-import { truncateExcerpt, getPageNumbers } from '../lib/utils';
+import { formatDate, truncateExcerpt, getPageNumbers } from '../lib/utils';
 
 interface Post {
   title: string;
@@ -56,7 +56,7 @@ const pageNumbers = getPageNumbers(currentPage, totalPages);
         </h1>
         <ul class="col-9 post-meta">
           <li>作者：<a href="/about">{post.author}</a></li>
-
+          <li>{formatDate(post.pubDate)}</li>
           <li>{post.wordCount}字</li>
         </ul>
         <div class="col-9 post-content">
