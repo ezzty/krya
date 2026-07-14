@@ -5,7 +5,7 @@ categories: ["生活"]
 tags: ["穷孩子"]
 draft: false
 ---
-![ms-1.avif](https://user0102.cn.imgto.link/public/20260422/ms-1.avif)
+![ms-1.avif](https://i.frc.cc/img/m/20260714/c397c0.jpg?x-oss-process=style/w950)
 
 **01. 财富掩盖不了的饮食底色**
 
