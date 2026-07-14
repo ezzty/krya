@@ -37,10 +37,11 @@ export function formatDate(date: string | Date): string {
   return `${dateStr} ${hh}:${mm}`;
 }
 
-// 截取摘要（减少 4 个字符）
+// 截取摘要：超长才加省略号，短摘要原样返回
 export function truncateExcerpt(excerpt: string, length: number = 67): string {
   if (!excerpt) return '';
-  return excerpt.slice(0, length);
+  if (excerpt.length <= length) return excerpt;
+  return excerpt.slice(0, length) + '...';
 }
 
 // 生成页码列表（最多显示 5 个页码，移动端 CSS 隐藏为 3 个）
@@ -60,9 +61,23 @@ export function getPageNumbers(current: number, total: number): number[] {
   return [current - 2, current - 1, current, current + 1, current + 2];
 }
 
+// 仅对已知阿里云 OSS / CDN 域名追加处理参数；本地路径与其它图床原样返回
+export function isOssCdnUrl(url: string): boolean {
+  if (!url || url.startsWith('/') || url.startsWith('data:') || url.startsWith('blob:')) {
+    return false;
+  }
+  try {
+    const host = new URL(url).hostname.toLowerCase();
+    return host === 'i.190808.xyz' || host.endsWith('.aliyuncs.com');
+  } catch {
+    return false;
+  }
+}
+
 // 处理缩略图 URL
 export function processThumbnailUrl(url: string | null, thumbnailStyle: string = 'w140'): string | null {
   if (!url) return null;
+  if (!isOssCdnUrl(url)) return url;
   const withoutOssParam = url.replace(/\?x-oss-process=[^&\s]*/, '');
   return `${withoutOssParam}?x-oss-process=style/${thumbnailStyle}`;
 }
@@ -184,7 +199,8 @@ export function formatPosts(posts: PostEntry[], pageSize: number, page: number =
       author: post.data.author || 'Jin',
       pubDate: post.data.pubDate.toISOString(),
       wordCount,
-      excerpt: post.data.description || plainText.slice(0, 67),
+      // 完整摘要交给展示层 truncateExcerpt 处理（避免预截断导致永远显示 ...）
+      excerpt: post.data.description || plainText,
       thumbnail,
     };
   });

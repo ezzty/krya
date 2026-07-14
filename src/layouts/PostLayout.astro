@@ -45,11 +45,11 @@ const ogImage = thumbnail || 'https://krya.com/og-image.png';
   })} />
   
   <div class="col-mb-12" id="main" role="main">
-    <article class="post">
-      <h1 class="col-mb-12 post-title">
+    <article class="post" data-pagefind-body>
+      <h1 class="col-mb-12 post-title" data-pagefind-meta="title">
         <a href={Astro.url.pathname}>{title}</a>
       </h1>
-      <ul class="col-mb-12 post-meta">
+      <ul class="col-mb-12 post-meta" data-pagefind-ignore>
         <li>作者：<a href="/about">{author}</a></li>
         <li>{formatDate(pubDate)}</li>
         <li>{wordCount}字</li>

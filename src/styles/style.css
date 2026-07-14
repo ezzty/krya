@@ -714,7 +714,7 @@ html[data-theme="dark"] .archive-list a {
 }
 
 html[data-theme="dark"] .archive-list a:hover {
-  color: var(--text-muted);
+  color: var(--link-color);
 }
 
 /* 表格样式 */
