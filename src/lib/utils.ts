@@ -88,23 +88,9 @@ export function getPageNumbers(current: number, total: number): number[] {
   return [current - 2, current - 1, current, current + 1, current + 2];
 }
 
-// 仅对已知阿里云 OSS / CDN 域名追加处理参数；本地路径与其它图床原样返回
-export function isOssCdnUrl(url: string): boolean {
-  if (!url || url.startsWith('/') || url.startsWith('data:') || url.startsWith('blob:')) {
-    return false;
-  }
-  try {
-    const host = new URL(url).hostname.toLowerCase();
-    return host === 'i.190808.xyz' || host.endsWith('.aliyuncs.com');
-  } catch {
-    return false;
-  }
-}
-
-// 处理缩略图 URL
+// 处理缩略图 URL（任意 URL：剥旧 x-oss-process 后统一追加 style 参数）
 export function processThumbnailUrl(url: string | null, thumbnailStyle: string = 'w140'): string | null {
   if (!url) return null;
-  if (!isOssCdnUrl(url)) return url;
   const withoutOssParam = url.replace(/\?x-oss-process=[^&\s]*/, '');
   return `${withoutOssParam}?x-oss-process=style/${thumbnailStyle}`;
 }
