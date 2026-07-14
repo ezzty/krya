@@ -1,8 +1,8 @@
 {
-  "name": "sintu-astro-theme",
+  "name": "krya",
   "type": "module",
   "version": "1.0.0",
-  "description": "Sintu theme for Astro - 单栏自适应博客主题",
+  "description": "krya.com - Jin 的个人博客（Astro 静态站）",
   "author": "Jin",
   "scripts": {
     "dev": "astro dev",

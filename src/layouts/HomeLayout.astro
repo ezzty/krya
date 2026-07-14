@@ -25,7 +25,7 @@ const { posts, currentPage = 1, totalPages = 1 } = Astro.props;
 const pageNumbers = getPageNumbers(currentPage, totalPages);
 ---
 
-<BaseLayout title="krya">
+<BaseLayout title="krya" description="Jin 的个人博客 - 旅行、生活与记录">
   <NavBar slot="header" />
   
   <div class="col-mb-12" id="main" role="main">

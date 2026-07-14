@@ -1,75 +1,79 @@
-# KRYA - jin的个人博客
+# KRYA
 
-一个简洁的 Astro 博客主题，作者原创设计。
+Jin 的个人博客 [krya.com](https://krya.com)，基于 **Astro 6** 的静态站点。
 
 ## 特性
 
-- 🚀 基于 Astro 6.x，性能优异
-- 🌙 暗黑模式支持
-- 📱 响应式设计，移动端优化
-- 🎨 简洁优雅的设计风格
-- 📝 支持 Markdown 博客文章
+- Astro 6 静态导出 + Content Collections
+- 暗黑模式 / 响应式单栏布局
+- Pagefind 全文搜索
+- RSS（`/rss.xml`、`/feed/`）与自定义 sitemap
+- Twikoo 评论、Umami 统计
+- 阿里云 OSS 图片处理（仅 `i.190808.xyz` 等白名单域名）
 
 ## 快速开始
 
 ```bash
-# 安装依赖
 npm install
+npm run dev      # 开发
+npm run build    # 生产构建（含图片处理 + Pagefind）
+npm run preview  # 预览 dist
+```
 
-# 开发模式
-npm run dev
+## 项目结构
 
-# 构建生产版本
-npm run build
-
-# 预览构建结果
-npm run preview
+```
+src/
+  content/posts/     # Markdown 文章
+  content.config.ts  # Collection schema
+  components/        # NavBar、Twikoo
+  layouts/           # Base / Home / Post
+  lib/utils.ts       # 日期、摘要、缩略图、分页
+  pages/             # 路由（首页、归档、分类、标签、搜索、RSS…）
+  styles/            # grid.css + style.css（CSS 变量主题）
+scripts/
+  post-build-image-processor.js  # 文章页 OSS 图追加 w950
+public/              # favicon、og-image、随机缩略图等
 ```
 
 ## 配置
 
-### 网站信息
+| 项 | 位置 |
+|----|------|
+| 站点域名 | `astro.config.mjs` → `site` |
+| 主题色 / 暗黑变量 | `src/styles/style.css` → `:root` / `[data-theme="dark"]` |
+| 导航 | `src/components/NavBar.astro` |
+| 评论 env | `src/components/Twikoo.astro`（默认 `https://cm.krya.com/`） |
+| 关于页 | `src/pages/about.astro` |
 
-编辑 `astro.config.mjs` 修改：
+文章 frontmatter 示例：
 
-- 网站标题
-- 网站描述
-- 作者信息
-- 社交链接
+```yaml
+---
+title: 标题
+pubDate: 2026-04-18
+description: 可选摘要
+categories: [旅游]
+tags: [丽江]
+draft: false
+---
+```
 
-### 主题颜色
-
-编辑 `src/styles/variables.css` 修改主题颜色。
+`pubDate` 支持纯日期或带时间；前端按东八区显示，纯日期只显示日期。
 
 ## 部署
 
-### 静态托管
+推送到 GitHub `main` 后由 **Cloudflare Pages** 自动构建（`wrangler.toml` / 控制台配置 `npm run build` → `dist`）。
 
-构建后的 `dist/` 目录可以部署到任何静态托管服务：
-
-- Vercel
-- Netlify
-- Cloudflare Pages
-- GitHub Pages
-- 阿里云 OSS
-
-### Docker
-
-```bash
-docker build -t astro-sintu-theme .
-docker run -p 8080:80 astro-sintu-theme
-```
+英文站： [en.krya.com](https://en.krya.com/)
 
 ## 技术栈
 
-- [Astro](https://astro.build/) - 静态站点生成器
-- TypeScript - 类型安全
-- CSS Variables - 主题定制
+- [Astro](https://astro.build/) 6.x
+- [Pagefind](https://pagefind.app/)
+- [@astrojs/rss](https://docs.astro.build/en/guides/rss/)
+- CSS Variables（无单独 `variables.css`）
 
 ## 许可证
 
-MIT
-
-## 作者
-
-Jin (@ezzty)
+MIT · Jin (@ezzty)

@@ -6,17 +6,21 @@ export async function GET() {
   // 过滤掉草稿
   const publishedPosts = posts.filter(post => !post.data.draft);
   
-  // 按发布日期排序
-  publishedPosts.sort((a, b) => {
+  // 按发布日期排序（拷贝，避免原地 sort）
+  const sortedPosts = [...publishedPosts].sort((a, b) => {
     return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
   });
 
   const siteUrl = 'https://krya.com';
+  // 列表页 lastmod 用最新文章时间，而不是构建时刻
+  const latestPostMod = sortedPosts.length
+    ? new Date(sortedPosts[0].data.pubDate).toISOString()
+    : new Date().toISOString();
   
   // 收集所有分类和标签（使用已发布的文章）
   const categorySet = new Set();
   const tagSet = new Set();
-  publishedPosts.forEach(post => {
+  sortedPosts.forEach(post => {
     const categories = post.data.categories || [];
     const tags = post.data.tags || [];
     categories.forEach(cat => categorySet.add(cat));
@@ -28,68 +32,68 @@ export async function GET() {
     // 首页
     {
       loc: siteUrl,
-      lastmod: new Date().toISOString(),
+      lastmod: latestPostMod,
       changefreq: 'daily',
       priority: 1.0,
     },
     // 归档页
     {
       loc: `${siteUrl}/archives`,
-      lastmod: new Date().toISOString(),
+      lastmod: latestPostMod,
       changefreq: 'daily',
       priority: 0.8,
     },
     // 关于页
     {
       loc: `${siteUrl}/about`,
-      lastmod: new Date().toISOString(),
+      lastmod: latestPostMod,
       changefreq: 'monthly',
       priority: 0.5,
     },
     // 分类列表页
     {
       loc: `${siteUrl}/categories`,
-      lastmod: new Date().toISOString(),
+      lastmod: latestPostMod,
       changefreq: 'weekly',
       priority: 0.7,
     },
     // 分类详情页
     ...Array.from(categorySet).map(category => ({
       loc: `${siteUrl}/categories/${encodeURIComponent(category)}`,
-      lastmod: new Date().toISOString(),
+      lastmod: latestPostMod,
       changefreq: 'weekly',
       priority: 0.6,
     })),
     // 标签列表页
     {
       loc: `${siteUrl}/tags`,
-      lastmod: new Date().toISOString(),
+      lastmod: latestPostMod,
       changefreq: 'weekly',
       priority: 0.7,
     },
     // 标签详情页
     ...Array.from(tagSet).map(tag => ({
       loc: `${siteUrl}/tags/${encodeURIComponent(tag)}`,
-      lastmod: new Date().toISOString(),
+      lastmod: latestPostMod,
       changefreq: 'weekly',
       priority: 0.6,
     })),
     // 搜索页
     {
       loc: `${siteUrl}/search`,
-      lastmod: new Date().toISOString(),
+      lastmod: latestPostMod,
       changefreq: 'monthly',
       priority: 0.5,
     },
     // 分页页面
-    ...Array.from({ length: Math.max(0, Math.ceil(publishedPosts.length / 8) - 1) }, (_, i) => ({
+    ...Array.from({ length: Math.max(0, Math.ceil(sortedPosts.length / 8) - 1) }, (_, i) => ({
       loc: `${siteUrl}/p/${i + 2}`,
-      lastmod: new Date().toISOString(),
+      lastmod: latestPostMod,
       changefreq: 'weekly',
       priority: 0.5,
     })),
     // 所有文章
-    ...publishedPosts.map(post => ({
+    ...sortedPosts.map(post => ({
       loc: `${siteUrl}/post/${post.id.replace(/\.[^.]+$/, '')}`,
       lastmod: new Date(post.data.pubDate).toISOString(),
       changefreq: 'weekly',

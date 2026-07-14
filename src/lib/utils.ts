@@ -20,20 +20,47 @@ export function extractFirstImage(content: string): string | null {
   
   return null;
 }
-// 格式化日期：2026-04-18 或 2026-04-18 14:30（东八区，有时间则显示）
-export function formatDate(date: string | Date): string {
+/** 统一东八区日期部件，归档分组 / 展示共用，避免构建机本地时区导致跨月 */
+export function toEast8Parts(date: string | Date): {
+  year: number;
+  month: number;
+  day: number;
+  hours: number;
+  minutes: number;
+  dateStr: string;
+  source: Date;
+} {
   const d = typeof date === 'string' ? new Date(date) : date;
-  // 使用东八区 (UTC+8) 避免跨天问题
   const offset = d.getTimezoneOffset() * 60000;
   const local = new Date(d.getTime() + offset + 8 * 3600000);
   const dateStr = local.toISOString().split('T')[0];
+  const [year, month, day] = dateStr.split('-').map(Number);
+  return {
+    year,
+    month,
+    day,
+    hours: local.getUTCHours(),
+    minutes: local.getUTCMinutes(),
+    dateStr,
+    source: d,
+  };
+}
+
+/** 归档用：YYYY-MM（东八区） */
+export function getYearMonthEast8(date: string | Date): string {
+  const { year, month } = toEast8Parts(date);
+  return `${year}-${String(month).padStart(2, '0')}`;
+}
+
+// 格式化日期：2026-04-18 或 2026-04-18 14:30（东八区，有时间则显示）
+export function formatDate(date: string | Date): string {
+  const { dateStr, hours, minutes, source } = toEast8Parts(date);
   // UTC 00:00 表示没有设置时间，只显示日期
-  if (d.getUTCHours() === 0 && d.getUTCMinutes() === 0) {
+  if (source.getUTCHours() === 0 && source.getUTCMinutes() === 0) {
     return dateStr;
   }
-  // 有具体时间，显示日期+时间
-  const hh = String(local.getUTCHours()).padStart(2, '0');
-  const mm = String(local.getUTCMinutes()).padStart(2, '0');
+  const hh = String(hours).padStart(2, '0');
+  const mm = String(minutes).padStart(2, '0');
   return `${dateStr} ${hh}:${mm}`;
 }
 
@@ -131,6 +158,8 @@ export interface PostData {
   description?: string;
   thumbnail?: string;
   draft?: boolean;
+  categories?: string[];
+  tags?: string[];
 }
 
 
@@ -169,30 +198,25 @@ export interface FormatPostsResult {
 }
 
 export function formatPosts(posts: PostEntry[], pageSize: number, page: number = 1): FormatPostsResult {
-  const sortedPosts = posts.sort((a, b) => {
+  // 拷贝后排序，避免原地 sort 影响 getStaticPaths 多次调用
+  const sortedPosts = [...posts].sort((a, b) => {
     return new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime();
   });
-  
+
   const totalPages = Math.ceil(sortedPosts.length / pageSize);
   const start = (page - 1) * pageSize;
   const end = page * pageSize;
   const paginatedPosts = sortedPosts.slice(start, end);
-  
+
   const formattedPosts = paginatedPosts.map((post) => {
-    let thumbnail = post.data.thumbnail;
-    if (!thumbnail) {
-      const firstImage = extractFirstImage(post.body || '');
-      if (firstImage) {
-        thumbnail = firstImage;
-      } else {
-        thumbnail = `/img/random/${getRandomThumbnailIndex(post.id)}.webp`;
-      }
-    }
-    
-    thumbnail = processThumbnailUrl(thumbnail, 'w140');
+    const rawThumbnail =
+      post.data.thumbnail ||
+      extractFirstImage(post.body || '') ||
+      `/img/random/${getRandomThumbnailIndex(post.id)}.webp`;
+    const thumbnail = processThumbnailUrl(rawThumbnail, 'w140') || rawThumbnail;
     const plainText = stripMarkdown(post.body || '');
     const wordCount = countWords(post.body || '');
-    
+
     return {
       title: post.data.title,
       slug: post.id.replace(/\.[^.]+$/, ''),
@@ -204,7 +228,7 @@ export function formatPosts(posts: PostEntry[], pageSize: number, page: number =
       thumbnail,
     };
   });
-  
+
   return {
     posts: formattedPosts,
     totalPages,

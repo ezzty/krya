@@ -16,16 +16,22 @@ interface Props {
 
 const { title, description, author, pubDate, wordCount = 0, tags = [], categories = [], thumbnail } = Astro.props;
 
-// 处理 og:image URL
+// 处理 og:image URL（无图时用站点默认图）
 const ogImage = thumbnail || 'https://krya.com/og-image.png';
+const isDefaultOg = ogImage === 'https://krya.com/og-image.png';
 ---
 
-<BaseLayout title={title} description={description || 'Jin 的个人博客'}>
+<BaseLayout
+  title={title}
+  description={description || 'Jin 的个人博客'}
+  image={ogImage}
+  imageWidth={isDefaultOg ? 120 : undefined}
+  imageHeight={isDefaultOg ? 120 : undefined}
+  type="article"
+>
   <NavBar slot="header" />
   
-  <!-- 文章页 SEO 元数据 - 放在 head 中 -->
-  <meta slot="head" property="og:image" content={ogImage} />
-  <meta slot="head" property="og:type" content="article" />
+  <!-- 文章页 SEO 元数据 -->
   <meta slot="head" property="article:published_time" content={pubDate} />
   {tags.length > 0 && (
     <meta slot="head" property="article:tag" content={tags.join(', ')} />
@@ -41,6 +47,7 @@ const ogImage = thumbnail || 'https://krya.com/og-image.png';
     },
     "datePublished": pubDate,
     "description": Astro.props.description || '',
+    "image": ogImage,
     "url": Astro.url.href
   })} />
   

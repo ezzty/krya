@@ -2,9 +2,26 @@
 interface Props {
   title: string;
   description?: string;
+  /** OG 图片，默认站点 og-image */
+  image?: string;
+  imageWidth?: number;
+  imageHeight?: number;
+  /** Open Graph type */
+  type?: string;
 }
 
-const { title, description = "krya" } = Astro.props;
+const DEFAULT_OG = 'https://krya.com/og-image.png';
+const DEFAULT_OG_W = 120;
+const DEFAULT_OG_H = 120;
+
+const {
+  title,
+  description = 'krya',
+  image = DEFAULT_OG,
+  imageWidth = image === DEFAULT_OG ? DEFAULT_OG_W : undefined,
+  imageHeight = image === DEFAULT_OG ? DEFAULT_OG_H : undefined,
+  type = 'website',
+} = Astro.props;
 
 // 导入 CSS 文件（Vite 会自动打包）
 import '../styles/grid.css';
@@ -24,16 +41,22 @@ import '../styles/style.css';
     <!-- Open Graph -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={type} />
     <meta property="og:url" content={Astro.url.href} />
+    <meta property="og:image" content={image} />
+    {imageWidth != null && (
+      <meta property="og:image:width" content={String(imageWidth)} />
+    )}
+    {imageHeight != null && (
+      <meta property="og:image:height" content={String(imageHeight)} />
+    )}
+    <meta property="og:site_name" content="krya" />
     
     <!-- Canonical URL (文章页会覆盖) -->
     <link rel="canonical" href={`https://krya.com${Astro.url.pathname}`} />
     
-    <!-- 插入额外 head 内容（如 OG meta） -->
+    <!-- 插入额外 head 内容（如 article meta / JSON-LD） -->
     <slot name="head" />
-    
-    <!-- CSS (imported for Vite bundling) -->
     
     <!-- 主题初始化 - 防止暗黑模式闪白 -->
     <script is:inline>
