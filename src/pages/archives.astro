@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import NavBar from '../components/NavBar.astro';
 import { getCollection } from 'astro:content';
-import { buildCategoryCounts, formatDate, getYearMonthEast8 } from '../lib/utils';
+import { buildCategoryCounts, formatDate, getYearMonthEast8, withTrailingSlash } from '../lib/utils';
 
 const posts = (await getCollection('posts')).filter(post => !post.data.draft);
 
@@ -34,7 +34,7 @@ const groupedPosts: Record<string, typeof posts> = {};
           <h2 class="section-title">分类</h2>
           <div class="category-list">
             {categories.map(([category, count]) => (
-              <a href={`/categories/${encodeURIComponent(category)}`} class="category-item">
+              <a href={withTrailingSlash(`/categories/${encodeURIComponent(category)}`)} class="category-item">
                 <span class="category-name">{category}</span>
                 <span class="category-count">{count}</span>
               </a>
@@ -54,7 +54,7 @@ const groupedPosts: Record<string, typeof posts> = {};
               {posts.map((post) => (
                 <li>
                   <span class="archive-date">{formatDate(post.data.pubDate.toISOString())}</span>
-                  <a href={`/post/${post.id.replace(/\.[^.]+$/, '')}`}>{post.data.title}</a>
+                  <a href={withTrailingSlash(`/post/${post.id.replace(/\.[^.]+$/, '')}`)}>{post.data.title}</a>
                 </li>
               ))}
             </ul>

@@ -20,7 +20,37 @@ export function extractFirstImage(content: string): string | null {
   
   return null;
 }
-/** 统一东八区日期部件，归档分组 / 展示共用，避免构建机本地时区导致跨月 */
+/** 站内路径统一尾斜杠（与 trailingSlash: 'always' / CF 规范 URL 一致）。根路径与带扩展名的文件不动。 */
+export function withTrailingSlash(path: string): string {
+  if (!path || path === '/') return '/';
+  // 外链原样
+  if (/^https?:\/\//i.test(path)) {
+    try {
+      const u = new URL(path);
+      if (!u.pathname.endsWith('/') && !/\.[a-zA-Z0-9]+$/.test(u.pathname)) {
+        u.pathname += '/';
+      }
+      return u.toString();
+    } catch {
+      return path;
+    }
+  }
+  const hashIdx = path.indexOf('#');
+  const queryIdx = path.indexOf('?');
+  let pathname = path;
+  let suffix = '';
+  if (hashIdx !== -1) {
+    suffix = path.slice(hashIdx);
+    pathname = path.slice(0, hashIdx);
+  } else if (queryIdx !== -1) {
+    suffix = path.slice(queryIdx);
+    pathname = path.slice(0, queryIdx);
+  }
+  if (pathname.endsWith('/')) return pathname + suffix;
+  // .xml .js 等静态文件不加斜杠
+  if (/\.[a-zA-Z0-9]+$/.test(pathname)) return pathname + suffix;
+  return pathname + '/' + suffix;
+}
 export function toEast8Parts(date: string | Date): {
   year: number;
   month: number;

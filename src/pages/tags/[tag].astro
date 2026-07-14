@@ -2,7 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import NavBar from '../../components/NavBar.astro';
-import { formatDate } from '../../lib/utils';
+import { formatDate, withTrailingSlash } from '../../lib/utils';
 
 export async function getStaticPaths() {
   const posts = (await getCollection('posts')).filter(post => !post.data.draft);
@@ -41,7 +41,7 @@ const posts = allPosts
           {posts.map(post => (
             <article class="post-item">
               <h2 class="post-title-small">
-                <a href={`/post/${post.id.replace(/\.[^.]+$/, '')}`}>{post.data.title}</a>
+                <a href={withTrailingSlash(`/post/${post.id.replace(/\.[^.]+$/, '')}`)}>{post.data.title}</a>
               </h2>
               <div class="post-meta">
                 <span>{formatDate(post.data.pubDate.toISOString())}</span>

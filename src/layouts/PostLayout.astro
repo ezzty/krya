@@ -1,7 +1,7 @@
 ---
 import BaseLayout from './BaseLayout.astro';
 import NavBar from '../components/NavBar.astro';
-import { formatDate } from '../lib/utils';
+import { formatDate, withTrailingSlash } from '../lib/utils';
 
 interface Props {
   title: string;
@@ -57,7 +57,7 @@ const isDefaultOg = ogImage === 'https://krya.com/og-image.png';
         <a href={Astro.url.pathname}>{title}</a>
       </h1>
       <ul class="col-mb-12 post-meta" data-pagefind-ignore>
-        <li>作者：<a href="/about">{author}</a></li>
+        <li>作者：<a href={withTrailingSlash('/about')}>{author}</a></li>
         <li>{formatDate(pubDate)}</li>
         <li>{wordCount}字</li>
       </ul>
@@ -73,7 +73,7 @@ const isDefaultOg = ogImage === 'https://krya.com/og-image.png';
                 categories.map((category, index) => (
                   <>
                     {index > 0 && ', '}
-                    <a href={`/categories/${encodeURIComponent(category)}`}>{category}</a>
+                    <a href={withTrailingSlash(`/categories/${encodeURIComponent(category)}`)}>{category}</a>
                   </>
                 ))
               }
@@ -88,7 +88,7 @@ const isDefaultOg = ogImage === 'https://krya.com/og-image.png';
                 tags.map((tag, index) => (
                   <>
                     {index > 0 && ', '}
-                    <a href={`/tags/${encodeURIComponent(tag)}`}>{tag}</a>
+                    <a href={withTrailingSlash(`/tags/${encodeURIComponent(tag)}`)}>{tag}</a>
                   </>
                 ))
               }

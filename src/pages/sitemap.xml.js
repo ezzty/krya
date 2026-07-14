@@ -38,63 +38,63 @@ export async function GET() {
     },
     // 归档页
     {
-      loc: `${siteUrl}/archives`,
+      loc: `${siteUrl}/archives/`,
       lastmod: latestPostMod,
       changefreq: 'daily',
       priority: 0.8,
     },
     // 关于页
     {
-      loc: `${siteUrl}/about`,
+      loc: `${siteUrl}/about/`,
       lastmod: latestPostMod,
       changefreq: 'monthly',
       priority: 0.5,
     },
     // 分类列表页
     {
-      loc: `${siteUrl}/categories`,
+      loc: `${siteUrl}/categories/`,
       lastmod: latestPostMod,
       changefreq: 'weekly',
       priority: 0.7,
     },
     // 分类详情页
     ...Array.from(categorySet).map(category => ({
-      loc: `${siteUrl}/categories/${encodeURIComponent(category)}`,
+      loc: `${siteUrl}/categories/${encodeURIComponent(category)}/`,
       lastmod: latestPostMod,
       changefreq: 'weekly',
       priority: 0.6,
     })),
     // 标签列表页
     {
-      loc: `${siteUrl}/tags`,
+      loc: `${siteUrl}/tags/`,
       lastmod: latestPostMod,
       changefreq: 'weekly',
       priority: 0.7,
     },
     // 标签详情页
     ...Array.from(tagSet).map(tag => ({
-      loc: `${siteUrl}/tags/${encodeURIComponent(tag)}`,
+      loc: `${siteUrl}/tags/${encodeURIComponent(tag)}/`,
       lastmod: latestPostMod,
       changefreq: 'weekly',
       priority: 0.6,
     })),
     // 搜索页
     {
-      loc: `${siteUrl}/search`,
+      loc: `${siteUrl}/search/`,
       lastmod: latestPostMod,
       changefreq: 'monthly',
       priority: 0.5,
     },
     // 分页页面
     ...Array.from({ length: Math.max(0, Math.ceil(sortedPosts.length / 8) - 1) }, (_, i) => ({
-      loc: `${siteUrl}/p/${i + 2}`,
+      loc: `${siteUrl}/p/${i + 2}/`,
       lastmod: latestPostMod,
       changefreq: 'weekly',
       priority: 0.5,
     })),
     // 所有文章
     ...sortedPosts.map(post => ({
-      loc: `${siteUrl}/post/${post.id.replace(/\.[^.]+$/, '')}`,
+      loc: `${siteUrl}/post/${post.id.replace(/\.[^.]+$/, '')}/`,
       lastmod: new Date(post.data.pubDate).toISOString(),
       changefreq: 'weekly',
       priority: 0.6,
