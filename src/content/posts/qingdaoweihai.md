@@ -12,7 +12,7 @@ tags:
   - 山东美食
 author: jin
 ---
-![w950](https://i.190808.xyz/img/m/20260810/d558c7.jpg?x-oss-process=style/w950)
+![dji拍摄](https://i.190808.xyz/img/m/20260810/d558c7.jpg?x-oss-process=style/w950)
 
 这次旅行有五个人：我们一家三口；以及媳妇的闺蜜和闺蜜的妈妈。虽然有5个人，但是四个大人加一个小孩儿，让长途旅行不算拥挤；而且路上也多了很多打发时间的无聊话题。
 
@@ -22,7 +22,7 @@ author: jin
 
 首站西安到了已是晚上，而且大家都来过几次；不过来都来了，还是回顾一下回民街和大唐不夜城。
 
-![w950](https://i.190808.xyz/img/m/20260810/ac736a.jpg?x-oss-process=style/w950)
+![西安钟鼓楼](https://i.190808.xyz/img/m/20260810/ac736a.jpg?x-oss-process=style/w950)
 
 第二天从西安横穿太行山。我在抖音早就领略过林州的太行胜景，横穿山西省不算绕路，那就顺路找个景点游览一番。
 
