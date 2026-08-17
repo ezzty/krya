@@ -1,5 +1,5 @@
 ---
-title: 2014越南旅行记
+title: 🇻🇳2014越南旅行记
 pubDate: 2014-03-01
 categories:
   - 旅游
