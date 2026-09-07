@@ -6,7 +6,7 @@ export default defineConfig({
   output: 'static',
   // 输出为目录 index.html，规范 URL 带尾斜杠；站内链接也应带 /
   trailingSlash: 'always',
-  compressHTML: true,
+  compressHTML: 'jsx',
   markdown: {
     shikiConfig: {
       theme: 'dark-plus',
