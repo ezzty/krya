@@ -224,7 +224,6 @@ zip code.zip index.js package.json
 
 ![image](https://i.190808.xyz/m/26j13/f09581.png)
 
-
 > 上表前 8 项是**强制**的（代码里 `requiredEnvVars` 就是这 8 个），第 9 项 `ALLOWED_ORIGINS` 不设也能启动。⚠️ 但它**只在「启用代码级 CORS」时才参与判断**——默认 CORS 由平台直接回显 `Origin`（控制台没有可配的地方），此时该变量不起作用。你若取消代码级 CORS 注释，则必须设它，否则兜底值 `example.com` 会把浏览器上传全拦死。
 
 `ALLOWED_ORIGINS` 不用管——默认 CORS 不经过代码，`isValidOrigin` 根本不会被调用；只有按 5.4 启用代码级 CORS 时它才生效。
@@ -238,23 +237,7 @@ openssl rand -base64 24   # AUTH_PASS
 
 > `CDN_DOMAIN` 必须以 `http://` 或 `https://` 开头——代码里有专门的校验，忘了写协议头会直接终止启动。
 
-#### 5.4 HTTP 触发器与 CORS
-
-三种方式二选一，**默认就是「平台回显」**——网关直接把请求的 `Origin` 回显成 `Access-Control-Allow-Origin`，不校验来源：
-
-| 方式 | 白名单 | 改代码 | 备注 |
-| --- | --- | --- | --- |
-| **API Configured CORS** | ✅ `allowOrigins` 数组 | 否 | **邀测**能力，需联系阿里云开通，走 API 配置，预检不计费 |
-| **默认 CORS**（推荐，本文默认） | ❌ 无，直接回显 | 否 | 平台默认行为 |
-| **代码级 CORS** | ✅ 自己写判断 | 是（`index.js` 的 CORS 块） | 预检会调用函数并计费 |
-
-⚠️ **FC 控制台里没有「勾选允许跨域 / 填白名单域名」这样的选项**——已核对官方文档，白名单只能通过 API Configured CORS 的 `allowOrigins` 或代码级 CORS 配置，别照着某些教程去控制台里找这个开关。
-
-⚠️ **不要同时开默认回显和代码级 CORS**：函数返回的头会与平台回显合并，可能产生重复的 `Access-Control-Allow-Origin`，浏览器会直接报错。
-
-**个人图床的建议**：先用默认 CORS 就够。它确实放行任意 `Origin`，但那只是「浏览器放不放行」，真正的门是 token 鉴权——没 token 照样 `401`（README 有鉴权探针）。要收紧就申请开通 API Configured CORS，配 `allowOrigins: ["https://your-site.com"]`（⚠️ 它**不支持子域通配**，要逐个枚举）。
-
-#### 5.5 绑定自定义域名
+#### 5.4 绑定自定义域名
 
 FC 控制台 → 域名管理 → 添加域名 → 按提示配 CNAME 和证书。这样你才有 `https://api.example.com` 这样的 API 地址。
 
@@ -279,7 +262,6 @@ if (file.size > 20 * 1024 * 1024) { /* 拦截 */ }
 
 前后端各有一道限制，**以小的那个为准**。只改前端不改后端，大文件会在服务端被 413 掉；只改后端不改前端，用户在浏览器就被拦住了，根本发不出去。
 
-
 ---
 
 ### 七、想深入？核心细节都在源码 README
@@ -295,13 +277,14 @@ if (file.size > 20 * 1024 * 1024) { /* 拦截 */ }
 - **体积三重校验**、登录体 4KB 上限、IP 防爆破为什么必须用 `Map`（`X-Forwarded-For: __proto__` 原型污染实测）
 - **FC 事件格式兼容与 body 解码**（含两个大坑：惰性解码、未编码二进制不能按 UTF-8 解）
 - **前端发送方式**（iOS Safari 会丢 `xhr.send(File)` 的 body，要改用 ArrayBuffer）
+- **HTTP 触发器与 CORS 的三种方式**（含一个澄清：FC 控制台根本没有「勾选允许跨域」这个开关）
 - **OSS 图片处理**（实测 1.89 MB → 81 KB，省 96%）
 - **完整上线验收清单**（探针命令 + OSS 核实脚本 + 安全 checklist）
+- **常见坑速查表**（现象 → 原因 → 解决，iOS 丢 body、魔数误判这类疑难杂症也在里面）
 
 > 博客正文只想讲清楚「为什么自建、怎么跑起来、要注意什么」；真要动手部署，README 就是完整技术文档。
 
 ---
-
 
 ### 八、成本
 
@@ -327,26 +310,7 @@ if (file.size > 20 * 1024 * 1024) { /* 拦截 */ }
 
 ---
 
-### 九、常见坑速查
-
-| 现象                                                      | 原因                                     | 解决                                                |
-| ------------------------------------------------------- | -------------------------------------- | ------------------------------------------------- |
-| 函数 500，日志 `Cannot find module 'ali-oss'`                | 层没绑，或层目录结构不是 `nodejs/node_modules/`    | 重建层并绑定                                            |
-| 500，日志 `❌ FATAL: Missing required environment variable` | 环境变量缺项                                 | 补齐 8 个（`ALLOWED_ORIGINS` 可选）                      |
-| 魔数校验永远失败，收到的是文本                                         | body 被 base64 编码未解                     | 检查 `isBase64Encoded` 分支                           |
-| 魔数校验永远失败，但图片**没走 base64**                               | 未编码 body 按 UTF-8 解码，高位字节被毁             | `/upload` 用 `decodeBody('binary')`，见 README「核心实现」 |
-| 只有 iOS 上传失败，安卓/桌面正常；服务端 `rawLen=0`                      | iOS Safari 对 `xhr.send(File)` 丢 body   | 先 `await file.arrayBuffer()` 再发，见 README「前端发送」             |
-| 上传成功但 URL 404                                           | `CDN_DOMAIN` 没配域名/没绑证书                 | 补配 CDN 域名                                         |
-| 本地代码改了，线上行为没变                                           | 部署包不是最新的                               | 跑 README 验收探针确认                                   |
-| 预览图显示了但 OSS 里没有                                         | `blob:` URL 是**本地内存地址**，选中文件就生成，不代表已上传 | 以上传成功回调为准                                         |
-| 凌晨上传的图落到前一天目录                                           | FC 用 UTC 取日期                           | 用 `+8小时` 偏移                                       |
-| 自定义域名下看不到 `nosniff`/HSTS 头                              | 平台层剥掉了                                 | 平台行为，不是 bug                                       |
-| 报 CORS 错（`Access-Control-Allow-Origin` 重复或无效）           | 默认回显 + 代码级 CORS 同时开                    | 二选一，见 5.4                                         |
-| `GET /login` 返回 400/401 而不是 405                         | 线上是旧版代码（新版只收 POST）                     | 重新上传部署包                                           |
-
----
-
-### 十、维护更新
+### 九、维护更新
 
 **改业务代码（比如图片链接形式）：**
 
@@ -374,7 +338,7 @@ if (file.size > 20 * 1024 * 1024) { /* 拦截 */ }
 
 ---
 
-### 十一、参考
+### 十、参考
 
 - 源码：https://github.com/ezzty/oss-upload
 - [阿里云函数计算文档](https://help.aliyun.com/zh/functioncompute/)
