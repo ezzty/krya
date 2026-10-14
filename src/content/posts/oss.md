@@ -279,26 +279,6 @@ if (file.size > 20 * 1024 * 1024) { /* 拦截 */ }
 
 前后端各有一道限制，**以小的那个为准**。只改前端不改后端，大文件会在服务端被 413 掉；只改后端不改前端，用户在浏览器就被拦住了，根本发不出去。
 
-#### 6.1 发送方式：别直接 `xhr.send(File)`（iOS 会丢 body）
-
-```javascript
-// ❌ 写起来最自然，但 iOS Safari 上服务端收到 0 字节
-xhr.send(currentFile);
-
-// ✅ 先读成 ArrayBuffer 再发
-const buf = await currentFile.arrayBuffer();
-xhr.setRequestHeader('Content-Type', currentFile.type || 'application/octet-stream');
-xhr.send(buf);
-```
-
-这个坑的**诊断特征**很典型：桌面和安卓都正常，**iOS 必失败**，大小图都一样；服务端打印收到的请求头，显示 `Content-Length: 0`、`rawLen=0`、`te=none`，而前端明明 `file.size = 5311352`。**body 是在浏览器发出去之前就没写**，不是网关截断、不是格式问题。
-
-两个配套细节：
-
-- **必须显式设 `Content-Type`**：`ArrayBuffer` 发出去默认是 `application/octet-stream`，会被 MIME 白名单拒掉
-- **别加自定义请求头**（比如 `X-Client-Size` 之类的调试头）：预检的 `Access-Control-Allow-Headers` 是固定值 `content-type, authorization`，多一个头浏览器会直接把请求拦下，症状变成"完全发不出去"
-
-> 排查这类问题别靠猜：在前端把 `file.size`、在服务端把 `rawLen`/`content-length` **两边都打印出来对比**，一行数据就能定案。
 
 ---
 
@@ -355,7 +335,7 @@ xhr.send(buf);
 | 500，日志 `❌ FATAL: Missing required environment variable` | 环境变量缺项                                 | 补齐 8 个（`ALLOWED_ORIGINS` 可选）                      |
 | 魔数校验永远失败，收到的是文本                                         | body 被 base64 编码未解                     | 检查 `isBase64Encoded` 分支                           |
 | 魔数校验永远失败，但图片**没走 base64**                               | 未编码 body 按 UTF-8 解码，高位字节被毁             | `/upload` 用 `decodeBody('binary')`，见 README「核心实现」 |
-| 只有 iOS 上传失败，安卓/桌面正常；服务端 `rawLen=0`                      | iOS Safari 对 `xhr.send(File)` 丢 body   | 先 `await file.arrayBuffer()` 再发，见 6.1             |
+| 只有 iOS 上传失败，安卓/桌面正常；服务端 `rawLen=0`                      | iOS Safari 对 `xhr.send(File)` 丢 body   | 先 `await file.arrayBuffer()` 再发，见 README「前端发送」             |
 | 上传成功但 URL 404                                           | `CDN_DOMAIN` 没配域名/没绑证书                 | 补配 CDN 域名                                         |
 | 本地代码改了，线上行为没变                                           | 部署包不是最新的                               | 跑 README 验收探针确认                                   |
 | 预览图显示了但 OSS 里没有                                         | `blob:` URL 是**本地内存地址**，选中文件就生成，不代表已上传 | 以上传成功回调为准                                         |
