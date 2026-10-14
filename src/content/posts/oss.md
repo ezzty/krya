@@ -210,23 +210,22 @@ zip code.zip index.js package.json
 
 代码开头会逐个检查，缺失直接 `process.exit(1)`，函数返回 500 且日志里有 `❌ FATAL: Missing required environment variable: X`。
 
-| 变量名 | 示例值（**占位符**） | 说明 |
-| --- | --- | --- |
-| `AUTH_USER` | `admin` | 登录用户名 |
-| `AUTH_PASS` | `<请设置强密码>` | 登录密码，用随机长串 |
-| `JWT_SECRET` | `<32位以上随机字符串>` | token 签名密钥 |
-| `OSS_ACCESS_KEY_ID` | `LTAIxxxxxxxxxxxxxxxx` | RAM 用户的 AK |
-| `OSS_ACCESS_KEY_SECRET` | `<你的 AccessKey Secret>` | RAM 用户的 SK |
-| `OSS_BUCKET` | `my-img` | 桶名 |
-| `OSS_REGION` | `oss-cn-hangzhou` | 桶所在地域 ID |
-| `CDN_DOMAIN` | `https://img.example.com` | **必须带协议头**，否则启动即失败 |
-| `ALLOWED_ORIGINS` | `example.com,myblog.net` | 允许跨域的来源，逗号分隔。**不在强制列表里**，**仅在启用代码级 CORS 时生效** |
+**8 个必填**（代码里 `requiredEnvVars` 就是这 8 个）：
+
+- **`AUTH_USER`** `admin` —— 登录用户名
+- **`AUTH_PASS`** `<请设置强密码>` —— 登录密码，用随机长串
+- **`JWT_SECRET`** `<32位以上随机字符串>` —— token 签名密钥
+- **`OSS_ACCESS_KEY_ID`** `LTAIxxxxxxxxxxxxxxxx` —— RAM 用户的 AK
+- **`OSS_ACCESS_KEY_SECRET`** `<你的 AccessKey Secret>` —— RAM 用户的 SK
+- **`OSS_BUCKET`** `my-img` —— 桶名
+- **`OSS_REGION`** `oss-cn-hangzhou` —— 桶所在地域 ID
+- **`CDN_DOMAIN`** `https://img.example.com` —— **必须带协议头**，否则启动即失败
+
+**1 个可选：**
+
+- **`ALLOWED_ORIGINS`** `example.com,myblog.net` —— 允许跨域来源，逗号分隔。不设也能启动；它**只在启用代码级 CORS 时才参与判断**（默认 CORS 由平台直接回显 `Origin`，`isValidOrigin` 根本不会被调用）。若启用代码级 CORS 则必须设它，否则兜底值 `example.com` 会把浏览器上传全拦死。
 
 ![image](https://i.190808.xyz/m/26j13/f09581.png)
-
-> 上表前 8 项是**强制**的（代码里 `requiredEnvVars` 就是这 8 个），第 9 项 `ALLOWED_ORIGINS` 不设也能启动。⚠️ 但它**只在「启用代码级 CORS」时才参与判断**——默认 CORS 由平台直接回显 `Origin`（控制台没有可配的地方），此时该变量不起作用。你若取消代码级 CORS 注释，则必须设它，否则兜底值 `example.com` 会把浏览器上传全拦死。
-
-`ALLOWED_ORIGINS` 不用管——默认 CORS 不经过代码，`isValidOrigin` 根本不会被调用；只有按 5.4 启用代码级 CORS 时它才生效。
 
 生成随机值：
 
