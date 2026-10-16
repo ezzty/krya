@@ -11,7 +11,7 @@ tags:
   - 云函数fc图床
 author: jin
 ---
-![image](https://i.190808.xyz/m/26j16/20b3f2.png?x-oss-process=style/w950)
+![image](https://i.190808.xyz/m/26j16/e694a9.png?x-oss-process=style/w950)
 
 **先说三件事：**
 
